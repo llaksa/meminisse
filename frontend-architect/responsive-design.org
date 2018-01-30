@@ -1,0 +1,24 @@
+#+Title: Tipos y formas de agregar media queries
+
+* Media querie EXTERNO
+** Si el ancho de la página está entre 0px y 800px se usa 'media-querie.css' 
+#+BEGIN_EXPORT html
+  <link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css">
+#+END_EXPORT
+
+* Media querie INTERNO
+** tipos de Media querie
+#+BEGIN_EXPORT css 
+  @media print    /* Cambio de visulización al presionar 'CTRL + P' */
+
+  @media screen and (max-width: 800px) {    /* Cambio de visualización en diferentes pantallas y hasta 800px de ancho */
+    background: peru;
+    border: 15px solid lightblue;
+  }
+#+END_EXPORT
+
+#+Title: Adaptando nuestro diseño para tablets
+
+* Aplicación para probar nuestra página web en varios tipos de pantalla
+** Windows Resizer
+
