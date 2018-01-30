@@ -1,24 +1,20 @@
-#+Title: Tipos y formas de agregar media queries
+* 1. Title: Tipos y formas de agregar media queries
+***  Media querie EXTERNO
+Si el ancho de la página está entre 0px y 800px se usa 'some-styles.css' 
+#+BEGIN_SRC html
+  <link rel="stylesheet" media="(max-width: 800px)" href="css/some-styles.css">
+#+END_SRC
 
-* Media querie EXTERNO
-** Si el ancho de la página está entre 0px y 800px se usa 'media-querie.css' 
-#+BEGIN_EXPORT html
-  <link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css">
-#+END_EXPORT
-
-* Media querie INTERNO
-** tipos de Media querie
-#+BEGIN_EXPORT css 
-  @media print    /* Cambio de visulización al presionar 'CTRL + P' */
+***  Media querie INTERNO
+#+BEGIN_SRC css 
+  @media print    /* Cambio de visulización al presionar 'CTRL + P' (imprimir) */
 
   @media screen and (max-width: 800px) {    /* Cambio de visualización en diferentes pantallas y hasta 800px de ancho */
     background: peru;
     border: 15px solid lightblue;
   }
-#+END_EXPORT
+#+END_SRC
 
-#+Title: Adaptando nuestro diseño para tablets
-
-* Aplicación para probar nuestra página web en varios tipos de pantalla
-** Windows Resizer
-
+* 2. Title: Adaptando nuestro diseño para tablets
+*** Aplicación para probar nuestra página web en varios tipos de pantalla
+Windows Resizer
