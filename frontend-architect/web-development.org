@@ -32,6 +32,9 @@ Etiquetas dentro de *<head>...</head>*
 <meta charset="UTF-8" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" rel="stylesheet" type="text/css">
 <link href="./css/styles.css" rel="stylesheet"/>
+<style>
+  some-atribute: some-value;
+</style>
 #+END_SRC
 
 Etiquetas dentro de *<body>...</body>*
@@ -148,10 +151,31 @@ Etiquetas dentro de *<body>...</body>*
 
 - Agregando navegación interna
 #+BEGIN_SRC html
+<a href="#some-id">
 #+END_SRC
 
 - Agregando estilos a nuestro HTML
+*Intern:* Se usa la etiqueta *<style>...</style>*
 #+BEGIN_SRC html
+<style>
+body {
+    background-color: linen;
+}
+h1 {
+    color: maroon;
+    margin-left: 40px;
+} 
+</style>
+#+END_SRC
+
+*Inline:* Aplica un único estilo para un solo elemento
+#+BEGIN_SRC html
+<h1 style="color:blue;margin-left:30px;">This is a heading</h1> 
+#+END_SRC
+
+*Extern:* No hay que pedir ningún archivo adicional, pero el código tiende a volverse ilegible
+#+BEGIN_SRC html
+<link rel="stylesheet" type="text/css" href="path/to/some-stylefile.css">
 #+END_SRC
 
 *** CSS
