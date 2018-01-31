@@ -1,4 +1,4 @@
-#+Title: Resumen del curso de "Desarrollo Web"
+#+Title: Resumen del curso "Desarrollo Web"
 ** HTML
 HTML es la tecnología que le da estructura a una página web
 #+BEGIN_SRC html
@@ -33,7 +33,9 @@ HTML es la tecnología que le da estructura a una página web
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" rel="stylesheet" type="text/css">
 <link href="./css/styles.css" rel="stylesheet"/>
 <style>
-  some-atribute: some-value;
+  some-selector {
+    some-atribute: some-value;
+  }
 </style>
 #+END_SRC
 
