@@ -1,5 +1,5 @@
 * Title: Resumen del curso de "Desarrollo Web"
-*** HTML
+** HTML
 HTML es la tecnología que le da estructura a una página web
 #+BEGIN_SRC html
   <etiqueta1 atributo1="valor_a" atributo2="valor_b" ... >
@@ -178,7 +178,7 @@ h1 {
 <link rel="stylesheet" type="text/css" href="path/to/some-stylefile.css">
 #+END_SRC
 
-*** CSS
+** CSS
 
 - Selectores de CSS
 #+BEGIN_SRC html
