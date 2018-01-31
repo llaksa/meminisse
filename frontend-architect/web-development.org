@@ -8,86 +8,186 @@ HTML es la tecnología que le da estructura a una página web
       some text B
     </etiqueta2>
   </etiqueta1>
+
+  <etiqueta3 atributo1="valor_a" atributo2="valor_b" ... />
 #+END_SRC
 
 - Definiendo la estructura de nuestro sitio web
 
+Estructura básica de un documento HTML
+#+BEGIN_SRC html
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+  </body>
+</html>
+#+END_SRC
+
+Etiquetas dentro de *<head>*
+#+BEGIN_SRC html
+<!--un comentario HTML-->
+<title>Text</title>
+<meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" rel="stylesheet" type="text/css">
+<link href="./css/styles.css" rel="stylesheet"/>
+#+END_SRC
+
+Etiquetas dentro de *<body>*
+#+BEGIN_SRC html
+<!--un comentario HTML-->
+<section id="particular-name1" class="some-group-name another-group-name">
+<header id="particular-name2" class="some-group-name another-group-name">
+
+#+END_SRC
+
 - Agregando imágenes al sitio
+#+BEGIN_SRC html
+#+END_SRC
 
 - Agregando navegación interna
+#+BEGIN_SRC html
+#+END_SRC
 
 - Agregando estilos a nuestro HTML
+#+BEGIN_SRC html
+#+END_SRC
 
 *** CSS
 
 - Selectores de CSS
+#+BEGIN_SRC html
+#+END_SRC
 
 - Agregando clases a nuestros elementos HTML
+#+BEGIN_SRC html
+#+END_SRC
 
 - Backgrounds, colores y tamaños de fuente
+#+BEGIN_SRC html
+#+END_SRC
 
 - Google Fonts
+#+BEGIN_SRC html
+#+END_SRC
 
 - Display block e inline-block
+#+BEGIN_SRC html
+#+END_SRC
 
 - Entendiendo el modelo de caja
+#+BEGIN_SRC html
+#+END_SRC
 
 - Aplicando el modelo de caja a nuestro proyecto
+#+BEGIN_SRC html
+#+END_SRC
 
 - Múltiples clases para una misma etiqueta
+#+BEGIN_SRC html
+#+END_SRC
 
 - Flotando nuestros elementos
+#+BEGIN_SRC html
+#+END_SRC
 
 - Positions
+#+BEGIN_SRC html
+#+END_SRC
 
 - Bordes redondeados
+#+BEGIN_SRC html
+#+END_SRC
 
 *** Navegación, formularios, tablas y Flexbox
 
 - Agregando un footer a nuestro sitio
+#+BEGIN_SRC html
+#+END_SRC
 
 - Hacer un formulario de contacto
+#+BEGIN_SRC html
+#+END_SRC
 
 - Usar Flexbox en CSS
+#+BEGIN_SRC html
+#+END_SRC
 
 - Enlazar a páginas internas
+#+BEGIN_SRC html
+#+END_SRC
 
 - Crear tablas en nuestro sitio
+#+BEGIN_SRC html
+#+END_SRC
 
 - Pseudoelementos y entidades
+#+BEGIN_SRC html
+#+END_SRC
 
 - Puliendo Detalles
+#+BEGIN_SRC html
+#+END_SRC
 
 - Deploy a Github Pages
+#+BEGIN_SRC html
+#+END_SRC
 
 *** Conclusiones
 
 - Cierre del curso
+#+BEGIN_SRC html
+#+END_SRC
 
 - Desafio 1: Pasar Imagenes a HTML y CSS
+#+BEGIN_SRC html
+#+END_SRC
 
 - Desafio 2: Logra fijar el footer en la parte de abajo
+#+BEGIN_SRC html
+#+END_SRC
 
 - Desafio 3: Hacer transiciones de hover
+#+BEGIN_SRC html
+#+END_SRC
 
 - Desafio 4: Centrar un elemento horizontal y verticalmente
+#+BEGIN_SRC html
+#+END_SRC
 
 *** Complementos del curso
 
 - Transiciones y transformaciones con CSS
+#+BEGIN_SRC html
+#+END_SRC
 
 - Animaciones avanzadas con Hover
+#+BEGIN_SRC html
+#+END_SRC
 
 *** Sesiones en Vivo
 
 - Stream 1: Resolviendo el primer desafío y dudas
+#+BEGIN_SRC html
+#+END_SRC
 
 - Stream 2: Resolviendo el primer desafío (Parte 2)
+#+BEGIN_SRC html
+#+END_SRC
 
 - Stream 3: Resolviendo el segundo reto
+#+BEGIN_SRC html
+#+END_SRC
 
 - Stream 5: Resolviendo el último desafio
+#+BEGIN_SRC html
+#+END_SRC
 
 - Stream 4: Resolviendo el tercer desafio
+#+BEGIN_SRC html
+#+END_SRC
 
 - Crea tu propio parallax
+#+BEGIN_SRC html
+#+END_SRC
