@@ -12,9 +12,9 @@ HTML es la tecnología que le da estructura a una página web
   <etiqueta3 atributo1="valor_a" atributo2="valor_b" ... />
 #+END_SRC
 
-- Definiendo la estructura de nuestro sitio web
+1. Definiendo la estructura de nuestro sitio web
 
-Estructura básica de un documento HTML
+- Estructura básica de un documento HTML
 #+BEGIN_SRC html
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@ Estructura básica de un documento HTML
 </html>
 #+END_SRC
 
-Etiquetas dentro de *<head>...</head>*
+- Etiquetas dentro de *<head>...</head>*
 #+BEGIN_SRC html
 <!--un comentario HTML-->
 <title>Some text</title>
@@ -37,9 +37,9 @@ Etiquetas dentro de *<head>...</head>*
 </style>
 #+END_SRC
 
-Etiquetas dentro de *<body>...</body>*
-- *id :* atributo opcional, cuyo valor debe ser única
-- *class :* atributo opcional, cuyo valor o valores pueden ser el mismo que de otras etiquetas
+- Etiquetas dentro de *<body>...</body>*
+*id :* atributo opcional, cuyo valor debe ser única
+*class :* atributo opcional, cuyo valor o valores pueden ser el mismo que de otras etiquetas
 #+BEGIN_SRC html
 <!--un comentario HTML-->
 <section id="some-id" class="some clasess">
@@ -140,22 +140,22 @@ Etiquetas dentro de *<body>...</body>*
     </form>
   </div>
 </footer>
-
 #+END_SRC
-- Agregando imágenes al sitio (PD: Pueden ir dentro de cualquier etiqueta)
+
+2. Agregando imágenes al sitio (PD: Pueden ir dentro de cualquier etiqueta)
 #+BEGIN_SRC html
 <figure class="some-class">
   <img alt="Some text in case img does not show" src="some/path/to/some-image.png" height="8888" width="9999"/>
 </figure>
 #+END_SRC
 
-- Agregando navegación interna
+3. Agregando navegación interna
 #+BEGIN_SRC html
 <a href="#some-id">
 #+END_SRC
 
-- Agregando estilos a nuestro HTML
-*Intern:* Se usa la etiqueta *<style>...</style>*
+4. Agregando estilos a nuestro HTML
+- *Intern:* Se usa la etiqueta *<style>...</style>*
 #+BEGIN_SRC html
 <style>
 body {
@@ -168,150 +168,150 @@ h1 {
 </style>
 #+END_SRC
 
-*Inline:* Aplica un único estilo para un solo elemento
+- *Inline:* Aplica un único estilo para un solo elemento
 #+BEGIN_SRC html
 <h1 style="color:blue;margin-left:30px;">This is a heading</h1> 
 #+END_SRC
 
-*Extern:* No hay que pedir ningún archivo adicional, pero el código tiende a volverse ilegible
+- *Extern:* No hay que pedir ningún archivo adicional, pero el código tiende a volverse ilegible
 #+BEGIN_SRC html
 <link rel="stylesheet" type="text/css" href="path/to/some-stylefile.css">
 #+END_SRC
 
 ** CSS
 
-- Selectores de CSS
+1. Selectores de CSS
 #+BEGIN_SRC html
 #+END_SRC
 
-- Agregando clases a nuestros elementos HTML
+2. Agregando clases a nuestros elementos HTML
 #+BEGIN_SRC html
 #+END_SRC
 
-- Backgrounds, colores y tamaños de fuente
+3. Backgrounds, colores y tamaños de fuente
 #+BEGIN_SRC html
 #+END_SRC
 
-- Google Fonts
+4. Google Fonts
 #+BEGIN_SRC html
 #+END_SRC
 
-- Display block e inline-block
+5. Display block e inline-block
 #+BEGIN_SRC html
 #+END_SRC
 
-- Entendiendo el modelo de caja
+6. Entendiendo el modelo de caja
 #+BEGIN_SRC html
 #+END_SRC
 
-- Aplicando el modelo de caja a nuestro proyecto
+7. Aplicando el modelo de caja a nuestro proyecto
 #+BEGIN_SRC html
 #+END_SRC
 
-- Múltiples clases para una misma etiqueta
+8. Múltiples clases para una misma etiqueta
 #+BEGIN_SRC html
 #+END_SRC
 
-- Flotando nuestros elementos
+9. Flotando nuestros elementos
 #+BEGIN_SRC html
 #+END_SRC
 
-- Positions
+10. Positions
 #+BEGIN_SRC html
 #+END_SRC
 
-- Bordes redondeados
+11. Bordes redondeados
 #+BEGIN_SRC html
 #+END_SRC
 
-*** Navegación, formularios, tablas y Flexbox
+** Navegación, formularios, tablas y Flexbox
 
-- Agregando un footer a nuestro sitio
+1. Agregando un footer a nuestro sitio
 #+BEGIN_SRC html
 #+END_SRC
 
-- Hacer un formulario de contacto
+2. Hacer un formulario de contacto
 #+BEGIN_SRC html
 #+END_SRC
 
-- Usar Flexbox en CSS
+3. Usar Flexbox en CSS
 #+BEGIN_SRC html
 #+END_SRC
 
-- Enlazar a páginas internas
+4. Enlazar a páginas internas
 #+BEGIN_SRC html
 #+END_SRC
 
-- Crear tablas en nuestro sitio
+5. Crear tablas en nuestro sitio
 #+BEGIN_SRC html
 #+END_SRC
 
-- Pseudoelementos y entidades
+6. Pseudoelementos y entidades
 #+BEGIN_SRC html
 #+END_SRC
 
-- Puliendo Detalles
+7. Puliendo Detalles
 #+BEGIN_SRC html
 #+END_SRC
 
-- Deploy a Github Pages
+8. Deploy a Github Pages
 #+BEGIN_SRC html
 #+END_SRC
 
-*** Conclusiones
+** Conclusiones
 
-- Cierre del curso
+1. Cierre del curso
 #+BEGIN_SRC html
 #+END_SRC
 
-- Desafio 1: Pasar Imagenes a HTML y CSS
+2. Desafio 1: Pasar Imagenes a HTML y CSS
 #+BEGIN_SRC html
 #+END_SRC
 
-- Desafio 2: Logra fijar el footer en la parte de abajo
+3. Desafio 2: Logra fijar el footer en la parte de abajo
 #+BEGIN_SRC html
 #+END_SRC
 
-- Desafio 3: Hacer transiciones de hover
+4. Desafio 3: Hacer transiciones de hover
 #+BEGIN_SRC html
 #+END_SRC
 
-- Desafio 4: Centrar un elemento horizontal y verticalmente
+5. Desafio 4: Centrar un elemento horizontal y verticalmente
 #+BEGIN_SRC html
 #+END_SRC
 
-*** Complementos del curso
+** Complementos del curso
 
-- Transiciones y transformaciones con CSS
+1. Transiciones y transformaciones con CSS
 #+BEGIN_SRC html
 #+END_SRC
 
-- Animaciones avanzadas con Hover
+2. Animaciones avanzadas con Hover
 #+BEGIN_SRC html
 #+END_SRC
 
-*** Sesiones en Vivo
+** Sesiones en Vivo
 
-- Stream 1: Resolviendo el primer desafío y dudas
+1. Stream 1: Resolviendo el primer desafío y dudas
 #+BEGIN_SRC html
 #+END_SRC
 
-- Stream 2: Resolviendo el primer desafío (Parte 2)
+2. Stream 2: Resolviendo el primer desafío (Parte 2)
 #+BEGIN_SRC html
 #+END_SRC
 
-- Stream 3: Resolviendo el segundo reto
+3. Stream 3: Resolviendo el segundo reto
 #+BEGIN_SRC html
 #+END_SRC
 
-- Stream 5: Resolviendo el último desafio
+4. Stream 5: Resolviendo el último desafio
 #+BEGIN_SRC html
 #+END_SRC
 
-- Stream 4: Resolviendo el tercer desafio
+5. Stream 4: Resolviendo el tercer desafio
 #+BEGIN_SRC html
 #+END_SRC
 
-- Crea tu propio parallax
+6. Crea tu propio parallax
 #+BEGIN_SRC html
 #+END_SRC
