@@ -25,25 +25,125 @@ Estructura básica de un documento HTML
 </html>
 #+END_SRC
 
-Etiquetas dentro de *<head>*
+Etiquetas dentro de *<head>...</head>*
 #+BEGIN_SRC html
 <!--un comentario HTML-->
-<title>Text</title>
+<title>Some text</title>
 <meta charset="UTF-8" />
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" rel="stylesheet" type="text/css">
 <link href="./css/styles.css" rel="stylesheet"/>
 #+END_SRC
 
-Etiquetas dentro de *<body>*
+Etiquetas dentro de *<body>...</body>*
+- *id :* atributo opcional, cuyo valor debe ser única
+- *class :* atributo opcional, cuyo valor o valores pueden ser el mismo que de otras etiquetas
 #+BEGIN_SRC html
 <!--un comentario HTML-->
-<section id="particular-name1" class="some-group-name another-group-name">
-<header id="particular-name2" class="some-group-name another-group-name">
+<section id="some-id" class="some clasess">
+  <header id="some-id" class="some classes">
+    <nav class="some classes">
+      <ul>
+        <li>
+          <a href="some-index.html">
+        </li>
+        <li>
+          <a href="#some-id">
+        </li>
+    </nav>
+  </header>
+  <div class="some classes">
+    <h1 class="some classes">Some text</h1>
+    <h3 class="some classes">Some-text</h3>
+  </div>
+</section>
+
+<section id="some-id" class="some classes">
+  <h2>Some text</h2>
+  
+  <article class="some classes">
+    <img alt="Some text in case img does not show" src="path/to/the-image.png" />
+      <div class="some classes">
+        <h3 class="some classes">Some text</h3>
+          <ol>
+            <li>Some text</li>
+            <li>Some text</li>
+            <li>Some text</li>
+          </ol>
+      </div>
+  </article>
+
+  <article class="some classes">
+    <img alt="Some text in case img does not show" src="path/to/another-image.png" width="333" />
+      <div class="some classes">
+        <h3 class="some classes">Some text</h3>
+          <ol>
+            <li>Some text</li>
+            <li>Some text</li>
+            <li>Some text</li>
+          </ol>
+      </div>
+  </article>
+</section>
+
+<footer class="some classes">
+  <div class="some classes">
+    <div class="some classes">
+      <img alt="Some text in case img does not show" src="path/to/another-image.png" />
+      <a href="tel:+51987654321"><strong>Telephone</strong><span>987654321</span></a>
+      <a href="mailto:contact@email.com"><strong>E-mail</strong><span>contact@email.com</span></a>
+    </div>
+    <form class="some classes" action="">
+      <div class="some classes">
+        <label for="some-value-to-for">Some text
+          <input name="" type="text" required id="some-value-to-for" value="some-id" />
+        </label>
+
+        <label for="some-value-to-for">Some text
+          <input name="" type="email" required id="some-value-to-for" value="some-id" />
+        </label>
+
+        <div class="some classes">Some text
+          <label for="some-value-to-for">
+            <input id="some-value-to-for" type="radio" name="some-name" value="some-id" />woman
+          </label>
+          <label for="some-value-to-for">
+            <input id="some-value-to-for" type="radio" name="some-name" value="some-id" />man
+          </label>
+        </div>
+
+        <div class="some classes">
+          <label for="some-value-to-for">
+            <input name="" type="checkbox" id="some-value-to-for"  name="some-name" value="some-id" />Cotization
+          </label>
+          <label for="some-value-to-for">
+            <input name="" type="checkbox" id="some-value-to-for"  name="some-name" value="some-id" />Claims
+          </label>
+          <label for="some-value-to-for">
+            <input name="" type="checkbox" id="some-value-to-for"  name="some-name" value="some-id" />Comments
+          </label>
+          <label for="some-value-to-for">
+            <input name="" type="checkbox" id="some-value-to-for"  name="some-name" value="some-id" />Others
+          </label>
+        </div>
+      </div>
+
+      <div class="some classes">
+        <label for="some-value-of-for">
+          <textarea cols="6666" id="some-value-of-for" name="some-name" rows="7777">
+          </textarea>
+          <input type="submit" value="Some-value" class="some classes" />
+        </label>
+      </div>
+    </form>
+  </div>
+</footer>
 
 #+END_SRC
-
-- Agregando imágenes al sitio
+- Agregando imágenes al sitio (PD: Pueden ir dentro de cualquier etiqueta)
 #+BEGIN_SRC html
+<figure class="some-class">
+  <img alt="Some text in case img does not show" src="some/path/to/some-image.png" height="8888" width="9999"/>
+</figure>
 #+END_SRC
 
 - Agregando navegación interna
