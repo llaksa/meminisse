@@ -6,10 +6,14 @@ Si el ancho de la página está entre 0px y 800px se usa 'some-styles.css'
 #+END_SRC
 
 ***  Media querie INTERNO
+Cambio de visulización al presionar 'CTRL + P' (imprimir)
 #+BEGIN_SRC css 
-  @media print    /* Cambio de visulización al presionar 'CTRL + P' (imprimir) */
+  @media print    
+#+END_SRC
 
-  @media screen and (max-width: 800px) {    /* Cambio de visualización en diferentes pantallas y hasta 800px de ancho */
+Cambio de visualización en diferentes pantallas y hasta 800px de ancho
+#+BEGIN_SRC css 
+  @media screen and (max-width: 800px) {    
     background: peru;
     border: 15px solid lightblue;
   }
