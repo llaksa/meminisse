@@ -1,2 +1,93 @@
-#+Title: Resumen del curso de "Desarrollo Web"
+* Title: Resumen del curso de "Desarrollo Web"
+*** HTML
+HTML es la tecnología que le da estructura a una página web
+#+BEGIN_SRC html
+  <etiqueta1 atributo1="valor_a" atributo2="valor_b" ... >
+    some text A
+    <etiqueta2 atributo3="valor_c" atributo4="valor_d" ... >
+      some text B
+    </etiqueta2>
+  </etiqueta1>
+#+END_SRC
 
+- Definiendo la estructura de nuestro sitio web
+
+- Agregando imágenes al sitio
+
+- Agregando navegación interna
+
+- Agregando estilos a nuestro HTML
+
+*** CSS
+
+- Selectores de CSS
+
+- Agregando clases a nuestros elementos HTML
+
+- Backgrounds, colores y tamaños de fuente
+
+- Google Fonts
+
+- Display block e inline-block
+
+- Entendiendo el modelo de caja
+
+- Aplicando el modelo de caja a nuestro proyecto
+
+- Múltiples clases para una misma etiqueta
+
+- Flotando nuestros elementos
+
+- Positions
+
+- Bordes redondeados
+
+*** Navegación, formularios, tablas y Flexbox
+
+- Agregando un footer a nuestro sitio
+
+- Hacer un formulario de contacto
+
+- Usar Flexbox en CSS
+
+- Enlazar a páginas internas
+
+- Crear tablas en nuestro sitio
+
+- Pseudoelementos y entidades
+
+- Puliendo Detalles
+
+- Deploy a Github Pages
+
+*** Conclusiones
+
+- Cierre del curso
+
+- Desafio 1: Pasar Imagenes a HTML y CSS
+
+- Desafio 2: Logra fijar el footer en la parte de abajo
+
+- Desafio 3: Hacer transiciones de hover
+
+- Desafio 4: Centrar un elemento horizontal y verticalmente
+
+*** Complementos del curso
+
+- Transiciones y transformaciones con CSS
+
+- Animaciones avanzadas con Hover
+
+*** Sesiones en Vivo
+
+- Stream 1: Resolviendo el primer desafío y dudas
+
+- Stream 2: Resolviendo el primer desafío (Parte 2)
+
+- Stream 3: Resolviendo el segundo reto
+
+- Stream 5: Resolviendo el último desafio
+
+- Stream 4: Resolviendo el tercer desafio
+
+- Crea tu propio parallax

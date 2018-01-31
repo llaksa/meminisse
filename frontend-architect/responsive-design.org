@@ -17,4 +17,4 @@ Si el ancho de la página está entre 0px y 800px se usa 'some-styles.css'
 
 * 2. Title: Adaptando nuestro diseño para tablets
 *** Aplicación para probar nuestra página web en varios tipos de pantalla
-Windows Resizer
+- Windows Resizer
