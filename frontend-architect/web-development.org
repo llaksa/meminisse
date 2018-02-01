@@ -258,8 +258,8 @@ selector::pseudo-element {
 some-property {
   background-image: url("path/to/some/image.png");
   background-size: cover;
-  background: #fd324e
-  background: linear-gradient(to left, #fe344e, #ff7250)
+  background: #fd324e;
+  background: linear-gradient(to left, #fe344e, #ff7250);
 
   font-family: 'Allerta', sans-serif;
   font-size: 18px;
