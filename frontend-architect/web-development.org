@@ -39,7 +39,7 @@ HTML es la tecnología que le da estructura a una página web
 </style>
 #+END_SRC
 
-- Etiquetas dentro de *<body>...</body>*
+- Etiquetas dentro de *<body>...</bodframeworky>*
 *id :* atributo opcional, cuyo valor debe ser única
 *class :* atributo opcional, cuyo valor o valores pueden ser el mismo que de otras etiquetas
 #+BEGIN_SRC html
@@ -182,138 +182,217 @@ h1 {
 
 ** CSS
 
-*1. Selectores de CSS*
-#+BEGIN_SRC html
-#+END_SRC
+'Cada etiqueta HTML tiene propiedas CSS definidas por default'
 
-*2. Agregando clases a nuestros elementos HTML*
-#+BEGIN_SRC html
+*1. Selectores de CSS*
+- Los selectores que se declaren después, serán los que prevalecerán 
+- Por eso se recomienda declarar en el orden: *, tags, pseudoelements, classes, pseudoclasses, id, ...
+
+[[https://www.w3schools.com/css/css_pseudo_classes.asp][CSS Pseudo-classes]]
+
+[[https://www.w3schools.com/css/css_pseudo_elements.asp][CSS Pseudo-elements]]
+
+#+BEGIN_SRC css
+/*
+A pseudo-class is used to define a special state of an element.
+
+For example, it can be used to:
+    Style an element when a user mouses over it
+    Style visited and unvisited links differently
+    Style an element when it gets focus
+*/
+
+/*
+A CSS pseudo-element is used to style specified parts of an element.
+
+For example, it can be used to:
+    Style the first letter, or line, of an element
+    Insert content before, or after, the content of an element
+*/
+
+/*Select all elements*/
+* {
+  some-property: some-values;
+}
+
+/*Select the 'some-tag' element*/
+some-tag {
+  some-property: some-values;
+}
+
+/*Select all elements with 'some-class' class*/
+.some-class {
+  some-property: some-values;
+}
+
+/*Select the element with 'some-id' id*/
+#some-id {
+  some-property: some-values;
+}
+
+/*Select all 's-s-son' inside 's-s-father', inside 's-s-grandfather'*/
+some-selector-grandfather some-selector-father some-selector-son {
+  some-property: some-values;
+}
+
+/*
+    Style an element when a user mouses over it
+    Style visited and unvisited links differently
+    Style an element when it gets focus
+*/
+selector:pseudo-class {
+  some-property: some-values;
+}
+
+/*
+    Style the first letter, or line, of an element
+    Insert content before, or after, the content of an element
+*/
+selector::pseudo-element {
+  some-property: some-values;
+}
 #+END_SRC
 
 *3. Backgrounds, colores y tamaños de fuente*
-#+BEGIN_SRC html
+#+BEGIN_SRC css
+some-property {
+  background-image: url("path/to/some/image.png");
+  background-size: cover;
+  background: #fd324e
+  background: linear-gradient(to left, #fe344e, #ff7250)
+
+
+  font-family: 'Allerta, sans-serif;
+  font-size: 18px
+  
+
+  color: green;
+}
 #+END_SRC
 
 *4. Google Fonts*
-#+BEGIN_SRC html
-#+END_SRC
+
+[[https://fonts.google.com/][Google fonts]]
 
 *5. Display block e inline-block*
-#+BEGIN_SRC html
+#+BEGIN_SRC css
+some-selector {
+  display: block;
+}
+
+some-selector {
+  display: inline-block;
+}
+
+some-selector {
+  display: flex;
+  justify-content: space-between;
+}
+
+some-selector {
+  display: flex;
+  width: 400px;
+}
 #+END_SRC
 
 *6. Entendiendo el modelo de caja*
-#+BEGIN_SRC html
-#+END_SRC
-
-*7. Aplicando el modelo de caja a nuestro proyecto*
-#+BEGIN_SRC html
-#+END_SRC
+[[https://www.w3schools.com/css/css_boxmodel.asp][CSS Box Model]]
 
 *8. Múltiples clases para una misma etiqueta*
 #+BEGIN_SRC html
+<sometag class="some-class other-some-class another-some-class and-then..."> 
 #+END_SRC
 
 *9. Flotando nuestros elementos*
-#+BEGIN_SRC html
+#+BEGIN_SRC css
+/*
+The CSS float property specifies how an element should float.
+
+The CSS clear property specifies what elements can float beside
+the cleared element and on which side.
+*/
 #+END_SRC
+[[https://www.w3schools.com/css/css_float.asp][CSS Layout - float and clear]]
 
 *10. Positions*
-#+BEGIN_SRC html
+#+BEGIN_SRC css
+/*
+The position property specifies the type of 
+positioning method used for an element
+(static, relative, fixed, absolute or sticky).
+*/
 #+END_SRC
+[[https://www.w3schools.com/css/css_positioning.asp][CSS Layout - The position Property]]
 
 *11. Bordes redondeados*
-#+BEGIN_SRC html
-#+END_SRC
+
+[[https://www.w3schools.com/cssref/css3_pr_border-radius.asp][CSS border-radius Property]]
 
 ** Navegación, formularios, tablas y Flexbox
 
-*1. Agregando un footer a nuestro sitio*
-#+BEGIN_SRC html
-#+END_SRC
-
-*2. Hacer un formulario de contacto*
-#+BEGIN_SRC html
-#+END_SRC
-
 *3. Usar Flexbox en CSS*
-#+BEGIN_SRC html
-#+END_SRC
+#+BEGIN_SRC css
+/*
+Before the Flexible Box Layout Module, there were 
+four layout modes:
 
-*4. Enlazar a páginas internas*
-#+BEGIN_SRC html
+    Block, for sections in a webpage.
+    Inline, for text.
+    Table, for two-dimensional table data.
+    Positioned, for explicit position of an element.
+
+The Flexible Box Layout Module, makes it easier to 
+design flexible responsive layout structure without
+having to use floats or positioning.
+*/
 #+END_SRC
+[[https://www.w3schools.com/css/css3_flexbox.asp][CSS Flexible Box Layout Module]]
 
 *5. Crear tablas en nuestro sitio*
-#+BEGIN_SRC html
-#+END_SRC
 
-*6. Pseudoelementos y entidades*
-#+BEGIN_SRC html
-#+END_SRC
-
-*7. Puliendo Detalles*
-#+BEGIN_SRC html
-#+END_SRC
+[[https://www.w3schools.com/html/html_tables.asp][Defining an HTML Table]]
+[[https://www.w3schools.com/css/css_table.asp][
+CSS Tables]]
 
 *8. Deploy a Github Pages*
-#+BEGIN_SRC html
-#+END_SRC
-
-** Conclusiones
-
-*1. Cierre del curso*
-#+BEGIN_SRC html
-#+END_SRC
-
-*2. Desafio 1: Pasar Imagenes a HTML y CSS*
-#+BEGIN_SRC html
-#+END_SRC
-
-*3. Desafio 2: Logra fijar el footer en la parte de abajo*
-#+BEGIN_SRC html
-#+END_SRC
-
-*4. Desafio 3: Hacer transiciones de hover*
-#+BEGIN_SRC html
-#+END_SRC
-
-*5. Desafio 4: Centrar un elemento horizontal y verticalmente*
-#+BEGIN_SRC html
-#+END_SRC
+[[https://pages.github.com/][
+Great Tutorial]]
 
 ** Complementos del curso
 
 *1. Transiciones y transformaciones con CSS*
-#+BEGIN_SRC html
-#+END_SRC
 
-*2. Animaciones avanzadas con Hover*
-#+BEGIN_SRC html
-#+END_SRC
+[[https://www.w3schools.com/css/css3_2dtransforms.asp][CSS 2D Transforms]]
+- CSS transforms allow you to translate, rotate, scale, and skew
+elements.
+- A transformation is an effect that lets an element change shape, 
+size and position.
 
-** Sesiones en Vivo
-
-*1. Stream 1: Resolviendo el primer desafío y dudas*
-#+BEGIN_SRC html
-#+END_SRC
-
-*2. Stream 2: Resolviendo el primer desafío (Parte 2)*
-#+BEGIN_SRC html
-#+END_SRC
-
-*3. Stream 3: Resolviendo el segundo reto*
-#+BEGIN_SRC html
-#+END_SRC
+[[https://www.w3schools.com/css/css3_3dtransforms.asp][CSS 3D Transforms]]
+- CSS allows you to format your elements using 3D transformations.
 
 *4. Stream 5: Resolviendo el último desafio*
-#+BEGIN_SRC html
+#+BEGIN_SRC css
 #+END_SRC
 
 *5. Stream 4: Resolviendo el tercer desafio*
-#+BEGIN_SRC html
+#+BEGIN_SRC css
 #+END_SRC
 
 *6. Crea tu propio parallax*
-#+BEGIN_SRC html
+
+[[https://www.w3schools.com/howto/howto_css_parallax.asp][How TO - Parallax Scrolling]]
+
+Parallax scrolling is a web site trend where the background content
+(i.e. an image) is moved at a different speed than the foreground 
+content while scrolling. Click on the links below to see the difference
+between a website with and without parallax scrolling.
+#+BEGIN_SRC css
+/*Usually used*/
+some-selector {
+ background-attachment: fixed;
+ ...
+ ...
+ ...
+}
 #+END_SRC

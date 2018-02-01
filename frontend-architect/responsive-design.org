@@ -1,14 +1,16 @@
 * 1. Title: Tipos y formas de agregar media queries
-***  Media querie EXTERNO
+***  Media querie *externo*
 Si el ancho de la página está entre 0px y 800px se usa 'some-styles.css' 
 #+BEGIN_SRC html
   <link rel="stylesheet" media="(max-width: 800px)" href="css/some-styles.css">
 #+END_SRC
 
-***  Media querie INTERNO
+***  Media querie *interno*
 Cambio de visulización al presionar 'CTRL + P' (imprimir)
 #+BEGIN_SRC css 
-  @media print    
+  @media print {
+    some-atribute: some-value;
+  }   
 #+END_SRC
 
 Cambio de visualización en diferentes pantallas y hasta 800px de ancho
