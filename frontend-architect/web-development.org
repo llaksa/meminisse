@@ -350,12 +350,12 @@ having to use floats or positioning.
 *5. Crear tablas en nuestro sitio*
 
 [[https://www.w3schools.com/html/html_tables.asp][Defining an HTML Table]]
-[[https://www.w3schools.com/css/css_table.asp][
-CSS Tables]]
+
+[[https://www.w3schools.com/css/css_table.asp][CSS Table]]
 
 *8. Deploy a Github Pages*
-[[https://pages.github.com/][
-Great Tutorial]]
+
+[[https://pages.github.com/][Great Tutorial]]
 
 ** Complementos del curso
 
@@ -369,14 +369,6 @@ size and position.
 
 [[https://www.w3schools.com/css/css3_3dtransforms.asp][CSS 3D Transforms]]
 - CSS allows you to format your elements using 3D transformations.
-
-*4. Stream 5: Resolviendo el último desafio*
-#+BEGIN_SRC css
-#+END_SRC
-
-*5. Stream 4: Resolviendo el tercer desafio*
-#+BEGIN_SRC css
-#+END_SRC
 
 *6. Crea tu propio parallax*
 
