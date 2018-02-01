@@ -261,10 +261,8 @@ some-property {
   background: #fd324e
   background: linear-gradient(to left, #fe344e, #ff7250)
 
-
-  font-family: 'Allerta, sans-serif;
-  font-size: 18px
-  
+  font-family: 'Allerta', sans-serif;
+  font-size: 18px;
 
   color: green;
 }
