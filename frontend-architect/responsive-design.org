@@ -74,11 +74,32 @@ desktops, 1200px a +
       display: block;
     }
 
+    .col {
+      margin: 0;
+    }
+ 
     /*'input' selector by type*/
     input[type="text"],
     input[type="email"] {
+      zoom: 1.5;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
       font-size: 11px;
       padding: 22px;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+    and-maybe some others selectors {
+      property1: value1;
+      property2: value2;
+      property3: value3;
+      ...
+      ...
+      ...
     }
   }
 
@@ -112,4 +133,88 @@ desktops, 1200px a +
       padding: 0;
     }
   }
+#+END_SRC
+
+* 4. Utilizando el patrón off-canvas en el menú superior (Hamburger Menu, or others)
+*** [[https://icomoon.io/][Íconos Prediseñados]]
+
+Web para descargar bibliotecas CSS de íconos prediseñados
+
+Ejemplo de uso:
+
+- Primer paso
+
+Create a media querie for the Hamburguer Menu like: 
+
+#+BEGIN_SRC css
+@media screen and (max-width: 500px)
+  ...
+  ...
+  some-property {
+    ...
+    transition: .3s;
+    ...
+  }
+  ...
+  ...
+#+END_SRC 
+
+and do next:
+
+#+BEGIN_SRC html
+<!--Llamando a nuestro HTML, un ícono de menu prediseñado-->
+<span class="icon-menu"></span>
+#+END_SRC
+
+- Segundo paso
+#+BEGIN_SRC html
+<!--Agregando una clase para editar 'span' según nuestro proyecto-->
+<span class="burguer-button icon-menu"></span>
+#+END_SRC
+
+- Tercer paso
+#+BEGIN_SRC css
+  .burguer-button {
+    width: 40px;
+    line-height: 40px;
+    height: 40px;
+    background: #395667;
+    display: inline-block;
+    text-align: center;
+
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+    top: 0;
+  }
+#+END_SRC
+
+- etc...
+
+*** Agregando el efecto de touch
+
+Para 'activar' o 'desactivar' la aparición del menú en smartphones
+
+#+BEGIN_SRC css
+/*We create a class '.active' to use when the event happened*/
+  .active {
+    some-property: some-value;
+   }
+#+END_SRC
+
+#+BEGIN_SRC html
+<script>
+  $burguerButton = document.getElementById('burguer-button');
+  $menu = document.getElementById('menu');
+
+  $burguerButton.addEventListener('touchstart', function() {
+    $menu.classList.toggle('active')
+  });  
+</script>
+#+END_SRC
+
+* 5. Corrigiendo resoluciones con meta-viewport
+
+#+BEGIN_SRC html
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 #+END_SRC
