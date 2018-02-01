@@ -245,8 +245,7 @@ selector:pseudo-class {
 }
 
 /*
-    Style the first letter, or line, of an element
-    Insert content before, or after, the content of an element
+    Style the first letter, or line, of an element Insert content before, or after, the content of an element
 */
 selector::pseudo-element {
   some-property: some-values;
@@ -307,8 +306,7 @@ some-selector {
 /*
 The CSS float property specifies how an element should float.
 
-The CSS clear property specifies what elements can float beside
-the cleared element and on which side.
+The CSS clear property specifies what elements can float beside the cleared element and on which side.
 */
 #+END_SRC
 [[https://www.w3schools.com/css/css_float.asp][CSS Layout - float and clear]]
@@ -316,9 +314,7 @@ the cleared element and on which side.
 *10. Positions*
 #+BEGIN_SRC css
 /*
-The position property specifies the type of 
-positioning method used for an element
-(static, relative, fixed, absolute or sticky).
+The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).
 */
 #+END_SRC
 [[https://www.w3schools.com/css/css_positioning.asp][CSS Layout - The position Property]]
@@ -332,17 +328,14 @@ positioning method used for an element
 *3. Usar Flexbox en CSS*
 #+BEGIN_SRC css
 /*
-Before the Flexible Box Layout Module, there were 
-four layout modes:
+Before the Flexible Box Layout Module, there were four layout modes:
 
     Block, for sections in a webpage.
     Inline, for text.
     Table, for two-dimensional table data.
     Positioned, for explicit position of an element.
 
-The Flexible Box Layout Module, makes it easier to 
-design flexible responsive layout structure without
-having to use floats or positioning.
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without having to use floats or positioning.
 */
 #+END_SRC
 [[https://www.w3schools.com/css/css3_flexbox.asp][CSS Flexible Box Layout Module]]
@@ -362,10 +355,8 @@ having to use floats or positioning.
 *1. Transiciones y transformaciones con CSS*
 
 [[https://www.w3schools.com/css/css3_2dtransforms.asp][CSS 2D Transforms]]
-- CSS transforms allow you to translate, rotate, scale, and skew
-elements.
-- A transformation is an effect that lets an element change shape, 
-size and position.
+- CSS transforms allow you to translate, rotate, scale, and skew elements.
+- A transformation is an effect that lets an element change shape, size and position.
 
 [[https://www.w3schools.com/css/css3_3dtransforms.asp][CSS 3D Transforms]]
 - CSS allows you to format your elements using 3D transformations.
@@ -374,10 +365,7 @@ size and position.
 
 [[https://www.w3schools.com/howto/howto_css_parallax.asp][How TO - Parallax Scrolling]]
 
-Parallax scrolling is a web site trend where the background content
-(i.e. an image) is moved at a different speed than the foreground 
-content while scrolling. Click on the links below to see the difference
-between a website with and without parallax scrolling.
+Parallax scrolling is a web site trend where the background content (i.e. an image) is moved at a different speed than the foreground content while scrolling. Click on the links below to see the difference between a website with and without parallax scrolling.
 #+BEGIN_SRC css
 /*Usually used*/
 some-selector {
