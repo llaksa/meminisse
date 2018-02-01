@@ -294,6 +294,7 @@ some-selector {
 #+END_SRC
 
 *6. Entendiendo el modelo de caja*
+
 [[https://www.w3schools.com/css/css_boxmodel.asp][CSS Box Model]]
 
 *8. Múltiples clases para una misma etiqueta*
