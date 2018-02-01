@@ -1,4 +1,4 @@
-* 1. Title: Tipos y formas de agregar media queries
+* 1. Tipos y formas de agregar media queries
 ***  Media querie *externo*
 Si el ancho de la página está entre 0px y 800px se usa 'some-styles.css' 
 #+BEGIN_SRC html
@@ -18,9 +18,98 @@ Cambio de visualización en diferentes pantallas y hasta 800px de ancho
   @media screen and (max-width: 800px) {    
     background: peru;
     border: 15px solid lightblue;
+    ...
+    ...
+    ...
   }
 #+END_SRC
 
-* 2. Title: Adaptando nuestro diseño para tablets
+* 2. Adaptando nuestro diseño para tablets
 *** Aplicación para probar nuestra página web en varios tipos de pantalla
 - Windows Resizer
+
+*** Usefull properties
+#+BEGIN_SRC css 
+  some-selector {display: inline-block;}
+
+/*reset properties of your choose before to use them again*/
+  some-selector {position: static;}
+
+  some-selector {margin: 0}
+  
+  some-selector {height: auto}
+
+  some-selector {list-style: none}
+#+END_SRC
+
+* 3. Adaptando nuestro proyecto para dispositivos móviles
+*** To consider:
+
+Móvil
+@media (min-width: 576px) { … }
+
+tablets, 768px a +
+@media (min-width: 768px) { … }
+
+desktops 992px a +
+@media (min-width: 992px) { … }
+
+desktops, 1200px a +
+@media (min-width: 1200px) { … }
+
+*** Add Media Queries and reset properties of your choose before to use them again
+
+#+BEGIN_SRC css
+  /*i.e. some IPAD*/
+  @media screen and (max-width: 650px) {
+    .footer {
+      display: block;
+    }
+    
+    .contact {
+      margin: 0 auto;
+    }
+
+    .message some-selector {
+      display: block;
+    }
+
+    /*'input' selector by type*/
+    input[type="text"],
+    input[type="email"] {
+      font-size: 11px;
+      padding: 22px;
+    }
+  }
+
+  /*i.e. some smartphone*/
+  @media screen and (max-width: 650px) {
+    some-selector {
+      property1: value1;
+      property2: value2;
+      property3: value3;
+      ...
+      ...
+      ...
+    }    
+
+    some-selector {
+      text-align: center;
+    }
+
+    somes selector {
+      border: 1px solid red;
+      position: static;
+      display: block;
+      text-align: center;
+    }
+
+    somes selector {
+      margin: 0;
+    }
+
+    some-selector {
+      padding: 0;
+    }
+  }
+#+END_SRC

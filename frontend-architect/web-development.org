@@ -183,6 +183,7 @@ h1 {
 ** CSS
 
 'Cada etiqueta HTML tiene propiedas CSS definidas por default'
+Por ejemplo <button> tiene por defecto "display: inline", etc 
 
 *1. Selectores de CSS*
 - Los selectores que se declaren después, serán los que prevalecerán 
@@ -251,6 +252,13 @@ selector:pseudo-class {
 selector::pseudo-element {
   some-property: some-values;
 }
+
+    /*'input' selector by type*/
+    input[type="text"],
+    input[type="email"] {
+      font-size: 11px;
+      padding: 22px;
+    }
 #+END_SRC
 
 *3. Backgrounds, colores y tamaños de fuente*
@@ -317,6 +325,15 @@ The CSS clear property specifies what elements can float beside the cleared elem
 /*
 The position property specifies the type of positioning method used for an element (static, relative, fixed, absolute or sticky).
 */
+
+/*
+The properties 'top', 'right', 'bottom', 'left' are always used after the 'position' property
+*/
+some-selector {
+  position: relative;
+  top: 111px;
+  bottom: 222px;
+}
 #+END_SRC
 [[https://www.w3schools.com/css/css_positioning.asp][CSS Layout - The position Property]]
 
