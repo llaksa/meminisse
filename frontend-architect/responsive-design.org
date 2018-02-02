@@ -192,8 +192,9 @@ and do next:
 - etc...
 
 *** Agregando el efecto de touch
-);
 
+#+BEGIN_SRC html
+<script>
   $burguerButton.addEventListener('touchstart', function() {
     $menu.classList.toggle('active')
   });  
@@ -336,7 +337,7 @@ Ejemplo con *webkit*(Safari):
 * 9. Construyendo tablas responsive
 
 #+BEGIN_SRC css
-/*Provocar la aparición de un scroll en la tabla*/
+/*Provocar la aparición de un scroll en la tabla y no importe que haya muchas columnas*/
 @media screen and (max-width: 800px) {
   .contenedor .tabla {
     overflow: auto;
@@ -349,4 +350,53 @@ Ejemplo con *webkit*(Safari):
 ...
 ...
 ...
+#+END_SRC
+
+* 10. Testeando nuestro sitio con Remote Debugging
+
+*** Es importante testear nuestro proyecto en varios dispositivos y sus respectivos browsers
+
+[[https://github.com/llaksa?tab=overview&from=2018-01-01&to=2018-01-31][Responsive Debugging]]
+
+* 11. Añadiendo gestos touch a nuestro menú con HammerJS
+
+[[https://hammerjs.github.io/][Hammer JS]]
+
+- Ejemplo:
+
+#+BEGIN_SRC javascript
+const $body = document.body;
+const gestos = new Hammer($body);
+const $menu = getElementById('menu');
+
+function toggleMenu () {
+  $menu.classList.toggle('active');
+};
+
+gestos.on('swipeleft', function(ev) {
+	toggleMenu();
+});
+gestos.on('swiperight', function(ev) {
+	toggleMenu();
+});
+#+END_SRC
+
+* 12. Refinando detalles
+
+Si se presiona el menú hamurguesa que ocupa toda la pantalla, es mejor desactivar el scroll de los elementos debajo del menu:
+
+#+BEGIN_SRC css
+body.opened {
+	overflow: hidden;
+}
+#+END_SRC 
+
+#+BEGIN_SRC javascript
+function toogleMenu(event) {
+  ...
+  ...
+  document.body.classList.toggle('opened');
+  ...
+  ...
+}
 #+END_SRC
