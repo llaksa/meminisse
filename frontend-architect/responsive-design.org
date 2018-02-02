@@ -152,7 +152,7 @@ Create a media querie for the Hamburguer Menu like this:
     ...
     some-property {
       ...
-      transition: .3s;
+      transition-delay: .3s;
       ...
     }
   ...
@@ -270,7 +270,7 @@ Podríamos descargar por npm o usarlo mediante CDN
 #+END_SRC
 
 #+BEGIN_SRC css
-/*El padding-top es el porcentaje del ancho, que representa el alto*/
+  /*El padding-top es el porcentaje del ancho, que representa el alto*/
   .contenedor-iframe{
     position:relative;
     padding-top: 56.25%; /* = (height(px)x100)/width(px)*/ 
