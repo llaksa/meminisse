@@ -214,17 +214,15 @@ Sin la etiqueta, la página siempre se renderiza de la misma forma para todo dis
 
 * 6. Cómo utilizar media queries con JavaScript
 
-- The window.matchMedia() method returns a MediaQueryList object representing the results of the specified CSS media query string.
+The *window.matchMedia()* method returns a MediaQueryList object representing the results of the specified CSS media query string. The MediaQueryList object has two properties and two methods:
 
-The MediaQueryList object has two properties and two methods:
+- *matches:* Used to check the results of a query. Returns a boolean value: true if the document matches the media query list, otherwise false.
+- *media:* A String, representing the serialized media query list.
 
-*matches:* Used to check the results of a query. Returns a boolean value: true if the document matches the media query list, otherwise false
-*media:* A String, representing the serialized media query list
+To use window.matchMedia() in a responsive manner, to make your code react to a CSS media query whenever the window state changes, you can use its methods/event handlers
 
-- To use window.matchMedia() in a responsive manner, to make your code react to a CSS media query whenever the window state changes, you can use its methods/event handlers
-
-*addListener(functionref):* Adds a new listener function, which is executed whenever the media query's evaluated result changes
-*removeListener(functionref):* Removes a previously added listener function from the media query list. Does nothing if the specified listener is not already in the list
+- *addListener(functionref):* Adds a new listener function, which is executed whenever the media query's evaluated result changes.
+- *removeListener(functionref):* Removes a previously added listener function from the media query list. Does nothing if the specified listener is not already in the list.
 
 #+BEGIN_SRC javascript
   function myFunction(x) {
