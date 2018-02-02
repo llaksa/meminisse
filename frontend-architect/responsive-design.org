@@ -26,13 +26,13 @@ Cambio de visualización en diferentes pantallas y hasta 800px de ancho
 
 * 2. Adaptando nuestro diseño para tablets
 *** Aplicación para probar nuestra página web en varios tipos de pantalla
-- Windows Resizer
+- [[https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=es][Windows Resizer]]
 
 *** Usefull properties
 #+BEGIN_SRC css 
   some-selector {display: inline-block;}
 
-/*reset properties of your choose before to use them again*/
+  /*reset properties of your choose before to use them again*/
   some-selector {position: static;}
 
   some-selector {float: none}
@@ -152,7 +152,7 @@ Create a media querie for the Hamburguer Menu like this:
     ...
     some-property {
       ...
-      transition-delay: .3s;
+      transition-delay: 0.3s;
       ...
     }
   ...
