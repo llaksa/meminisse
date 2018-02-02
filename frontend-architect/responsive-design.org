@@ -244,16 +244,15 @@ PD: Tratar en lo posible de usar media queries de CSS y cuando no haya manera, y
 
 *** [[http://dinbror.dk/blazy/][Lazy Loading]]
 
-Podríamos descargar por npm o usarlo mediante CDN
+Ejemplo de uso:
 
 #+BEGIN_SRC html
   <img class="b-lazy" src="placeholder-image.jpg" data-src="image.jpg" alt="Image description" />
 #+END_SRC 
 
 #+BEGIN_SRC javascript
-  // Example
   let bLazy = new Blazy({ 
-    selector: 'img' // all images
+    selector: 'img' // Select all images
   });
 #+END_SRC 
 
@@ -311,7 +310,7 @@ Podríamos descargar por npm o usarlo mediante CDN
   }
 #+END_SRC
 
-* 8. Soportando múltiples resoluciones de pantalla
+* 9. Soportando múltiples resoluciones de pantalla
 
 *** Motores de densidad de pixel en dispositivos
 - Se usa prefijos de media querie CSS dependiendo del browser
@@ -321,7 +320,7 @@ Safari(*-webkit*), chrome(*-webkit*), opera(*-o*), firefox(*-moz*)
 Ejemplo con *webkit*(Safari):
 
 #+BEGIN_SRC css
-/*Se ejecutará un determinado código CSS cuando se abra el proyecto en un safari browser*/
+  /*Se ejecutará un determinado código CSS cuando se abra el proyecto en un safari browser*/
   @media screen and (-webkit-min-device-pixel-ratio: 2) {
     some-selector {
       some-properties: some-values;
@@ -331,10 +330,10 @@ Ejemplo con *webkit*(Safari):
   }
 #+END_SRC
 
-* 9. Construyendo tablas responsive
+* 10. Construyendo tablas responsive
 
 #+BEGIN_SRC css
-/*Provocar la aparición de un scroll en la tabla y no importe que haya muchas columnas*/
+  /*Provocar la aparición de un scroll en la tabla y no importe que haya muchas columnas*/
   @media screen and (max-width: 800px) {
     .contenedor .tabla {
       overflow: auto;
