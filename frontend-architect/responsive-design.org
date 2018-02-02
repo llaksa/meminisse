@@ -400,3 +400,14 @@ function toogleMenu(event) {
   ...
 }
 #+END_SRC
+
+* 13. Optimizando la carga del sitio
+
+[[https://developers.google.com/speed/][Testear la carga del proyecto web, su UX y para varios dispositivos]]
+
+[[https://tinypng.com/][Comrimiendo imágenes de nuestro proyecto]]
+
+[[https://www.cleancss.com/css-minify/][Comprimir nuestro CSS]]
+
+[[https://github.com/typekit/webfontloader][Web Font Loader gives you added control when using linked fonts via @font-face]]
+
