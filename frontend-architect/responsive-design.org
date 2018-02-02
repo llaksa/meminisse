@@ -35,7 +35,7 @@ Cambio de visualización en diferentes pantallas y hasta 800px de ancho
 /*reset properties of your choose before to use them again*/
   some-selector {position: static;}
 
-  some-selector {marginThe viewport is the user's visible area of a web page.: 0}
+  some-selector {float: none}
   
   some-selector {height: auto}
 
