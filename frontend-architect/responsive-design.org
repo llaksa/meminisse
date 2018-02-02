@@ -35,7 +35,7 @@ Cambio de visualización en diferentes pantallas y hasta 800px de ancho
 /*reset properties of your choose before to use them again*/
   some-selector {position: static;}
 
-  some-selector {margin: 0}
+  some-selector {marginThe viewport is the user's visible area of a web page.: 0}
   
   some-selector {height: auto}
 
@@ -144,7 +144,7 @@ Ejemplo de uso:
 
 - Primer paso
 
-Create a media querie for the Hamburguer Menu like: 
+Create a media querie for the Hamburguer Menu like this: 
 
 #+BEGIN_SRC css
 @media screen and (max-width: 500px)
@@ -192,20 +192,7 @@ and do next:
 - etc...
 
 *** Agregando el efecto de touch
-
-Para 'activar' o 'desactivar' la aparición del menú en smartphones
-
-#+BEGIN_SRC css
-/*We create a class '.active' to use when the event happened*/
-  .active {
-    some-property: some-value;
-   }
-#+END_SRC
-
-#+BEGIN_SRC html
-<script>
-  $burguerButton = document.getElementById('burguer-button');
-  $menu = document.getElementById('menu');
+);
 
   $burguerButton.addEventListener('touchstart', function() {
     $menu.classList.toggle('active')
@@ -215,6 +202,151 @@ Para 'activar' o 'desactivar' la aparición del menú en smartphones
 
 * 5. Corrigiendo resoluciones con meta-viewport
 
+The viewport is the user's visible area of a web page. HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
+
 #+BEGIN_SRC html
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+#+END_SRC
+
+Esta etiqueta hace que se renderize un HTML ajustada a un tamaño específico con su media querie CSS respectiva, según la pantalla del dispositivo.
+Sin la etiqueta, la página siempre se renderiza de la misma forma para todo dispositivo y luego cambia según las media queries CSS.  
+
+* 6. Cómo utilizar media queries con JavaScript
+
+- The window.matchMedia() method returns a MediaQueryList object representing the results of the specified CSS media query string.
+
+The MediaQueryList object has two properties and two methods:
+
+*matches:* Used to check the results of a query. Returns a boolean value: true if the document matches the media query list, otherwise false
+*media:* A String, representing the serialized media query list
+
+- To use window.matchMedia() in a responsive manner, to make your code react to a CSS media query whenever the window state changes, you can use its methods/event handlers
+
+*addListener(functionref):* Adds a new listener function, which is executed whenever the media query's evaluated result changes
+*removeListener(functionref):* Removes a previously added listener function from the media query list. Does nothing if the specified listener is not already in the list
+
+#+BEGIN_SRC javascript
+
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        document.body.style.backgroundColor = "yellow";
+    } else {
+        document.body.style.backgroundColor = "pink";
+    }
+}
+
+var x = window.matchMedia("(max-width: 700px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+#+END_SRC
+
+PD: Tratar en lo posible de usar media queries de CSS y cuando no haya manera, ya usar media queries de JS
+
+* 7. Optimizando la carga de imágenes con lazy loading
+
+*** [[http://dinbror.dk/blazy/][Lazy Loading]]
+
+Podríamos descargar por npm o usarlo mediante CDN
+
+#+BEGIN_SRC html
+    <img class="b-lazy" src="placeholder-image.jpg" data-src="image.jpg" alt="Image description" />
+#+END_SRC 
+
+#+BEGIN_SRC javascript
+  // Example
+  var bLazy = new Blazy({ 
+    selector: 'img' // all images
+  });
+#+END_SRC 
+
+* 8. Agregando videos de manera responsive
+
+*** Para un video externo (IFrame)
+
+#+BEGIN_SRC html
+<div class="contenedor-iframe">
+     <iframe class ="iframe" src="ruta del archivo" width="1920" height="1080"></frame>
+</div>
+#+END_SRC
+
+#+BEGIN_SRC css
+/*El padding-top es el porcentaje del ancho, que representa el alto*/
+.contenedor-iframe{
+     position:relative;
+     padding-top: 56.25%; /* = (height(px)x100)/width(px)*/ 
+}
+
+.iframe{
+     position:absolute;
+     top:0;
+     right:0;
+     bottom:0;
+     left:0;
+     height: 100%;
+     width: 100%;
+}
+#+END_SRC
+
+*** Para un video en nuestro servidor local del proyecto (<video>...</video>)
+
+#+BEGIN_SRC html
+<div class="contenedor-video">
+     <video class ="video" src="path/to/video.algo" width="1920" height="1080"></video>
+</div>
+#+END_SRC
+
+#+BEGIN_SRC css
+/*El padding-top es el porcentaje del ancho, que representa el alto*/
+.contenedor-video{
+     position:relative;
+     padding-top: 56.25%; /* = (height(px)x100)/width(px)*/ 
+}
+
+.video{
+     position:absolute;
+     top:0;
+     right:0;
+     bottom:0;
+     left:0;
+     height: 100%;
+     width: 100%;
+}
+#+END_SRC
+
+* 8. Soportando múltiples resoluciones de pantalla
+
+*** Motores de densidad de pixel en dispositivos
+- Se usa prefijos de media querie CSS dependiendo del browser
+
+Safari(*-webkit*), chrome(*-webkit*), opera(*-o*), firefox(*-moz*)
+
+Ejemplo con *webkit*(Safari):
+
+#+BEGIN_SRC css
+/*Se ejecutará un determinado código CSS cuando se abra el proyecto en un safari browser*/
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  some-selector {
+    some-properties: some-values;
+    ...
+    ...
+  }
+}
+#+END_SRC
+
+* 9. Construyendo tablas responsive
+
+#+BEGIN_SRC css
+/*Provocar la aparición de un scroll en la tabla*/
+@media screen and (max-width: 800px) {
+  .contenedor .tabla {
+    overflow: auto;
+    ...
+    ...
+    ...
+  }
+}
+
+...
+...
+...
 #+END_SRC
