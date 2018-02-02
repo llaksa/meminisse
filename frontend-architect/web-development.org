@@ -254,11 +254,11 @@ selector::pseudo-element {
 }
 
     /*'input' selector by type*/
-    input[type="text"],
-    input[type="email"] {
-      font-size: 11px;
-      padding: 22px;
-    }
+input[type="text"],
+input[type="email"] {
+  font-size: 11px;
+  padding: 22px;
+}
 #+END_SRC
 
 *3. Backgrounds, colores y tamaños de fuente*

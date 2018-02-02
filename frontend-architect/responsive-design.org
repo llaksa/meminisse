@@ -147,14 +147,14 @@ Ejemplo de uso:
 Create a media querie for the Hamburguer Menu like this: 
 
 #+BEGIN_SRC css
-@media screen and (max-width: 500px)
-  ...
-  ...
-  some-property {
+  @media screen and (max-width: 500px)
     ...
-    transition: .3s;
     ...
-  }
+    some-property {
+      ...
+      transition: .3s;
+      ...
+    }
   ...
   ...
 #+END_SRC 
@@ -162,14 +162,14 @@ Create a media querie for the Hamburguer Menu like this:
 and do next:
 
 #+BEGIN_SRC html
-<!--Llamando a nuestro HTML, un ícono de menu prediseñado-->
-<span class="icon-menu"></span>
+  <!--Llamando a nuestro HTML, un ícono de menu prediseñado-->
+  <span class="icon-menu"></span>
 #+END_SRC
 
 - Segundo paso
 #+BEGIN_SRC html
-<!--Agregando una clase para editar 'span' según nuestro proyecto-->
-<span class="burguer-button icon-menu"></span>
+  <!--Agregando una clase para editar 'span' según nuestro proyecto-->
+  <span class="burguer-button icon-menu"></span>
 #+END_SRC
 
 - Tercer paso
@@ -227,18 +227,17 @@ The MediaQueryList object has two properties and two methods:
 *removeListener(functionref):* Removes a previously added listener function from the media query list. Does nothing if the specified listener is not already in the list
 
 #+BEGIN_SRC javascript
-
-function myFunction(x) {
+  function myFunction(x) {
     if (x.matches) { // If media query matches
-        document.body.style.backgroundColor = "yellow";
+      document.body.style.backgroundColor = "yellow";
     } else {
-        document.body.style.backgroundColor = "pink";
+      document.body.style.backgroundColor = "pink";
     }
-}
+  }
 
-var x = window.matchMedia("(max-width: 700px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
+  const x = window.matchMedia("(max-width: 700px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
 #+END_SRC
 
 PD: Tratar en lo posible de usar media queries de CSS y cuando no haya manera, ya usar media queries de JS
@@ -250,12 +249,12 @@ PD: Tratar en lo posible de usar media queries de CSS y cuando no haya manera, y
 Podríamos descargar por npm o usarlo mediante CDN
 
 #+BEGIN_SRC html
-    <img class="b-lazy" src="placeholder-image.jpg" data-src="image.jpg" alt="Image description" />
+  <img class="b-lazy" src="placeholder-image.jpg" data-src="image.jpg" alt="Image description" />
 #+END_SRC 
 
 #+BEGIN_SRC javascript
   // Example
-  var bLazy = new Blazy({ 
+  let bLazy = new Blazy({ 
     selector: 'img' // all images
   });
 #+END_SRC 
@@ -265,53 +264,53 @@ Podríamos descargar por npm o usarlo mediante CDN
 *** Para un video externo (IFrame)
 
 #+BEGIN_SRC html
-<div class="contenedor-iframe">
-     <iframe class ="iframe" src="ruta del archivo" width="1920" height="1080"></frame>
-</div>
+  <div class="contenedor-iframe">
+    <iframe class ="iframe" src="ruta del archivo" width="1920" height="1080"></frame>
+  </div>
 #+END_SRC
 
 #+BEGIN_SRC css
 /*El padding-top es el porcentaje del ancho, que representa el alto*/
-.contenedor-iframe{
-     position:relative;
-     padding-top: 56.25%; /* = (height(px)x100)/width(px)*/ 
-}
+  .contenedor-iframe{
+    position:relative;
+    padding-top: 56.25%; /* = (height(px)x100)/width(px)*/ 
+  }
 
-.iframe{
-     position:absolute;
-     top:0;
-     right:0;
-     bottom:0;
-     left:0;
-     height: 100%;
-     width: 100%;
-}
+  .iframe{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+  }
 #+END_SRC
 
 *** Para un video en nuestro servidor local del proyecto (<video>...</video>)
 
 #+BEGIN_SRC html
-<div class="contenedor-video">
-     <video class ="video" src="path/to/video.algo" width="1920" height="1080"></video>
-</div>
+  <div class="contenedor-video">
+    <video class ="video" src="path/to/video.algo" width="1920" height="1080"></video>
+  </div>
 #+END_SRC
 
 #+BEGIN_SRC css
 /*El padding-top es el porcentaje del ancho, que representa el alto*/
-.contenedor-video{
-     position:relative;
-     padding-top: 56.25%; /* = (height(px)x100)/width(px)*/ 
-}
+  .contenedor-video{
+    position:relative;
+    padding-top: 56.25%; /* = (height(px)x100)/width(px)*/ 
+  }
 
-.video{
-     position:absolute;
-     top:0;
-     right:0;
-     bottom:0;
-     left:0;
-     height: 100%;
-     width: 100%;
-}
+  .video{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+  }
 #+END_SRC
 
 * 8. Soportando múltiples resoluciones de pantalla
@@ -325,31 +324,30 @@ Ejemplo con *webkit*(Safari):
 
 #+BEGIN_SRC css
 /*Se ejecutará un determinado código CSS cuando se abra el proyecto en un safari browser*/
-@media screen and (-webkit-min-device-pixel-ratio: 2) {
-  some-selector {
-    some-properties: some-values;
-    ...
-    ...
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    some-selector {
+      some-properties: some-values;
+      ...
+      ...
+    }
   }
-}
 #+END_SRC
 
 * 9. Construyendo tablas responsive
 
 #+BEGIN_SRC css
 /*Provocar la aparición de un scroll en la tabla y no importe que haya muchas columnas*/
-@media screen and (max-width: 800px) {
-  .contenedor .tabla {
-    overflow: auto;
-    ...
-    ...
-    ...
+  @media screen and (max-width: 800px) {
+    .contenedor .tabla {
+      overflow: auto;
+      ...
+      ...
+      ...
+    }
   }
-}
-
-...
-...
-...
+  ...
+  ...
+  ...
 #+END_SRC
 
 * 10. Testeando nuestro sitio con Remote Debugging
@@ -365,20 +363,20 @@ Ejemplo con *webkit*(Safari):
 - Ejemplo:
 
 #+BEGIN_SRC javascript
-const $body = document.body;
-const gestos = new Hammer($body);
-const $menu = getElementById('menu');
+  const $body = document.body;
+  const gestos = new Hammer($body);
+  const $menu = getElementById('menu');
 
-function toggleMenu () {
-  $menu.classList.toggle('active');
-};
+  function toggleMenu () {
+    $menu.classList.toggle('active');
+  };
 
-gestos.on('swipeleft', function(ev) {
-	toggleMenu();
-});
-gestos.on('swiperight', function(ev) {
-	toggleMenu();
-});
+  gestos.on('swipeleft', function(ev) {
+	  toggleMenu();
+  });
+  gestos.on('swiperight', function(ev) {
+	  toggleMenu();
+  });
 #+END_SRC
 
 * 12. Refinando detalles
@@ -386,19 +384,19 @@ gestos.on('swiperight', function(ev) {
 Si se presiona el menú hamurguesa que ocupa toda la pantalla, es mejor desactivar el scroll de los elementos debajo del menu:
 
 #+BEGIN_SRC css
-body.opened {
-	overflow: hidden;
-}
+  body.opened {
+	  overflow: hidden;
+  }
 #+END_SRC 
 
 #+BEGIN_SRC javascript
-function toogleMenu(event) {
-  ...
-  ...
-  document.body.classList.toggle('opened');
-  ...
-  ...
-}
+  function toogleMenu(event) {
+    ...
+    ...
+    document.body.classList.toggle('opened');
+    ...
+    ...
+  }
 #+END_SRC
 
 * 13. Optimizando la carga del sitio
@@ -410,4 +408,3 @@ function toogleMenu(event) {
 [[https://www.cleancss.com/css-minify/][Comprimir nuestro CSS]]
 
 [[https://github.com/typekit/webfontloader][Web Font Loader gives you added control when using linked fonts via @font-face]]
-

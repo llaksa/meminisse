@@ -13,9 +13,10 @@
 #+resname:
 #+begin_example
 Directory structure:
-/myProyecto/
+/myProject/
 |-- dist/
-|   `-- archivos-para-producción 
+|   `-- index.html 
+|   `-- index.html 
 |-- src/
 |   `-- archivos-fuente
 `-- gulpfile.js
