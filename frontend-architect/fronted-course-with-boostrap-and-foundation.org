@@ -1,0 +1,28 @@
+
+La documentación de Boostrap o Foundation es entendible. Así que aquí van una recopilación de los mejores comentarios.
+
+* [[https://foundation.zurb.com/sites/docs/index.html][Foundation Docs]] 
+
+Foundation for Sites, Emails and Apps!
+Podemos usar la versión Custom Build para personalizar algunas características del framework antes de empezar a trabajar.
+
+*css/app.css:* Put all your styles here
+*js/app.js:* Put all your aditional javascript of the project here
+
+*** 1. Grilla de Foundation
+
+- /row/	Crea una fila
+- /column/	Crea una columna
+- /small-12/	Crea una columna que ocupa 12 espacios para dispositivos pequeños.
+- /medium-4/	Crea una columna que ocupa 4 espacios para dispositivos medianos.
+- /medium-offset-1/	Crea una columna como espacio en blanco.
+- /end/	Sitúa una columna inmediatamente después de la anterior.
+- /small-collapse/	Los elementos dentro de una fila quedarán pegados al borde.
+- /large-uncollapse/	Los elementos mantendrán un margen dentro de cada fila.
+- /small-centered/	Colocará una columna centrada en dispositivos pequeños.
+- /large-uncentered/	No permitirá que las columnas queden centradas en dispositivos grandes.
+- /medium-push-6/	Empuja una columna seis posiciones en dispositivos medianos.
+- /medium-pull-6/ Jala una columna seis posiciones en dispositivos medianos.
+
+*** 2. Grilla Flex de Foundation
+
