@@ -10,14 +10,187 @@
 
 *** Archivos
 
+- *gulpfile.js :* Archivo donde se van a programar las tareas.
+- *src :* Carpeta que contiene los archivos originales o de desarrollo.
+- *dist :* carpeta con los archivos finales o versión de producción.
+
 #+resname:
 #+begin_example
 Directory structure:
 /myProject/
 |-- dist/
 |   `-- index.html 
-|   `-- index.html 
+|   `-- css/style.css 
 |-- src/
-|   `-- archivos-fuente
+|   `-- style.css
 `-- gulpfile.js
 #+end_example
+
+*** Dependencias de desarrollo de PostCSS con Gulp
+
+$ npm install -g postcss
+
+$ npm install --save-dev gulp gulp-postcss browser-sync
+
+Para evitar que "node-modules/" se suba al repositorio remoto:
+
+$ cd node_modules/
+$ touch .gitignore
+$ echo "node_modules" > .gitignore
+
+*** gulpfile.js
+
+#+BEGIN_SRC javascript
+var gulp        = require('gulp')
+var postcss     = require('gulp-postcss')
+var browserSync = require('browser-sync').create()
+
+// Servidor de desarrollo (servidor web para entorno local)
+gulp.task('serve', function () {
+  browserSync.init({
+    server: {
+      baseDir: './dist'
+    }  
+  })
+})
+
+// Tarea para procesar el CSS
+gulp.task('css', function () {
+
+  var processor = [
+    autoprefixer({
+      browsers: ['> 5k', 'ie 8']
+    })
+  ]
+ 
+  return gulp.src('./src/*.css')
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(browserSync.stream())
+})
+
+// Tarea para vigilar los cambios
+gulp.task('watch', function() {
+  gulp.watch('./src/*.css', ['css'])
+  gulp.watch('./dist/*.html').on('change', browserSync.reload)
+})
+
+gulp.task('default', ['watch', 'serve'])
+#+END_SRC
+
+* 4. Autoprefixer: Cómo añadir vendor prefixes usando CSS standard 
+
+#+BEGIN_SRC javascript
+  var autoprefixer = require('autoprefixer')
+
+  var processor = [
+    autoprefixer({browsers: ['> 5k', 'ie 8']})
+  ]
+#+END_SRC
+
+Con /autoprefixer/ pasa que escribimos en el archivo de entrada, por ejemplo:
+
+#+BEGIN_SRC css
+  ...
+  some-selector {
+    display: flex;
+    ...
+  }
+  ...
+#+END_SRC
+
+y obtenemos esto en el archivo de salida:
+
+#+BEGIN_SRC css
+  ...
+  some-selector {
+    display: -webkit-box;
+    display: flex;
+    ...
+  }
+  ...
+#+END_SRC
+
+* 5. Anidando clases de CSS con Nested
+
+$ npm install --save-dev postcss-nested
+
+#+BEGIN_SRC javascript
+  var cssnested = require('postcss-nested')
+
+  ...
+  var processor = [
+    ... ,
+    cssnested
+  ]
+  ...
+#+END_SRC
+
+Sin /nested/ :
+
+#+BEGIN_SRC css
+  ...
+  some-selector {
+    some-property: some-value;
+    ...
+  }
+  
+  some-selector-whatever {
+    some-property: some-value;
+    ...
+  }
+  ...
+#+END_SRC
+
+Con /nested/ :
+
+#+BEGIN_SRC css
+  ...
+  some-selector {
+    some-property: some-value;
+    ...
+    &-whatever {
+      some-property: some-value;
+      ...
+    }
+  }
+#+END_SRC
+
+* 6. Configurando CSSNext en nuestro archivo Gulp
+
+$ npm install --save-dev postcss-cssnext
+
+#+BEGIN_SRC css
+  var cssnext = require('postcss-cssnext')
+  /*var autoprefixer = require('autoprefixer')*/
+  ...
+  var processor = [
+    /*autoprefixer({browsers: ['> 5k', 'ie 8']}),*/
+    cssnested,
+    cssnext(browsers: ['> 5k', 'ie 8'])
+  ]
+  ...
+#+END_SRC
+
+* 7. Propiedades personalizadas
+
+Usando cssnext se puede hacer, por ejemplo:
+
+#+BEGIN_SRC css
+  :root {
+    --bg-body: #fafafa;
+    --bg-header: #466173;
+    --bg-footer: #273b47;
+  }
+
+  some-selector {
+    background-color: var(--bg-header);
+    ...
+  }
+
+  some-selector {
+    background-color: var(--bg-footer);
+    ...
+  }
+#+END_SRC 
+
