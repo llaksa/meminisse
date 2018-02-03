@@ -186,11 +186,296 @@ Usando cssnext se puede hacer, por ejemplo:
   some-selector {
     background-color: var(--bg-header);
     ...
+    &-whatever {
+      some-property: some-value;
+      ...
+    }
   }
 
   some-selector {
     background-color: var(--bg-footer);
     ...
   }
+  ...
 #+END_SRC 
 
+* 8. Usando Calc
+
+Por ejemplo:
+
+#+BEGIN_SRC css
+  :root {
+    --bg-body: #fafafa;
+    --bg-header: #466173;
+    --bg-footer: #273b47;
+    
+    --fontSize: 18px;
+  }
+
+  some-selector {
+    background-color: var(--bg-header);
+    ...
+    &-whatever {
+      font-size: calc(var(--fontSize) * 3.5);
+      some-property: some-value;
+      ...
+    }
+  }
+
+  some-selector {
+    background-color: var(--bg-header);
+    ...
+    &-whatever {
+      some-property: some-value;
+      ...
+    }
+  }
+  ...
+#+END_SRC 
+
+* 9. Media queries personalizadas
+
+#+BEGIN_SRC css
+...
+/*Custom Media Queries*/
+  @custom-media --mobile (max-width: 500px);
+  @custom-media --tablet (max-width: 650px);
+  @custom-media --desktop (max-width: 800px);
+  @custom-media --retina (-webkit-min-device-pixel-ratio: 2);
+
+  some-selector {
+    background: url('../some/path/to/image.algo') #466173;
+    ...
+
+    &-whatever {
+      some-property: some-value;
+      ...
+    }
+  }
+  @media (--retina) {
+    some-selector {
+      background-image: url('../some/path/to/image.algo');
+      ...
+  }    
+  ...
+#+END_SRC
+
+* 10. Manejo de color
+
+#+BEGIN_SRC css
+  :root {
+    ...
+    --btn-gradient: #fd324e;
+    --btn-gradient-start: color(var(--btn-gradient) blackness(30%));
+    --btn-gradient-end: color(var(--btn-gradient) lightness(+10%) hue(10%);
+    ...
+  }
+  ...
+    &-btn {
+      ...
+      background: var(--btn-gradient);
+      background: linear-gradient(to left, var(--btn-gradient-start), var(--btn-gradient-end))
+      ...
+    }
+  ...
+#+END_SRC
+
+* 11. Manejo de filtros
+
+#+BEGIN_SRC css
+  ...
+    &-logo {
+      transition: all 0.3s ease-in;
+      &:hover {
+        filter: blur(4px);
+      }
+    }
+  ...
+#+END_SRC
+
+* 12. Mixins: Cómo reutilizar estilos de CSS
+
+$ npm install --save-dev postcss-mixins
+
+- Sintaxis:
+
+#+BEGIN_SRC css
+@define-mixin “NombreDelMixin” $parametro1, $parametro2 {
+  color: $parametro1 
+  font-size: $parametro2 
+}
+#+END_SRC
+
+- En un proyecto:
+
+#+BEGIN_SRC javascript
+  var processors = [
+    mixins(), 
+    cssnested,
+    cssnext({  browsers: [ ‘> 5%’, ’ie 8 ’ ] }) 
+  ]
+#+END_SRC
+
+#+BEGIN_SRC css
+  ...
+  /*--Mixins--*/
+  @define-mixin btn $textColor, $bgColor, $bgColorStart, $bgColorEnd {
+    color: $(textColor);
+    cursor: pointer;
+    font-size: var(--fontSize);
+    background: $(bgColor);
+    background: linear-gradient(to left, $(bgColorStart), $(bgColorEnd));
+  }
+  ...
+    &-btn {
+    @mixin btn var(--bg-body), var(--btn-gradient), var(--btn-gradient-start), var(--btn-gradient-end);
+  }
+
+  some-selector {
+    @mixin btn var(--bg-body), var(--btn-gradient), var(--btn-gradient-start), var(--btn-gradient-end);
+  }
+  ...
+#+END_SRC
+
+* 13. Separando nuestros archivos CSS y uso de @import
+
+$ npm install --save-dev postcss-import
+
+Sintaxis:
+
+#+BEGIN_SRC css
+  @import ‘./NombreDelArchivo.css’
+#+END_SRC
+
+Debemos tener cuidado de no hacer “require” usando la palabra reservada “import”, para este caso usamos:
+
+#+BEGIN_SRC javascript
+  ...
+  var atImport = require (‘postcss-import’)
+  ...
+
+  ...
+  var processors = [
+    atImport(),
+    ...
+  ]
+  ...
+#+END_SRC
+
+#+BEGIN_SRC css
+  @import './variables.css'; /* archivo donde se podrían poner las variables en :root {} */
+  @import './iconfonts.css'; /* archivo css de un ícono prediseñado */
+  ...
+  /*--Custom Media Queries--*/
+  ...
+  /*--MIxins--*/
+  ...
+#+END_SRC
+
+* 14. Implementando un carousel con CSS Scroll Snap
+
+Anteriormente, implementar un carrusel, implicaba el uso de librerías de terceros y inclusive código JavaScript. Ahora gracias a Scroll Snap, podemos disponer de esta funcionalidad usando CSS nativo:
+https://www.w3.org/TR/css-scroll-snap-1/
+Entonces, cada artículo que teníamos separado uno seguido del otro, se volverá un elemento de nuestro carrusel.
+Mediante la clase .u-scrollContainer, usaremos las 2 propiedades particulares para el carrusel: scroll-snap-points-x: repeat(100%) y scroll-snap-type: mandatory;
+
+#+BEGIN_SRC css
+  .u-scrollContainer {
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-size:0;
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: mandatory;
+
+    &-iemContent {
+      ...
+    }
+
+    &-iemContent {
+      ... 
+    }
+  }
+#+END_SRC
+
+* 15. Grids responsive con Lost 
+
+$ npm install --save-dev postcss-lost
+
+#+BEGIN_SRC javascript
+  var lost = require('postcss-lost')
+  ...
+  var processors = [
+    atImport(),
+    mixins(), 
+    cssnested,
+    lost(),
+    cssnext({  browsers: [ ‘> 5%’, ’ie 8 ’ ]  })
+  ]
+  ...
+#+END_SRC
+
+#+BEGIN_SRC css
+  ...
+  .u-grid{
+    ...
+    ...
+    
+    &-colum {
+      ...
+      lost-colum: 1/5;
+      
+      @media (--tablet) {
+        lost-colum: 1/3;
+      }
+      
+      @media (--mobile) {
+        lost-colum: 1/1;
+      }
+    }
+  }
+#+END_SRC 
+
+* 16. Minificando archivos con CSSWring
+
+#+BEGIN_SRC javascript
+  var csswring = require('csswring')
+  ...
+  ...
+   var processors = [
+    atImport(),
+    mixins(), 
+    cssnested,
+    lost(),
+    cssnext({  browsers: [ ‘> 5%’, ’ie 8 ’ ]  }),
+    csswring()
+  ]
+  ...
+#+END_SRC
+
+Ahora solo queda ejecutar el comando /gulp/ en la terminal y en la carpeta *dist/* aparecerá el css mimificado
+
+* 17. Fuentes responsive con rucksack
+
+[[https://github.com/seaneking/rucksack][Rucksack]]
+
+#+BEGIN_SRC javascript
+  var rucksack = require('gulp-rucksack')
+  ...
+  ...
+   var processors = [
+    atImport(),
+    mixins(), 
+    cssnested,
+    lost(),
+    rucksack,
+    cssnext({  browsers: [ ‘> 5%’, ’ie 8 ’ ]  }),
+    csswring()
+  ]
+  ...
+#+END_SRC
+
+* 18. Unificando media-queries con Mqpacker
+
+[[https://github.com/hail2u/node-css-mqpacker][Mqpacker]]
