@@ -6,23 +6,320 @@ La documentación de Boostrap o Foundation es entendible. Así que aquí van una
 Foundation for Sites, Emails and Apps!
 Podemos usar la versión Custom Build para personalizar algunas características del framework antes de empezar a trabajar.
 
-*css/app.css:* Put all your styles here
-*js/app.js:* Put all your aditional javascript of the project here
+*css/app.css:* Put all your styles here.
+*js/app.js:* Put all your aditional javascript of the project here.
 
 *** 1. Grilla de Foundation
 
-- /row/	Crea una fila
-- /column/	Crea una columna
-- /small-12/	Crea una columna que ocupa 12 espacios para dispositivos pequeños.
-- /medium-4/	Crea una columna que ocupa 4 espacios para dispositivos medianos.
-- /medium-offset-1/	Crea una columna como espacio en blanco.
-- /end/	Sitúa una columna inmediatamente después de la anterior.
-- /small-collapse/	Los elementos dentro de una fila quedarán pegados al borde.
-- /large-uncollapse/	Los elementos mantendrán un margen dentro de cada fila.
-- /small-centered/	Colocará una columna centrada en dispositivos pequeños.
-- /large-uncentered/	No permitirá que las columnas queden centradas en dispositivos grandes.
-- /medium-push-6/	Empuja una columna seis posiciones en dispositivos medianos.
-- /medium-pull-6/ Jala una columna seis posiciones en dispositivos medianos.
+- *row:*	Crea una fila
+- *column:*	Crea una columna
+- *small-12:*	Crea una columna que ocupa 12 espacios para dispositivos pequeños.
+- *medium-4:*	Crea una columna que ocupa 4 espacios para dispositivos medianos.
+- *medium-offset-1:*	Crea una columna como espacio en blanco.
+- *end:*	Sitúa una columna inmediatamente después de la anterior.
+- *small-collapse:*	Los elementos dentro de una fila quedarán pegados al borde.
+- *large-uncollapse:*	Los elementos mantendrán un margen dentro de cada fila.
+- *small-centered:*	Colocará una columna centrada en dispositivos pequeños.
+- *large-uncentered:*	No permitirá que las columnas queden centradas en dispositivos grandes.
+- *medium-push-6:*	Empuja una columna seis posiciones en dispositivos medianos.
+- *medium-pull-6:* Jala una columna seis posiciones en dispositivos medianos.
 
 *** 2. Grilla Flex de Foundation
+
+Manipular el ancho de columnas.
+
+    Clase shrink: se utiliza para crear columnas con ancho automático según su contenido. Las columnas adyacentes a ella toman el tamaño restante en la fila.
+    Clase [tamaño]-expand: se utiliza para crear columnas de ancho proporcional según el número de columnas, donde [tamaño] puede ser small, medium o large.
+    Clase [tamaño]-unstack: se utiliza para crear columnas de ancho proporcional según su contenido, esta clase se agrega a la fila (row).
+
+[tamaño] puede ser small, medium o large. A partir del tamaño seleccionado se ejecuta la clase.
+
+Alinear columnas horizontalmente.
+
+    Clase align-right: se utiliza para alinear columnas a la derecha. Esta clase se añade a la fila (row).
+    Clase align-center: se utiliza para centrar las columnas.
+    Clase align-justify: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, exceptuando el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
+    Clase align-spaced: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, y agrega el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
+
+Alinear columnas verticalmente.
+
+Clases utilizadas en la fila (row):
+
+Por defecto todas las columnas están alineadas verticalmente arriba con un alto igual a la columna de mayor altura. Al utilizar las siguientes clases, las columnas toman una altura según su propio contenido.
+
+    Clase align-top: se utiliza para alinear arriba todas las columnas de la fila.
+    Clase align-middle: se utiliza para alinear al centro todas las columnas de la fila.
+    Clase align-bottom: se utiliza para alinear abajo todas las columnas de la fila.
+
+Clases utilizadas en columna por individual:
+
+Las siguientes clases se pueden utilizar directamente en una columna especifica, a la cual queremos cambiar la alineación heredada de la fila o la que tenga por defecto.
+
+    Clase align-self-top: alinea en la parte de arriba.
+    Clase align-self-middle: alinea al centro.
+    Clase align-self-bottom: alinea en la parte de abajo.
+
+Manipular el padding de las columnas.
+
+Las siguientes clases se aplican a la fila:
+
+    Clase [tamaño]-collapse: se utiliza para eliminar el padding de las columnas.
+    Clase [tamaño]-uncollapse: se utiliza para no eliminar el padding de las columnas.
+
+Manipular el orden de las columnas.
+
+Las siguientes clases se utilizan directamente en cada columna y es necesario definir el orden en cada una de ellas, por ejemplo si hay 3 columnas, debemos especificar una clase de ordenamiento (1, 2 y 3) en cada una de ellas.
+
+En [número] se debe especificar el número de orden (1, 2, 3, 4, etc.).
+
+    Clase [tamaño]-order-[número]: se utiliza para manipular el orden de las columnas.
+
+*** Foundation Icon Fonts
+
+Simplementa agregar como siempre:
+
+[[https://fonts.google.com/][Google Fonts]]
+
+*** Barra de menú en Foundation
+
+Los menú en Foundation se crean mediante la etiqueta <ul> con la clase menú; y los enlaces del menú se crean con la etiqueta <a> dentro de <li>.
+
+Clases para modificar los menús:
+
+    Clase simple: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer un menú más simple, visualmente lo que cambia es que tiene menos padding.
+    Clase vertical: se utiliza en la etiqueta <ul> del menú principal y sirve para crear un menú vertical.
+    Clase active: se utiliza en la etiqueta <li> que se desea afectar, y sirve para seleccionar ese item de menú de manera que se muestre diferente al resto, ya que es el item activo.
+    Clase menu-text: se utiliza en la etiqueta <li> que se desea afectar, el texto no debe de ser un enlace, sino simple texto.
+
+Es posible agregar iconos a cada elemento del menú, sólo agregando la etiqueta:
+
+#+begin_src html
+<li><a href="#"><span class=“fi-ticket”></span> Tickets</a></li>
+#+end_src
+
+    Clase icon-top: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer que el icono quede arriba del texto del item de menú.
+
+Sub-menús.
+
+Los sub-menús se crean agregando la estructura completa de la etiqueta <ul class=”menu”> debajo del enlace que se requiere active el sub-menú; además se debe agregar a la etiqueta <ul> del menú principal la clase dropdown y el atributo data-dropdown-menu. Ejemplo:
+
+*** Botones en Foundation
+
+Los tipos de tamaños de los botones son:
+
+- tiny (Es el tamaño más pequeño)
+- small
+- medium
+- large
+
+Se puede crear un botón básico con un marcado mínimo. Debido a que los botones se pueden usar para muchos propósitos, es importante usar la etiqueta correcta.
+Use la etiqueta <a> si el botón es un enlace a otra página, o un enlace a un ancla dentro de una página. En general, los anclajes no requieren JavaScript para funcionar.
+Use la etiqueta <button> si el botón realiza una acción que cambia algo en la página actual. Los elementos <button> casi siempre requieren JavaScript para funcionar.
+Agregue el atributo type=“button” a <button>, a menos que el botón envíe un formulario, en ese caso use type=“submit”.
+Clase button: da los estilos predeterminados de botón que Foundation ofrece.
+Clases para modificar el tamaño del botón: tiny, small, medium (o ninguna clase de tamaño, ya que medium es el tamaño por defecto de los botones), large, expanded, small expanded.
+Clases para modificar el color: primary, secondary, success, alert, warning.
+Clase hollow: permite crear un botón “fantasma”, es decir, solo con el texto y el borde, con un fondo transparente.
+Clase disabled: permite mostrar como deshabilitado un botón ya sea con la etiqueta <a> o <button>; si se utiliza la etiqueta <button> en lugar de agregar la clase, es posible utilizar el atributo disabled.
+
+*** Tabs con Foundation
+
+Los tabs estan compuestos por dos cosas:
+
+ - Pestañas de navegacion
+
+- Contenido.
+
+Para agregar nuesdtra navegación por tabs es indispensable crear una etiqueta ul con la clase tabs, con el atributo data-tabs y asignarle un id 
+
+#+begin_src html
+<ul class="tabs" data-tabs id="lineup-tabs">
+#+end_src
+
+"Esto es similar al dropdwon en el menu".  
+
+Para meter las pestañas en etiquetas li: A las etiquetas li, le vamos a dar una clase llamada tabs-title:
+
+#+begin_src html
+<li class="tabs-title">
+#+end_src
+
+Y dentro de ella vamos a meter una etiqueta <a>. 
+Estas etiquetas <a> deberan tener como href un # junto con el id que le vamos a asignar a el div correspondiente de esa seccion. 
+
+Ejemplo: 
+
+#+begin_src html
+<a href="#panelViernes">Viernes</a> 
+#+end_src 
+
+*TIPS:* 
+
+- text-transform: uppercase;//Nos sirve para transformar el texto a mayusculas
+
+Los tabs-title Foundation no nos permite centrarlos, para ello debemos agregar en nuestro archivo css unas propiedades, con el fin de pisar esos estilos: 
+
+#+begin_src css
+  .tabs-title {
+    display: inline-block;
+    float: none;
+  }
+#+end_src
+
+Si no agregamos estos estilos, Foundation lo que hace es tirarnos los tabs-title a la izquierda.
+
+Ya realizada la navegación, procedemos a construir el contenido para esa navegación.
+Para ello vamos a crear un div con clase 'tabs-content' y con el atributo data-tabs-content, este atributo va a tener como valor el id que se le asigno al ul. En el ejemplo de la clase le asignamos 'lineup-tabs'
+
+#+begin_src html
+<div class="tabs-content" data-tabs-content="lineup-tabs">
+#+end_Src
+
+Es indispensable agregar el id que se le asigno al ul ya que en nuestra pagina podemos tener distintos menu de navegacion con distintos contenidos
+Dentro de este tabs-content vamos a crear los divs para cada titulo. 
+Para ello creamos un div con la clase 'tabs-panel' y le damos como id 'panelViernes'
+panelViernes porque ese fue el href que le dimos a la primera pestaña de navegacion. 
+
+#+begin_src html
+<div class="tabs-panel" id="panelViernres"></div>
+#+end_src
+
+Debemos activar un panel por defecto, para que sea el que se muestre cuando el usuario cargue la pagina por primera vez, para eso le agregamos la clase 'is-active' para que la seccion se muestre por defecto, en este caso lo vamos a hacer con el panelViernes, tanto en el title como en el contenido.
+
+*** Carrousel en Foundation con Orbit
+
+[[https://foundation.zurb.com/sites/docs/v/5.5.3/components/orbit.html][Orbit Web Page]] 
+
+*** Tablas de precio con Foundation
+
+*Building blocks:* Un conjunto de componentes ya construidos para que nosotros los usemos.
+
+Url: [[https://foundation.zurb.com/building-blocks/][Buildin Blocks]]
+
+Bulding blocks de Foundation es una biblioteca de componentes que podemos incluir a cualquier proyecto hecho con Foundation, una vez incluídos al proyecto podemos modificar los estilos CSS para que coincida con nuestro diseño. Ejemplo de componentes: Pricing tables, Full screen hero, etc.
+
+*** Igualar alto de columnas en Foundation
+
+Foundation nos brinda una manera muy sencilla para igualar el alto de cualquier elemento de nuestra web. 
+Para ello es necesario es necesario utilizar Equalizer, y para utilizar equalizer debemos agregar atributos al div con clase 'row' o al elemento padre le vamos a agregar dos atributos: 
+
+El atributo data-equalizer. 
+
+El atributo data-equalizer-on="small" donde especificamos desde que tamaño va a empezar a igualar los elementos.
+Y luego debemos igualar los elementos, para ello les agregamos los atributos 'data-equalizer-watch' De esta manera foundation les proporcionará el mismo alto a esos elementos.
+
+*** Contenido responsive con Foundation
+
+Para hacer contenido repsonsive design con Foundation, vamos a utilizar el atributo 'data-interchange', con este atributo podemos indicarle que valores va a tomar, partiendo desde small, continuando con medium y finalizando con large. Debemos llevar el orden indicado anteriormente, ya que Foundation parte desde el concepto de Mobile First. 
+El data-interchange le vamos a pasar valores de la misma manera que un array, es decir dentro de corchetes [] y separandolos por coma ',' de la siguiente manera:
+
+#+begin_src css
+data-interchange="[valor, small],[valor, medium],[valor, large]"
+#+end_src
+
+En caso de que se omita alguno de los tamaños, ejemplo medium o large, pues tomara como referencia el valor anterior, debido a que Foundation parte del concepto de Mobile First. 
+
+- Ejemplo 1: 
+
+#+begin_src html
+<img data-interchange="[ruta.png, small],[ruta2.png, mmedium],[ruta3.png, large]"> 
+#+end_src
+
+- Ejemplo 2: En este ejemplo vamos a mostrar una imagen diferente para cada tamaño.
+
+#+begin_src html
+<div data-interchange="[assets/mapa-small.html, small][assets/mapa-medium.html, medium]"></div>
+#+end_src
+
+Este es el ejemplo de la clase, en este ejemplo  el documento mapa-small.html lo unico que vamos a guardar es una etiqueta de <img src="assets/mapa.png"/> con una imagen por dentro
+Mientras que en el documento mapa-medium.html, vamos a guardar la etiqueta iframe que nos da google al momento de compartir un mapa.
+Si corremos el Ejemplo #2, vamos a ver que no funciona.. Esto se debe a que no se puede realizar un request desde un archivo HTML, debido a que en el assets/mapa-medium.html, estamos accediendo a google desde un archivo estatico de nuestro PC y los navegadores no permiten hacer eso, no podemos embeber un iframe en un archivo y luego acceder a el.
+Para ello vamos a hacer uso de la herramienta serve, para ello es necesario tener:
+
+- NodeJS 
+- NPM  
+
+Luego de tener instalado NodeJS en nuestro pc, podemos ir a NPM y buscar la herramienta serve de tjholowaychuk, basicamente es un servidor local que nos sirve los archivos emulando un servidor web, de esta manera podemos acceder al index.html dentro de un servidor web y eso si nos permite realizar un request fuera.
+Procedemos a instalarlo desde la consola, con el comadno: npm install -g serve
+Una vez instalado, nos posicionamos en el directorio donde tenemos el archivo de nuestro proyecto, y ahi vamos a ejecutar el comando: 'serve .'
+Donde . es la ubicacion actual y nos va a simular un servidor desde ahi
+
+*MY SUGGESTION INSTEAD OF NODEJS - Run the command:*
+
+$ python -m SimpleHTTPServer 8000
+
+Then, go to http://localhost:8000
+
+*** Formularios con Foundation
+
+Los form en HTML lo que hacen es llamar a una action (accion)...
+Estos form tambien llevan un method (metodo), el cual puede ser: GET, POST, DELETE, entre otros. Esto es parte del protocolo de HTTP.
+En el action se define una ruta y en el method se define que tipo de metodo va a utilizar el navegador para acceder a esa ruta, como se menciona anteriormente, tenemos distintos metodos como:
+
+- PUT: Cuando se actualizan datos
+- GET: Cuando se accede a una pagina o una funcion de una pagina
+- POST: Cuando enviamos datos a una pagina
+- DELETE: Si estamos eliminando datos de un sitio web
+
+Foundation nos permite poner row y dentro de esas row podemos crear columns...
+Pero tambien nos permite poner row columns(una fila que sea una columna), a su vez podemos agregarle los tamaños que queremos que tenga, sin embargo si el contenedor 'row columns' esta dentro de otra grilla no podemos agregarle tamaños. Esto es como un callout es decir un contenedor...
+Los row columns se centran automaticamente. Y se ven asi: 
+
+#+begin_src html
+<div class="row columns small-12 medium-6"> 
+</div>
+#+end_src
+
+div class="input-group": Estos divs nos permiten crear los formularios con diseño, ejemplo un formulario que lleve un icono antes del texto a ingresar, luego el input y luego un boton. Todo esto se va a definir dentro de el input-group y va dentro del row columns.
+Dentro de ese input-group el primer elemento es un span class="input-group-label" y dentro de ese span incluimos el icono con un i class="fi-mail" (en este caso). Como podemos ver hasta este punto los bordes de la izquierda son redondeados, mientras que los de la derecha son rectos, esto es con el fin de que sigamos incluyendo el input.
+Luego de esto podemos ingresar el input, para este ejemplo necesitamos un input type email, con el fin de que el formulario valide que es un email. 
+Le vamos a dar una clase llamada 'input-group-field'(Esto va dentro del mismp input-group, sin salirnos de ahi).
+De igual forma podemos observar que los bordes derechos siguen siendo rectos, esto se debe a que ahi va a ir nustro boton.
+Sin salir del input-group, vamos a ingresar un div con clase input-group-button, dentro de ese div vamos a crear el boton, para ello vamos a crear un input type submit con class button y un value (el value es el texto que se muestra dentro del boton).
+
+Si queremos referirnos a un input en css lo hacemos de la siguiente manera: 
+
+#+begin_src css
+  ...
+  input[type="submit, button, email.. entre otros"]
+  ...
+#+end_src
+
+*** Validación de formularios con Foundation
+
+*URL:* https://foundation.zurb.com/sites/docs/v/5.5.3/components/abide.html
+
+Los formularios por defecto nos incluye una validacion estilo alert, pero es poco delicada.. Para desactivar ese tipo de validacion solo debemos agregarle el atributo novalidate al form.
+Para hacer uso de Abide debemos agregarle el atributo data-abide al formulario..
+Continuamos agregando el atributo required al input.
+Para crear el mensaje de error que va a mostrar Abide vamos a crear un div con las mismas clases del div padre del input. 
+
+Para el ejemplo de la clase seria el: 
+
+#+begin_src html
+<div class="row columns small-12 medium-6"> </div>
+#+end_src
+
+Es necesario que ese div lleve un display none.
+Y dentro de ese div creamos una etiquetea <p></p> Con el mensaje de error. Tambien podemos agregarle iconos a esa etiqueta ejemplo:
+
+#+begin_src html
+<div class="row columns small-12 medium-6"> 
+   <p><i class="fi-alert"></i>Correo no valido.</p>
+</div>
+#+end_src
+
+Ya con el mensaje listo para mostrarse al usuario, debemos agregarle el atributo data-abide-error al div, para que abide sepa cual es el mensajae de eror que debe mostrarle al usuario.
+Si queremos acceder a los estilos que nos da Foundation en el input cada vez que se genera un error lo hacemos a traves de la clase: .is-invalid-input:not(:focus) y ahi podemos agregarle los estilos que queremos modificar.
+En mi caso cree una clase en css llamada none, donde le agregue los estilos al mensaje de error y un display none. De manera de solo incluirle al div la clase none y no el style="display: none;". 
+
+#+begin_src css
+#suscribete-container .none {
+ 	display: none;
+ 	text-align: center;
+ 	color: white;
+ 	font-family: 'Bree Serif', serif;
+ 	font-size: 1em;
+}
+#+end_Src
 
