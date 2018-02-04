@@ -26,53 +26,50 @@ Podemos usar la versión Custom Build para personalizar algunas características
 
 *** 2. Grilla Flex de Foundation
 
-Manipular el ancho de columnas.
+- Manipular el ancho de columnas.
 
-    Clase shrink: se utiliza para crear columnas con ancho automático según su contenido. Las columnas adyacentes a ella toman el tamaño restante en la fila.
-    Clase [tamaño]-expand: se utiliza para crear columnas de ancho proporcional según el número de columnas, donde [tamaño] puede ser small, medium o large.
-    Clase [tamaño]-unstack: se utiliza para crear columnas de ancho proporcional según su contenido, esta clase se agrega a la fila (row).
+Clase *shrink*: se utiliza para crear columnas con ancho automático según su contenido. Las columnas adyacentes a ella toman el tamaño restante en la fila.
+Clase *[tamaño]-expand*: se utiliza para crear columnas de ancho proporcional según el número de columnas, donde [tamaño] puede ser small, medium o large.
+Clase *[tamaño]-unstack*: se utiliza para crear columnas de ancho proporcional según su contenido, esta clase se agrega a la fila (row).
 
-[tamaño] puede ser small, medium o large. A partir del tamaño seleccionado se ejecuta la clase.
+/[tamaño]/ puede ser small, medium o large. A partir del tamaño seleccionado se ejecuta la clase.
 
-Alinear columnas horizontalmente.
+- Alinear columnas horizontalmente.
 
-    Clase align-right: se utiliza para alinear columnas a la derecha. Esta clase se añade a la fila (row).
-    Clase align-center: se utiliza para centrar las columnas.
-    Clase align-justify: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, exceptuando el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
-    Clase align-spaced: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, y agrega el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
+Clase *align-right*: se utiliza para alinear columnas a la derecha. Esta clase se añade a la fila (row).
+Clase *align-center*: se utiliza para centrar las columnas.
+Clase *align-justify*: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, exceptuando el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
+Clase *align-spaced*: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, y agrega el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
 
-Alinear columnas verticalmente.
+- Alinear columnas verticalmente.
 
 Clases utilizadas en la fila (row):
-
 Por defecto todas las columnas están alineadas verticalmente arriba con un alto igual a la columna de mayor altura. Al utilizar las siguientes clases, las columnas toman una altura según su propio contenido.
 
-    Clase align-top: se utiliza para alinear arriba todas las columnas de la fila.
-    Clase align-middle: se utiliza para alinear al centro todas las columnas de la fila.
-    Clase align-bottom: se utiliza para alinear abajo todas las columnas de la fila.
+Clase *align-top*: se utiliza para alinear arriba todas las columnas de la fila.
+Clase *align-middle*: se utiliza para alinear al centro todas las columnas de la fila.
+Clase *align-bottom*: se utiliza para alinear abajo todas las columnas de la fila.
 
 Clases utilizadas en columna por individual:
-
 Las siguientes clases se pueden utilizar directamente en una columna especifica, a la cual queremos cambiar la alineación heredada de la fila o la que tenga por defecto.
 
-    Clase align-self-top: alinea en la parte de arriba.
-    Clase align-self-middle: alinea al centro.
-    Clase align-self-bottom: alinea en la parte de abajo.
+Clase *align-self-top*: alinea en la parte de arriba.
+Clase *align-self-middle*: alinea al centro.
+Clase *align-self-bottom*: alinea en la parte de abajo.
 
-Manipular el padding de las columnas.
+- Manipular el padding de las columnas.
 
 Las siguientes clases se aplican a la fila:
 
-    Clase [tamaño]-collapse: se utiliza para eliminar el padding de las columnas.
-    Clase [tamaño]-uncollapse: se utiliza para no eliminar el padding de las columnas.
+Clase *[tamaño]-collapse*: se utiliza para eliminar el padding de las columnas.
+Clase *[tamaño]-uncollapse*: se utiliza para no eliminar el padding de las columnas.
 
-Manipular el orden de las columnas.
+- Manipular el orden de las columnas.
 
 Las siguientes clases se utilizan directamente en cada columna y es necesario definir el orden en cada una de ellas, por ejemplo si hay 3 columnas, debemos especificar una clase de ordenamiento (1, 2 y 3) en cada una de ellas.
+En /[número]/ se debe especificar el número de orden (1, 2, 3, 4, etc.).
 
-En [número] se debe especificar el número de orden (1, 2, 3, 4, etc.).
-
-    Clase [tamaño]-order-[número]: se utiliza para manipular el orden de las columnas.
+Clase *[tamaño]-order-[número]*: se utiliza para manipular el orden de las columnas.
 
 *** Foundation Icon Fonts
 
@@ -84,12 +81,12 @@ Simplementa agregar como siempre:
 
 Los menú en Foundation se crean mediante la etiqueta <ul> con la clase menú; y los enlaces del menú se crean con la etiqueta <a> dentro de <li>.
 
-Clases para modificar los menús:
+- Clases para modificar los menús:
 
-    Clase simple: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer un menú más simple, visualmente lo que cambia es que tiene menos padding.
-    Clase vertical: se utiliza en la etiqueta <ul> del menú principal y sirve para crear un menú vertical.
-    Clase active: se utiliza en la etiqueta <li> que se desea afectar, y sirve para seleccionar ese item de menú de manera que se muestre diferente al resto, ya que es el item activo.
-    Clase menu-text: se utiliza en la etiqueta <li> que se desea afectar, el texto no debe de ser un enlace, sino simple texto.
+    Clase *simple*: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer un menú más simple, visualmente lo que cambia es que tiene menos padding.
+    Clase *vertical*: se utiliza en la etiqueta <ul> del menú principal y sirve para crear un menú vertical.
+    Clase *active*: se utiliza en la etiqueta <li> que se desea afectar, y sirve para seleccionar ese item de menú de manera que se muestre diferente al resto, ya que es el item activo.
+    Clase *menu-text*: se utiliza en la etiqueta <li> que se desea afectar, el texto no debe de ser un enlace, sino simple texto.
 
 Es posible agregar iconos a cada elemento del menú, sólo agregando la etiqueta:
 
@@ -97,7 +94,7 @@ Es posible agregar iconos a cada elemento del menú, sólo agregando la etiqueta
 <li><a href="#"><span class=“fi-ticket”></span> Tickets</a></li>
 #+end_src
 
-    Clase icon-top: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer que el icono quede arriba del texto del item de menú.
+    Clase *icon-top*: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer que el icono quede arriba del texto del item de menú.
 
 Sub-menús.
 
@@ -322,4 +319,12 @@ En mi caso cree una clase en css llamada none, donde le agregue los estilos al m
  	font-size: 1em;
 }
 #+end_Src
+
+*** Navegación avanzada con Foundation
+
+Suavidad en la navegación:
+
+*URL:* https://foundation.zurb.com/sites/docs/v/5.5.3/components/magellan.html#js
+
+*** Barra de navegación fija con Foundation
 
