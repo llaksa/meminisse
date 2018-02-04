@@ -29,7 +29,9 @@ Podemos usar la versión Custom Build para personalizar algunas características
 - Manipular el ancho de columnas
 
 Clase *shrink*: se utiliza para crear columnas con ancho automático según su contenido. Las columnas adyacentes a ella toman el tamaño restante en la fila.
+
 Clase *[tamaño]-expand*: se utiliza para crear columnas de ancho proporcional según el número de columnas, donde [tamaño] puede ser small, medium o large.
+
 Clase *[tamaño]-unstack*: se utiliza para crear columnas de ancho proporcional según su contenido, esta clase se agrega a la fila (row).
 
 /[tamaño]/ puede ser small, medium o large. A partir del tamaño seleccionado se ejecuta la clase.
@@ -37,8 +39,11 @@ Clase *[tamaño]-unstack*: se utiliza para crear columnas de ancho proporcional 
 - Alinear columnas horizontalmente
 
 Clase *align-right*: se utiliza para alinear columnas a la derecha. Esta clase se añade a la fila (row).
+
 Clase *align-center*: se utiliza para centrar las columnas.
+
 Clase *align-justify*: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, exceptuando el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
+
 Clase *align-spaced*: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, y agrega el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
 
 - Alinear columnas verticalmente
@@ -47,14 +52,18 @@ Clases utilizadas en la fila (row):
 Por defecto todas las columnas están alineadas verticalmente arriba con un alto igual a la columna de mayor altura. Al utilizar las siguientes clases, las columnas toman una altura según su propio contenido.
 
 Clase *align-top*: se utiliza para alinear arriba todas las columnas de la fila.
+
 Clase *align-middle*: se utiliza para alinear al centro todas las columnas de la fila.
+
 Clase *align-bottom*: se utiliza para alinear abajo todas las columnas de la fila.
 
 Clases utilizadas en columna por individual:
 Las siguientes clases se pueden utilizar directamente en una columna especifica, a la cual queremos cambiar la alineación heredada de la fila o la que tenga por defecto.
 
 Clase *align-self-top*: alinea en la parte de arriba.
+
 Clase *align-self-middle*: alinea al centro.
+
 Clase *align-self-bottom*: alinea en la parte de abajo.
 
 - Manipular el padding de las columnas.
@@ -62,6 +71,7 @@ Clase *align-self-bottom*: alinea en la parte de abajo.
 Las siguientes clases se aplican a la fila:
 
 Clase *[tamaño]-collapse*: se utiliza para eliminar el padding de las columnas.
+
 Clase *[tamaño]-uncollapse*: se utiliza para no eliminar el padding de las columnas.
 
 - Manipular el orden de las columnas.
@@ -84,8 +94,11 @@ Los menú en Foundation se crean mediante la etiqueta <ul> con la clase menú; y
 - Clases para modificar los menús:
 
 Clase *simple*: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer un menú más simple, visualmente lo que cambia es que tiene menos padding.
+
 Clase *vertical*: se utiliza en la etiqueta <ul> del menú principal y sirve para crear un menú vertical.
+
 Clase *active*: se utiliza en la etiqueta <li> que se desea afectar, y sirve para seleccionar ese item de menú de manera que se muestre diferente al resto, ya que es el item activo.
+
 Clase *menu-text*: se utiliza en la etiqueta <li> que se desea afectar, el texto no debe de ser un enlace, sino simple texto.
 
 Es posible agregar iconos a cada elemento del menú, sólo agregando la etiqueta:
@@ -94,9 +107,9 @@ Es posible agregar iconos a cada elemento del menú, sólo agregando la etiqueta
 <li><a href="#"><span class=“fi-ticket”></span> Tickets</a></li>
 #+end_src
 
-    Clase *icon-top*: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer que el icono quede arriba del texto del item de menú.
+Clase *icon-top*: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer que el icono quede arriba del texto del item de menú.
 
-Sub-menús.
+- Sub-menús
 
 Los sub-menús se crean agregando la estructura completa de la etiqueta <ul class=”menu”> debajo del enlace que se requiere active el sub-menú; además se debe agregar a la etiqueta <ul> del menú principal la clase dropdown y el atributo data-dropdown-menu. Ejemplo:
 
@@ -113,11 +126,16 @@ Se puede crear un botón básico con un marcado mínimo. Debido a que los botone
 Use la etiqueta <a> si el botón es un enlace a otra página, o un enlace a un ancla dentro de una página. En general, los anclajes no requieren JavaScript para funcionar.
 Use la etiqueta <button> si el botón realiza una acción que cambia algo en la página actual. Los elementos <button> casi siempre requieren JavaScript para funcionar.
 Agregue el atributo type=“button” a <button>, a menos que el botón envíe un formulario, en ese caso use type=“submit”.
-Clase button: da los estilos predeterminados de botón que Foundation ofrece.
-Clases para modificar el tamaño del botón: tiny, small, medium (o ninguna clase de tamaño, ya que medium es el tamaño por defecto de los botones), large, expanded, small expanded.
-Clases para modificar el color: primary, secondary, success, alert, warning.
-Clase hollow: permite crear un botón “fantasma”, es decir, solo con el texto y el borde, con un fondo transparente.
-Clase disabled: permite mostrar como deshabilitado un botón ya sea con la etiqueta <a> o <button>; si se utiliza la etiqueta <button> en lugar de agregar la clase, es posible utilizar el atributo disabled.
+
+Clase *button*: da los estilos predeterminados de botón que Foundation ofrece.
+
+Clases para modificar el tamaño del botón: *tiny, small, medium* (o ninguna clase de tamaño, ya que medium es el tamaño por defecto de los botones), *large*, *expanded*, *small expanded*.
+
+Clases para modificar el color: *primary, *secondary*, *success*, *alert*, *warning*.
+
+Clase *hollow*: permite crear un botón “fantasma”, es decir, solo con el texto y el borde, con un fondo transparente.
+
+Clase *disabled*: permite mostrar como deshabilitado un botón ya sea con la etiqueta <a> o <button>; si se utiliza la etiqueta <button> en lugar de agregar la clase, es posible utilizar el atributo disabled.
 
 *** 6. Tabs con Foundation
 
@@ -253,10 +271,10 @@ Los form en HTML lo que hacen es llamar a una action (accion)...
 Estos form tambien llevan un method (metodo), el cual puede ser: GET, POST, DELETE, entre otros. Esto es parte del protocolo de HTTP.
 En el action se define una ruta y en el method se define que tipo de metodo va a utilizar el navegador para acceder a esa ruta, como se menciona anteriormente, tenemos distintos metodos como:
 
-- PUT: Cuando se actualizan datos
-- GET: Cuando se accede a una pagina o una funcion de una pagina
-- POST: Cuando enviamos datos a una pagina
-- DELETE: Si estamos eliminando datos de un sitio web
+- *PUT*: Cuando se actualizan datos
+- *GET*: Cuando se accede a una pagina o una funcion de una pagina
+- *POST*: Cuando enviamos datos a una pagina
+- *DELETE*: Si estamos eliminando datos de un sitio web
 
 Foundation nos permite poner row y dentro de esas row podemos crear columns...
 Pero tambien nos permite poner row columns(una fila que sea una columna), a su vez podemos agregarle los tamaños que queremos que tenga, sin embargo si el contenedor 'row columns' esta dentro de otra grilla no podemos agregarle tamaños. Esto es como un callout es decir un contenedor...
@@ -328,3 +346,23 @@ Suavidad en la navegación:
 
 *** 14. Barra de navegación fija con Foundation
 
+*URL:* https://foundation.zurb.com/sites/docs/magellan.html
+
+Para esta clase queremos que la barra de navegacion nos siga a cualquier parte donde naveguemos, para ello vamos a utilizar Sticky
+
+- Para el ejemplo de la clase le vamos a pasar el id que tenia el section (menu-container) a el nav, de manera que el section va a quedar sin id ni atributos, de esta manera al section le vamos a agregar el atributo data-sticky-container.
+- Dentro del section vamos a agregar un div con class="data-sticky" esto es para que tenga los estilos que requiere foundation para que sea sticky. Y dentro de ese div vamos a pegar todo el nav con id="menu-container".
+
+Ahora solo tenemos que configurar los atributos para el data-sticky... 
+
+- Para ello le vamos a agregar el atributo data-sticky a el div con clase data-sticky
+- Tambien debemos agregarle el atributo data-options="marginTop:0;" Esto es cuanto margen va a dejar desde la parte superior.
+- Otro atributo que vamos a agregar es data-sticky-on="small" Esto es desde que tamaño de la pantalla se va a activar el stikcy.
+- data-top-anchor="--" este atributo recibe el id de otro elemento al cual se tiene que pegar, en el ejemplo de la clase se debe pegar es al section, por ende le agregamos un id al section y se lo pasamos al data-top-anchor
+
+Ahora debemos darle un ancho del 100% y un z-index mayor al data-sticky, esto lo hacemos en css:
+
+.data-sticky {
+	width: 100%;
+	z-index: 10; //El z-index es para que funcionen los submenus en caso de que tengamos
+}
