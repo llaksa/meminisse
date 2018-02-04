@@ -26,7 +26,7 @@ Podemos usar la versión Custom Build para personalizar algunas características
 
 *** 2. Grilla Flex de Foundation
 
-- Manipular el ancho de columnas.
+- Manipular el ancho de columnas
 
 Clase *shrink*: se utiliza para crear columnas con ancho automático según su contenido. Las columnas adyacentes a ella toman el tamaño restante en la fila.
 Clase *[tamaño]-expand*: se utiliza para crear columnas de ancho proporcional según el número de columnas, donde [tamaño] puede ser small, medium o large.
@@ -34,14 +34,14 @@ Clase *[tamaño]-unstack*: se utiliza para crear columnas de ancho proporcional 
 
 /[tamaño]/ puede ser small, medium o large. A partir del tamaño seleccionado se ejecuta la clase.
 
-- Alinear columnas horizontalmente.
+- Alinear columnas horizontalmente
 
 Clase *align-right*: se utiliza para alinear columnas a la derecha. Esta clase se añade a la fila (row).
 Clase *align-center*: se utiliza para centrar las columnas.
 Clase *align-justify*: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, exceptuando el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
 Clase *align-spaced*: se utiliza para que las columnas se distribuyan a todo lo ancho de la fila, esta clase crea un espacio igual entre cada columnas, y agrega el espacio izquierdo de la primera columna y el espacio derecho de la última columna.
 
-- Alinear columnas verticalmente.
+- Alinear columnas verticalmente
 
 Clases utilizadas en la fila (row):
 Por defecto todas las columnas están alineadas verticalmente arriba con un alto igual a la columna de mayor altura. Al utilizar las siguientes clases, las columnas toman una altura según su propio contenido.
@@ -71,22 +71,22 @@ En /[número]/ se debe especificar el número de orden (1, 2, 3, 4, etc.).
 
 Clase *[tamaño]-order-[número]*: se utiliza para manipular el orden de las columnas.
 
-*** Foundation Icon Fonts
+*** 3. Foundation Icon Fonts
 
 Simplementa agregar como siempre:
 
 [[https://fonts.google.com/][Google Fonts]]
 
-*** Barra de menú en Foundation
+*** 4. Barra de menú en Foundation
 
 Los menú en Foundation se crean mediante la etiqueta <ul> con la clase menú; y los enlaces del menú se crean con la etiqueta <a> dentro de <li>.
 
 - Clases para modificar los menús:
 
-    Clase *simple*: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer un menú más simple, visualmente lo que cambia es que tiene menos padding.
-    Clase *vertical*: se utiliza en la etiqueta <ul> del menú principal y sirve para crear un menú vertical.
-    Clase *active*: se utiliza en la etiqueta <li> que se desea afectar, y sirve para seleccionar ese item de menú de manera que se muestre diferente al resto, ya que es el item activo.
-    Clase *menu-text*: se utiliza en la etiqueta <li> que se desea afectar, el texto no debe de ser un enlace, sino simple texto.
+Clase *simple*: se utiliza en la etiqueta <ul> del menú principal y sirve para hacer un menú más simple, visualmente lo que cambia es que tiene menos padding.
+Clase *vertical*: se utiliza en la etiqueta <ul> del menú principal y sirve para crear un menú vertical.
+Clase *active*: se utiliza en la etiqueta <li> que se desea afectar, y sirve para seleccionar ese item de menú de manera que se muestre diferente al resto, ya que es el item activo.
+Clase *menu-text*: se utiliza en la etiqueta <li> que se desea afectar, el texto no debe de ser un enlace, sino simple texto.
 
 Es posible agregar iconos a cada elemento del menú, sólo agregando la etiqueta:
 
@@ -100,7 +100,7 @@ Sub-menús.
 
 Los sub-menús se crean agregando la estructura completa de la etiqueta <ul class=”menu”> debajo del enlace que se requiere active el sub-menú; además se debe agregar a la etiqueta <ul> del menú principal la clase dropdown y el atributo data-dropdown-menu. Ejemplo:
 
-*** Botones en Foundation
+*** 5. Botones en Foundation
 
 Los tipos de tamaños de los botones son:
 
@@ -119,7 +119,7 @@ Clases para modificar el color: primary, secondary, success, alert, warning.
 Clase hollow: permite crear un botón “fantasma”, es decir, solo con el texto y el borde, con un fondo transparente.
 Clase disabled: permite mostrar como deshabilitado un botón ya sea con la etiqueta <a> o <button>; si se utiliza la etiqueta <button> en lugar de agregar la clase, es posible utilizar el atributo disabled.
 
-*** Tabs con Foundation
+*** 6. Tabs con Foundation
 
 Los tabs estan compuestos por dos cosas:
 
@@ -183,11 +183,11 @@ panelViernes porque ese fue el href que le dimos a la primera pestaña de navega
 
 Debemos activar un panel por defecto, para que sea el que se muestre cuando el usuario cargue la pagina por primera vez, para eso le agregamos la clase 'is-active' para que la seccion se muestre por defecto, en este caso lo vamos a hacer con el panelViernes, tanto en el title como en el contenido.
 
-*** Carrousel en Foundation con Orbit
+*** 7. Carrousel en Foundation con Orbit
 
-[[https://foundation.zurb.com/sites/docs/v/5.5.3/components/orbit.html][Orbit Web Page]] 
+*URL:* https://foundation.zurb.com/sites/docs/v/5.5.3/components/orbit.html 
 
-*** Tablas de precio con Foundation
+*** 8. Tablas de precio con Foundation
 
 *Building blocks:* Un conjunto de componentes ya construidos para que nosotros los usemos.
 
@@ -195,7 +195,7 @@ Url: [[https://foundation.zurb.com/building-blocks/][Buildin Blocks]]
 
 Bulding blocks de Foundation es una biblioteca de componentes que podemos incluir a cualquier proyecto hecho con Foundation, una vez incluídos al proyecto podemos modificar los estilos CSS para que coincida con nuestro diseño. Ejemplo de componentes: Pricing tables, Full screen hero, etc.
 
-*** Igualar alto de columnas en Foundation
+*** 9. Igualar alto de columnas en Foundation
 
 Foundation nos brinda una manera muy sencilla para igualar el alto de cualquier elemento de nuestra web. 
 Para ello es necesario es necesario utilizar Equalizer, y para utilizar equalizer debemos agregar atributos al div con clase 'row' o al elemento padre le vamos a agregar dos atributos: 
@@ -205,7 +205,7 @@ El atributo data-equalizer.
 El atributo data-equalizer-on="small" donde especificamos desde que tamaño va a empezar a igualar los elementos.
 Y luego debemos igualar los elementos, para ello les agregamos los atributos 'data-equalizer-watch' De esta manera foundation les proporcionará el mismo alto a esos elementos.
 
-*** Contenido responsive con Foundation
+*** 10. Contenido responsive con Foundation
 
 Para hacer contenido repsonsive design con Foundation, vamos a utilizar el atributo 'data-interchange', con este atributo podemos indicarle que valores va a tomar, partiendo desde small, continuando con medium y finalizando con large. Debemos llevar el orden indicado anteriormente, ya que Foundation parte desde el concepto de Mobile First. 
 El data-interchange le vamos a pasar valores de la misma manera que un array, es decir dentro de corchetes [] y separandolos por coma ',' de la siguiente manera:
@@ -247,7 +247,7 @@ $ python -m SimpleHTTPServer 8000
 
 Then, go to http://localhost:8000
 
-*** Formularios con Foundation
+*** 11. Formularios con Foundation
 
 Los form en HTML lo que hacen es llamar a una action (accion)...
 Estos form tambien llevan un method (metodo), el cual puede ser: GET, POST, DELETE, entre otros. Esto es parte del protocolo de HTTP.
@@ -282,7 +282,7 @@ Si queremos referirnos a un input en css lo hacemos de la siguiente manera:
   ...
 #+end_src
 
-*** Validación de formularios con Foundation
+*** 12. Validación de formularios con Foundation
 
 *URL:* https://foundation.zurb.com/sites/docs/v/5.5.3/components/abide.html
 
@@ -320,11 +320,11 @@ En mi caso cree una clase en css llamada none, donde le agregue los estilos al m
 }
 #+end_Src
 
-*** Navegación avanzada con Foundation
+*** 13. Navegación avanzada con Foundation
 
 Suavidad en la navegación:
 
 *URL:* https://foundation.zurb.com/sites/docs/v/5.5.3/components/magellan.html#js
 
-*** Barra de navegación fija con Foundation
+*** 14. Barra de navegación fija con Foundation
 
