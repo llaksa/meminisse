@@ -1,0 +1,24 @@
+* 1. Sintaxis de transiciones
+
+*URL:* https://www.w3schools.com/css/css3_transitions.asp
+
+- To create a transition effect, you must specify two things:
+
+The CSS property you want to add an effect to
+The duration of the effect
+
+- CSS Transition Properties
+
+The following table lists all the CSS transition properties:
+
+| Property 	                 | Description                                                                            |
+|----------------------------+----------------------------------------------------------------------------------------|
+| transition 	               | A shorthand property for setting the four transition properties into a single property |
+| transition-delay           | Specifies a delay (in seconds) for the transition effect                               |
+| transition-duration        | Specifies how many seconds or milliseconds a transition effect takes to complete       |
+| transition-property        | Specifies the name of the CSS property the transition effect is for                    |
+| transition-timing-function | Specifies the speed curve of the transition effect                                     |
+
+* 2. Transiciones de interacción
+
+*URL:* https://www.w3schools.com/css/css3_transitions.asp

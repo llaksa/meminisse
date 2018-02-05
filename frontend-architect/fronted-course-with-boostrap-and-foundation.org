@@ -18,7 +18,7 @@ Podemos usar la versión Custom Build para personalizar algunas características
 - *medium-offset-1:*	Crea una columna como espacio en blanco.
 - *end:*	Sitúa una columna inmediatamente después de la anterior.
 - *small-collapse:*	Los elementos dentro de una fila quedarán pegados al borde.
-- *large-uncollapse:*	Los elementos mantendrán un margen dentro de cada fila.
+- *large-uncollapse:*	Los elementos mantendrán un margen dentro de cada fithe series of dawnla.
 - *small-centered:*	Colocará una columna centrada en dispositivos pequeños.
 - *large-uncentered:*	No permitirá que las columnas queden centradas en dispositivos grandes.
 - *medium-push-6:*	Empuja una columna seis posiciones en dispositivos medianos.
@@ -340,7 +340,9 @@ En mi caso cree una clase en css llamada none, donde le agregue los estilos al m
 
 *** 13. Navegación avanzada con Foundation
 
-Suavidad en la navegación:
+Para agregar una navegación avanzada y suave dentro del siglepage vamos a utilizar Magellan
+Y digo una navegación suave porque normalmente la navegación no contiene ningun efecto, simplemente si hacemos click en algun href nos dirije a su id de una manera inmediata. 
+Magellan nos proporciona esa suavidad o ese efecto que le brinda una mejor experiencia de usuario, simula que el usuario esta haciendo scroll hacia la sección donde hizo click. Y para usar magellan lo que tenemos que hacer es que toda la navegacion (para en el ejemplo de la clase son todos los ul) la vamos a incluir detro de una etiqueta nav con el atributo data-magellan, luego lo que tenemos que hacer es que en cada seccion  a la cual nos dirijian los href le vamos a agregar el atributo data-magellan-target="--" y le agregamos como valor el mismo id que tiene. 
 
 *URL:* https://foundation.zurb.com/sites/docs/v/5.5.3/components/magellan.html#js
 
@@ -366,3 +368,418 @@ Ahora debemos darle un ancho del 100% y un z-index mayor al data-sticky, esto lo
 	width: 100%;
 	z-index: 10; //El z-index es para que funcionen los submenus en caso de que tengamos
 }
+
+*** 15. Modificando Tabs en Foundation
+
+Usando un poco de JavaScript vamos a crear una navegación fluida con los tabs
+Para esta clase queremos que al hacer click en el submenu del Lineup nos dirija al dia correspondiente, para ello debemos tener en cuenta dos actividades: 
+
+  1) Obtener los datos cuando hacemos click en el submenu.
+  2) Activar el panel de acuerdo al submenu correspondiente.
+
+1) Para empezara resolver el problema vamos a ir al index.html y en la parte del submenu le vamos a agregar el atributo data-toggle-dia="--" y le pasamos como valor el id de cada uno de los paneles (data-toggel-dia no es algo de foundation, es algo que estamos creando nosotros)
+
+Ahora vamos a ir a app.js (es un archivo que nos da Foundation para agregar nuestro codigo JS, este archivo se encuentra dentro de la carpeta js).. Como podemos ver Foundation utiliza jQuery. Entonces vamos a utilizar la variable Pesos $ y vamos a indicarle que queremos obtener todos los atributos que tengan data-toggle-dia: 
+
+$('[data-toggle-dia]')
+
+Y que queremos hacer? Queremos que cuando hagamos click en alguno de ellos, suceda algo..
+
+$('[data-toggle-dia]').click()
+
+Y el parametro que recibe la funcion click de jQuery es una funcion, le tenemos que pasar una funcion que se va a ejecutar cuando hagamos click
+
+$('[data-toggle-dia]').click(function(){
+
+...
+
+})
+
+
+$('[data-toggle-dia]').click(() => {
+
+... //Es la misma funcion de arriba pero con el nuevo estandar de JavaScript (arrow functions)
+
+}
+
+
+Esa funcion podemos colocarle un nombre, siempre es una buena practica colocarle nombre a las funciones, pero en este caso como es una funcion sencilla pues podemos dejarla anonima
+Esta funcion va a recibir el parametro event (ev), que contiene todos los datos del evento, como donde se hizo click, etc.. 
+En nuestro caso queremos obtener los datos de donde se hizo click, Viernes, Sabado o Domingo, para ello vamos a guardar en una variable (var / const) const para el nuevo standar de ecmascript.. 
+
+var panel = $(this).data()
+
+this va a ser el elemento donde hicimos click sea viernes, sabado o domingo..
+Y para acceder al atributo usamos la funcion data('--') pasandole por string el atributo al cual queremos acceder, pero lo vamos a pasar sin los guiones '-', donde haya un guion simplemente agregamos una letra mayusculas. Y no hace falta el data- ya que esta implicito para todos los atributos data.
+
+data-toggle-dia = toggleDia
+$('[data-toggle-dia]').click(function(){
+var panel = $(this).data('toggleDia')
+console.log(panel);
+
+})
+
+
+Vamos a ver la consola y ver el console.log 
+
+Como podemos ver nos indica el dia en el que hicimos click, pero a su vez nos genera un error.. Ese error se debe a que magellan esta buscando el id #.
+
+2) Para activar el elemento al que se le hizo click accedemos a el ul que tiene como id lineup-tabs. 
+
+$('#lineup-tabs')
+
+Ahora queremos activar programaticamente el panel en el cual se hizo click en el menu superior, entonces le decimos a Foundations que llame a la funcion selectTab y que active panel (que es el que se le hizo click en el menu superior).
+
+$('#lineup-tabs').foundation('selectTab', panel)
+
+En este punto ya debe funcionar perfectamente, sin embargo podemos ver que si ya hemos hecho scroll, no nos dirije nuevamente a la parte de arriba o mejor dicho, no tiene agregado magellan. 
+Para ello simplemente le agregamos el href #lineup-container para que lo dirija al lineup cada vez que haga click en alguno de ellos.
+
+*** 16. Menú offcanvas con Foundation
+
+*URL:* https://foundation.zurb.com/sites/docs/menu.html
+
+Para empezar debemos agregar la clase 'show-for-medium' al ul que contiene todos los elementos de navegacion. Esta clase le indica que va a ser visible a partir de dispositivos medianos
+
+
+Tambien vamos a agregar un nuevo ul con la clase 'show-for-small-only' para que se muestre solo en dispositivos small. Y la clase 'menu align-spaced' porque va a ser un menu y va a estar centrado. 
+
+Dentro de ese ul vamos a agregar un li > a. Que contiene la palabra menu.
+
+
+
+Ahora vamos a crear la parte del menu que se va a mostrar, para ello luego de la etiqueta body vamos a agregar un div con clase 'off-canvas-wrapper'. Y dentro de el vamos a crear un div con clase 'off-canvas-wrapper-inner' y le asignamos el atributo data-off-canvas-wrapper.
+
+
+Dentro de el vamos a crear un div con clases 'off-canvas position-left' con un id='offCanvas', tambien es necesario agregarle el atributo data-off-canvas, dentro de el es donde va a estar nuestro menu del costado, para ello vamos a crear una etiqueta nav con atributo data-magellan para que nos proporcione el mismo efecto, y dentro de esa etiqueta vamos a agregar un ul con clases 'vertical menu' ya que va a ser un menu en sentido vertical. 
+
+Ahora lo que tenemos es que copiar todos las etiquetas li que contenga el menu que se muestra en dispositivos medianos en adelante y pegarla aqui.
+
+
+El div con clase off-canvas-wrapper-inner necesita dos elementos o dos div, uno que acabamos de crear que seria el menu de la izquierda y el otro es todo el contenido de nuestra pagina.
+
+
+Vamos a proceder a organiza el contenido de nuestra pagina, para ello dentro del off-canvas-wrapper-inner vamos a crear un div con clase 'off-canvas-content' tambien le vamos a asignar el atributo data-off-canvas-content , y dentro de el vamos a posicionar todo nuestro sitio, es decir todo lo que teniamos en el body ahora va dentro de este div.
+
+
+Ahora lo que tenemos que hacer es que a la etiqueta <a> que cubre la palabra menu (la que se muestra en dispositivos small) le vamos a agregar el atributo data-toggle="--" pasandole por parametro el id que le asignamos a el menu escondido o al div con clase 'off-canvas position-left', en este caso le asignamos 'offCanvas'
+
+
+Tener en cuenta que ahora el body es lo que se muestra debajo de la seccion del menu escondido, ya no forma parte de lo que se muestra en la primera pantalla.
+
+
+En este punto ya tiene que servir 100% el menu de la izquierda, sin embargo si hacemos click en alguno de sus elementos nos hace el efecto del magellan pero no nos cierra el menu, este continua visible, vamos a hacer que al hacer click nos lleve al elemento seleccionado y nos cierre el menu, para eso vamos al archivo app.js y vamos a agregar esa funcionalidad.
+
+
+Vamos a crear una variable, y vamos a llamar a jQuery, le vamos a decir que nos estamos refiriendo al id offCanvas.
+
+const $offCanvas = $('#offCanvas')
+
+
+Ahora le vamos a indicar que todos los elementos li que esten dentro del offCanvas, cuando hagaoms click queremos llamar una funcion anonima que recibe un evento
+
+
+$offCanvas.find('li').click(function(ev){
+
+alert('Funciona?');
+
+})
+
+
+Verificamos que funcione....
+
+
+Ahora le vamos a indicar que el offCanvas llame a foundation y se cierre 'close'
+
+
+$offCanvas.find('li').click(function(ev){
+
+$offCanvas.foundation('close');
+
+})
+
+
+En este punto debe ser funcional, pero la seccion del menu despues de hacer click queda corrida hacia la derecha, para solucionar eso vamos a agregarle un id al menu principal (no al del costado) en este caso nos referimos al div que contiene el nav del menu, a ese div le vamos a poner el id='sticky'.. Y en el documento app.js lo vamos a obtener por jQuery:
+
+
+const $sticky = $('#sticky');
+
+
+ Y dentro de la funcion vamos a agregar la siguiente linea de codigo:
+
+
+ setTimeout(function(){
+
+  $sticky.css('left', '0px') // Para que se pegue a la izquierda
+
+  }, 300)
+
+
+ la funcion setTimeout es una funcion que tienen todos los navegadores, lo que primero recibe es una funcion y luego un delete y al cumplirse ese delete va a llamar esa funcion. Los 300 es un valor numerico que puede variar, son milisegundos para que se llame esa funcion
+
+*** 17. Menú Drilldown con Foundation
+
+*URL:* https://foundation.zurb.com/sites/docs/drilldown-menu.html
+
+*** 18. Obteniendo datos del formulario
+
+*URL:* https://formspree.io/
+
+*** 19. Contenedores en Bootstrap
+
+*URL:* https://getbootstrap.com/docs/4.0/layout/overview/#containers 
+
+*** 20. Grillas en Bootstrap
+
+*URL:* https://v4-alpha.getbootstrap.com/layout/grid/
+
+*** 21. Grillas Flex con Bootstrap
+
+*URL:* https://v4-alpha.getbootstrap.com/utilities/flexbox/
+
+*** 22. Barra de navegación con Bootstrap
+
+*URL:* https://v4-alpha.getbootstrap.com/components/navbar/
+
+*** 23. Navegación responsive con Bootstrap
+
+*URL:* https://fontawesome.com/
+
+*** 24. Carousel con Bootstrap
+
+*ULR:* https://getbootstrap.com/docs/4.0/components/carousel/
+
+*** 25. Imágenes responsivas con Bootstrap
+
+*URL:* https://v4-alpha.getbootstrap.com/content/images/#responsive-images
+
+*** 26. Formularios con Bootstrap
+
+*URL:* https://v4-alpha.getbootstrap.com/components/forms/
+
+Take a look to the section [[https://v4-alpha.getbootstrap.com/components/forms/#validation][Validation]]
+
+*** 27. Modals en Bootstrap
+
+Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.
+
+*URL:* https://getbootstrap.com/docs/4.0/components/modal/
+
+*** 28. Breadcrumbs con Bootstrap
+
+Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through ::before and content.
+
+*URL:* https://v4-alpha.getbootstrap.com/components/breadcrumb/
+
+*** 29. Filtros con Bootstrap
+
+Bootstrap does not have a component that allows filtering. However, we can use jQuery to filter / search for elements.
+
+*URL:* https://www.w3schools.com/bootstrap/bootstrap_filters.asp
+
+*** 30. Cards con Bootstrap
+
+A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
+
+*URL:* https://v4-alpha.getbootstrap.com/components/card/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Resumen
+
+    1
+    ¿Qué librería usamos en Foundation para validar formularios?
+
+abide
+
+    2
+    ¿Qué atributo debemos añadir para evitar que se valide un formulario Foundation?
+    
+novalidate
+
+    3
+    ¿Qué librería se utiliza en Foundation para crear navegación fluida?
+
+magellan
+
+    4
+    ¿Qué atributo debemos colocar en la etiqueta nav usando magellan?
+
+data-magellan
+
+    5
+    ¿Qué es un Sticky Navigation?
+
+que se queda quieto mientras te desplazas por la pagina
+
+    6
+    ¿Cuántos breakpoints tiene Bootstrap 4 por defecto?
+
+5
+
+    7
+    ¿Bootstrap 4 trae iconos por defecto?
+
+nop
+
+    8
+    ¿Qué clase no oculta un elemento en Bootstrap?
+
+hidenn...
+
+    9
+    ¿Cuántas columnas tiene por defecto Bootstrap?
+
+12
+
+    10
+    ¿Qué librería usamos en Bootstrap para validar formularios?
+
+
+
+    11
+    ¿Qué función cumple el local storage?
+
+la de local storage :P
+
+    12
+    ¿Qué clase utilizo en una opción del menú para marcar como activo?
+
+active
+
+    13
+    Para crear un submenú en foundation, además de la clase dropdown, debemos agregar:
+
+data dropdown menu
+
+    14
+    ¿Cuál es una clase válida para el tamaño de botones en Foundation?
+
+    .btn-lg
+    .btn-md
+    .btn-sm
+    .btn-xs
+
+    15
+    La clase de Bootstrap .mode.fade nos sirve para:
+
+desvanece, desaparece una imagen, o la convierte en otra
+
+    16
+    ¿La clase hollow en un botón en Foundation?
+
+texto y borde, sin relleno
+
+    17
+    Para poder igualar el alto de columnas en Foundation debemos agregar:
+
+data equalizer watch
+
+    18
+    Para manejar contenido responsive en Foundation usamos:
+
+interchange
+
+    19
+    ¿Qué clase no oculta un elemento en Foundation?
+
+el distinto a los demas
+
+    20
+    ¿Qué clase utilizamos para mostrar un elemento en dispositivos medianos o grandes en Foundation?
+
+trust in you
+
+    21
+    ¿Qué sucede si no definimos el tamaño de una columna con grilla flex?
+
+
+
+    22
+    ¿Qué clase NO es válida para alinear verticalmente las columnas en Foundation con grillas flex?
+    23
+    ¿Qué clase es válida para alinear verticalmente las columnas en Bootstrap con grillas flex?
+    24
+    Para lanzar un modal con id=”ModalProducto”, utilizando Bootstrap, debemos ejecutar la siguiente línea de código.
+
+noseque.modal()
+
+    25
+    Para lanzar un modal con id=”ModalProducto”, utilizando Foundation, debemos ejecutar la siguiente línea de código.
+
+noseque.foundation()
+
+    26
+    Para crear columnas en Bootstrap 4 debemos añadirlas dentro de un div con clase
+
+row
+
+    27
+    El componente de off-canvas de foundation nos permite
+
+pestañas despegables de menu
+
+    28
+    Qué permite hacer el servicio Formspree
+
+recibir correo con datos
+
+    29
+    ¿Cuál de estos NO es un breakpoints válido en Foundation?
+
+el distinto
+
+    30
+    Para crear un formulario con Foundation, el contenedor debe tener la clase
+
+row collum
+  input group
+     input group label
+     input group field
