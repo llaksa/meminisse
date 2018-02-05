@@ -7,18 +7,94 @@
 The CSS property you want to add an effect to
 The duration of the effect
 
-- CSS Transition Properties
+*CSS Transition Properties*
 
 The following table lists all the CSS transition properties:
 
-| Property 	                 | Description                                                                            |
-|----------------------------+----------------------------------------------------------------------------------------|
-| transition 	               | A shorthand property for setting the four transition properties into a single property |
-| transition-delay           | Specifies a delay (in seconds) for the transition effect                               |
-| transition-duration        | Specifies how many seconds or milliseconds a transition effect takes to complete       |
-| transition-property        | Specifies the name of the CSS property the transition effect is for                    |
-| transition-timing-function | Specifies the speed curve of the transition effect                                     |
+| *Property* 	                 | *Description*                                                                          |
+|------------------------------+----------------------------------------------------------------------------------------|
+| *transition* 	               | A shorthand property for setting the four transition properties into a single property |
+| *transition-delay*           | Specifies a delay (in seconds) for the transition effect                               |
+| *transition-duration*        | Specifies how many seconds or milliseconds a transition effect takes to complete       |
+| *transition-property*        | Specifies the name of the CSS property the transition effect is for                    |
+| *transition-timing-function* | Specifies the speed curve of the transition effect                                     |
 
 * 2. Transiciones de interacción
 
-*URL:* https://www.w3schools.com/css/css3_transitions.asp
+Uso de /calc()/: https://www.w3schools.com/cssref/func_calc.asp
+
+* 3. Sintaxis de Transformaciones
+
+*URL:* https://www.w3schools.com/cssref/css3_pr_transform.asp
+
+- Transformaciones de rotación
+- Transformaciones de traslación y perspectiva
+
+Para recordar:
+
+Translate nos sirve para poder mover un elemento arriba, abajo, derecha e izquierda.
+Utilizamos la propiedad perspective para poder darle profundidad a un elemento y obtener un efecto 3D.
+
+https://www.w3schools.com/cssref/css3_pr_perspective.asp
+
+- Transformaciones de escala
+
+Transform-scale nos permite modificar el tamaño de nuestros elementos a nuestro gusto.
+La medición del tamaño de un elemento con scale, es la siguiente:
+
+0 = 0% del tamaño.
+1 = 100% del tamaño.
+
+- Transformaciones de sesgados
+
+Sesgar es esa inclinación que puede sufrir un elemento gracias a una transformación en CSS.
+Se puede sesgar un elemento tanto de un solo eje, como de ambos:
+
+transform: skew (x);
+transform: skew (y);
+transform: skew (x, y);
+
+*** *URL 2D TRANSFORMS:* https://www.w3schools.com/css/css3_2dtransforms.asp
+*** *URL 3D TRANSFORMS:* https://www.w3schools.com/css/css3_3dtransforms.asp 
+
+* 8. Punto de transformación
+
+El punto de transformación de un elemento está clavado en alguna parte de la interfaz, y por defecto se encuentra en el centro.
+
+Sin embargo, podemos jugar con la posición de este punto según el tipo de animación que queramos crear.
+
+* 9. Sintaxis de animaciones
+
+*URL:* https://www.w3schools.com/css/css3_animations.asp
+
+Por lo general se usa la propiedad /position: relative/ en un elemento contenedor para luego poder animarlo usando las propiedades left, top, bottom, etc.
+
+* 10. Aceleración y curva de bezier
+
+En este vídeo vamos a aprender a dar aceleración y movimientos curvos a los elementos web por medio de animation-timing-function: ease
+
+*Usefull Web:* http://cubic-bezier.com/#.17,.67,.83,.67 
+
+* 11. Múltiples animaciones
+
+En este vídeo vamos a aprender a hacer múltiples animaciones y cómo trabajar en cada una para realizar movimientos más complejos en los elementos.
+
+Para nombrar más de una animación podemos nombrarlas en la misma línea de código:
+
+#+begin_src css
+  ...
+    animation-name: nombre1, nombre2;
+  ...
+#+end_src
+
+* 12. Detectar eventos de animaciones CSS desde JS
+
+En este vídeo vamos a ver cómo detectar el fin o inicio de una animación llamando al elemento desde JavaScript.
+
+También veremos cómo cambiar o encadenar animaciones de forma más programada escuchando los eventos del elemento animado a través también de JavaScript.
+
+* 13. Optimizar render con will-change y developer tools
+
+En este vídeo vamos a aprender a medir qué es lo que ocurre con las animaciones que estamos trabajando y cuánto le cuesta al navegador ejecutarlas.
+
+*Recuerda:* Inspeccionando desde la consola del navegador los elementos web podemos ver las propiedades de las animaciones y el render y visualizar nuevas modificaciones.
