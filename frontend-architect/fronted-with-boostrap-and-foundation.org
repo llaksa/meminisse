@@ -6,8 +6,8 @@ La documentación de Boostrap o Foundation es entendible. Así que aquí van una
 Foundation for Sites, Emails and Apps!
 Podemos usar la versión Custom Build para personalizar algunas características del framework antes de empezar a trabajar.
 
-*css/app.css:* Put all your styles here.
-*js/app.js:* Put all your aditional javascript of the project here.
+- *css/app.css:* Put all your styles here.
+- *js/app.js:* Put all your aditional javascript of the project here.
 
 *** 1. Grilla de Foundation
 
