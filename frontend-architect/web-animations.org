@@ -2,13 +2,13 @@
 
 *URL:* https://www.w3schools.com/css/css3_transitions.asp
 
-- To create a transition effect, you must specify two things:
+- *To create a transition effect, you must specify two things:*
 
 The CSS property you want to add an effect to.
 
 The duration of the effect.
 
-*CSS Transition Properties*
+- *CSS Transition Properties*
 
 The following table lists all the CSS transition properties:
 
@@ -18,7 +18,9 @@ The following table lists all the CSS transition properties:
 | *transition-delay*           | Specifies a delay (in seconds) for the transition effect                               |
 | *transition-duration*        | Specifies how many seconds or milliseconds a transition effect takes to complete       |
 | *transition-property*        | Specifies the name of the CSS property the transition effect is for                    |
-| *transition-timing-function* | Specifies the speed curve oThe will-change CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.f the transition effect |
+| *transition-timing-function* | Specifies the speed curve of the transition effect                                     |
+
+The *will-change* CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.
 
 * 2. Transiciones de interacción
 
@@ -28,8 +30,8 @@ Uso de /calc()/: https://www.w3schools.com/cssref/func_calc.asp
 
 *URL:* https://www.w3schools.com/cssref/css3_pr_transform.asp
 
-- Transformaciones de rotación
-- Transformaciones de traslación y perspectiva
+- *Transformaciones de rotación*
+- *Transformaciones de traslación y perspectiva*
 
 Para recordar:
 
@@ -39,7 +41,7 @@ Utilizamos la propiedad perspective para poder darle profundidad a un elemento y
 
 https://www.w3schools.com/cssref/css3_pr_perspective.asp
 
-- Transformaciones de escala
+- *Transformaciones de escala*
 
 Transform-scale nos permite modificar el tamaño de nuestros elementos a nuestro gusto.
 
@@ -49,7 +51,7 @@ La medición del tamaño de un elemento con scale, es la siguiente:
 
 1 = 100% del tamaño.
 
-- Transformaciones de sesgados
+- *Transformaciones de sesgados*
 
 Sesgar es esa inclinación que puede sufrir un elemento gracias a una transformación en CSS.
 
