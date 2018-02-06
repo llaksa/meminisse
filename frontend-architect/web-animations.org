@@ -4,8 +4,9 @@
 
 - To create a transition effect, you must specify two things:
 
-The CSS property you want to add an effect to
-The duration of the effect
+The CSS property you want to add an effect to.
+
+The duration of the effect.
 
 *CSS Transition Properties*
 
@@ -17,7 +18,7 @@ The following table lists all the CSS transition properties:
 | *transition-delay*           | Specifies a delay (in seconds) for the transition effect                               |
 | *transition-duration*        | Specifies how many seconds or milliseconds a transition effect takes to complete       |
 | *transition-property*        | Specifies the name of the CSS property the transition effect is for                    |
-| *transition-timing-function* | Specifies the speed curve of the transition effect                                     |
+| *transition-timing-function* | Specifies the speed curve oThe will-change CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.f the transition effect |
 
 * 2. Transiciones de interacción
 
@@ -33,6 +34,7 @@ Uso de /calc()/: https://www.w3schools.com/cssref/func_calc.asp
 Para recordar:
 
 Translate nos sirve para poder mover un elemento arriba, abajo, derecha e izquierda.
+
 Utilizamos la propiedad perspective para poder darle profundidad a un elemento y obtener un efecto 3D.
 
 https://www.w3schools.com/cssref/css3_pr_perspective.asp
@@ -40,19 +42,26 @@ https://www.w3schools.com/cssref/css3_pr_perspective.asp
 - Transformaciones de escala
 
 Transform-scale nos permite modificar el tamaño de nuestros elementos a nuestro gusto.
+
 La medición del tamaño de un elemento con scale, es la siguiente:
 
 0 = 0% del tamaño.
+
 1 = 100% del tamaño.
 
 - Transformaciones de sesgados
 
 Sesgar es esa inclinación que puede sufrir un elemento gracias a una transformación en CSS.
+
 Se puede sesgar un elemento tanto de un solo eje, como de ambos:
 
-transform: skew (x);
-transform: skew (y);
-transform: skew (x, y);
+#+begin_src css
+  ...
+    transform: skew (x);
+    transform: skew (y);
+    transform: skew (x, y);
+  ...
+#+end_src
 
 *** *URL 2D TRANSFORMS:* https://www.w3schools.com/css/css3_2dtransforms.asp
 *** *URL 3D TRANSFORMS:* https://www.w3schools.com/css/css3_3dtransforms.asp 
@@ -98,3 +107,21 @@ También veremos cómo cambiar o encadenar animaciones de forma más programada 
 En este vídeo vamos a aprender a medir qué es lo que ocurre con las animaciones que estamos trabajando y cuánto le cuesta al navegador ejecutarlas.
 
 *Recuerda:* Inspeccionando desde la consola del navegador los elementos web podemos ver las propiedades de las animaciones y el render y visualizar nuevas modificaciones.
+
+The *will-change* CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.
+
+*URL:* https://developer.mozilla.org/es/docs/Web/CSS/will-change
+
+* 14. Propiedades animables
+
+Existen muchas propiedades de los elementos web que se pueden animar, descarga el archivo y practica creando una animación con alguna de las propiedades que pueden ser animadas.
+
+*URL:* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+
+* 15. element.animate
+
+En este vídeo vamos a aprender cómo podemos crear animaciones desde JavaScript con element.animate, que es parte de la especificación del API de animaciones de JavaScript.
+
+Usando javascript, seleccionamos un elemento del DOM, luego aplicamos el metodo animate pasándole un vector de las transformaciones xss de inicio y fin, además de un objeto  json con las propiedades css de la animación. Luego se gurada todo ello en una variable(i. e. animation) y se agrega a los botones del DOM los addeventlisteners para que , por ejemplo, puedan iniciar, pausar, revertir, finalizar la animacion . esto ultimo se hace con los metodos play(), pause(), cancel(), reverse() :P
+
+* 16. 
