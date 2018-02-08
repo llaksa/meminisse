@@ -1,0 +1,328 @@
+* USEFULL GIT AND GITHUB COMANDS
+
+** 1. Configuration
+
+#+begin_src sh
+$ git config --global user.email "your@email.com"
+
+$ git config --global user.name "your@email.com"
+
+$ git config --global color.ui true
+#+end_src
+
+** 2. Git init (Creating repositories)
+
+This commands are equivalent procedures
+
+#+begin_src sh
+$ git init <some-directory-name>
+$ cd <some-directory-name>
+#+end_src
+
+#+begin_src sh
+$ cd <some-another-directory-name>
+$ git init
+#+end_src
+
+** 3. git add | rm | status (Agregando, quitando y viendo el estatus de archivos)
+
++ Check our *repository status*:
+
+- Working directory
+- Staging area
+- Git directory (repository)
+
+#+begin_src sh
+$ git status
+#+end_src
+
++ Adding a file to our staging area
+
+#+begin_src sh
+$ git add <name-of-file.algo>
+#+end_src
+
++ Adding all to our staging area
+
+#+begin_src sh
+$ git add -A
+#+end_src
+
++ Come back a file from stage area to working area (unstage)
+
+#+begin_src sh
+$ git rm --cached <some-file.algo>
+#+end_src
+
+#+begin_src sh
++ Erase some file from repository
+#+end_src
+
+#+begin_src sh
+$ git rm -f <some-file.algo>
+#+end_src
+
+I prefer the:
+
+#+begin_src sh
+$ rm -rf <some-file.algo>
+#+end_src
+
++ Check if a file exists in our directory
+
+#+begin_src sh
+$ git dd -n <some-file.algo>
+#+end_src
+
+I prefer the:
+
+#+begin_src sh
+$ ls -a
+#+end_src
+
+** 4. git commit (Confirmando cambios)
+
+This command also enables the files in the staging area to be send to our git area (repository)
+
+#+begin_src sh
+$ git commit -m "some string to remember this commit"
+#+end_src
+
+This command adds current changes to the last commit (Amend the last commit!)
+
+#+begin_src sh
+$ git commit --amend
+#+end_src
+
+** 5. git tag (Etiquetando confirmaciones)
+
+To know the <SHA>
+
+#+begin_src sh
+$ git log
+#+end_src
+
+Annotated tag
+
+#+begin_src sh
+$ git tag -a v1.4 -m "my version 1.4"
+#+end_src
+
+Lightweight tags
+
+#+begin_src sh
+$ git tag <number.version> <SHA>
+#+end_src
+
+Deleting tags
+
+#+begin_src sh
+$ git tag -d <number.version>
+#+end_src
+
+Rename tag
+
+#+begin_src sh
+$ git tag -f -a <number.version> -m <some-message> <SHA>
+#+end_src
+
+** 6. git log (Revisando la historia de nuestro proyecto)
+
+To know the <SHA>, the Author, the Date
+
+#+begin_src sh
+$ git log
+#+end_src
+
+To personalize logs
+
+*<options>:*
+
+| --oneline | Show just small SHAs and commits |
+| --graph   | Show a graphic like a time line  |
+
+#+begin_src sh
+$ git log <option-1> <option-2> ... <option-n>
+#+end_src
+
+** 7. git diff (Revisando los cambios entre versiones)
+
+What changes are there between the current state and the commit of <some-SHA>?:
+
+#+begin_src sh
+$ git diff <some-SHA> 
+#+end_src
+
+Dont think in the timeline and tell me... What changes there are *from <some-SHA> / <some-tag>* commit, in comparison *to <another-SHA> / <another-tag>* commit?:
+
+#+begin_src sh
+$ git diff <some-SHA> <another-SHA> 
+#+end_src
+
+#+begin_src sh
+$ git diff <some-tag> <another-tag> 
+#+end_src
+
+** 8. git reset -- soft
+
+Delete the commits from this and onwards
+
+#+begin_src sh
+$ git reset --soft <SHA>
+#+end_src
+
+** 9. git reset -- mixed
+
+Come back the files from git area (repository) to working area
+
+#+begin_src sh
+$ git reset --mixed <SHA>
+#+end_src
+
+** 10. git reset -- hard
+
+Erase all (commits and files) in staging area
+
+#+begin_src sh
+$ git reset --hard
+#+end_src
+
+Come back to the commit of <SHA1>
+
+#+begin_src sh
+$ git reset --hard <SHA1>
+#+end_src
+
+We should make a backup file of our /log/ file for prevention
+
+#+begin_src sh
+$ git log > log.txt
+$ git log--oneline --decorate > log.txt
+#+end_src
+
+** 11. Desafío: Configurar otro editor de texto
+
+#+begin_src sh
+$ git config --global core.editor "<name-of-editor> --wait"
+#+end_src
+
+For emacs
+
+#+begin_src sh
+$ git config --global core.editor "emacs -nw"
+#+end_src
+
+** 12. git branch (Múltiples variantes del repositorio)
+
+Create a branch
+
+#+begin_src sh
+$ git branch <name-of-branch>
+#+end_src
+
+Show all branchs
+
+#+begin_src sh
+$ git branch -l
+#+end_src
+
+Erase branch whitout commits
+
+#+begin_src sh
+$ git branch -d <name-of-branch>
+#+end_src
+
+Erase branch whit or whitout commits
+
+#+begin_src sh
+$ git branch -D <name-of-branch>
+#+end_src
+
+Rename a branch
+
+#+begin_src sh
+$ gut branch -m <name-of-branch> <new-name-of-branch>
+#+end_src
+
+** 13. git checkout (Moviéndonos entre ramas y versiones)
+
+Change our state to another branch
+
+#+begin_src sh
+$ git checkout <name-of-branch>
+#+end_src
+
+Change our state to another SHA1
+
+#+begin_src sh
+$ git checkout <SHA1> 
+#+end_src
+
+Create and change our state to a new branch
+
+#+begin_src sh
+$ git checkout -b <new-name-of-branch>
+#+end_src
+
+** 14. Trabajando entre ramas 
+
+Untracked files (files in our working area) are not in any branch, indeed, does not matter in which branch we are, our files in the working area will always be the same.
+
+** 15. git merge (Mezclando ramas y resolviendo conflictos)
+
+Merge <name-of-branch> with the current branch
+
+$ git merge <name-of-branch>
+
+fast-forward: Automatic merge
+recursive/auto-merging: ambas ramas salieron al mismo tiempo y hay algo nuevo en la rama que la otra no recuerda, por eso hace la mezcla recursiva.
+manual merge: muestra los conflictos en los archivos y debemos editar manualmente. Lueg agregar los cmabios con git add -A y hacer git commit -m "algo" para implementar el merge manual.
+
+** 16. git rebase (Reescribe la historia de tu proyecto)
+
+Reorganiza los archivos de manera que a los commits de nuestra current branch se agreguen los commits de una rama específica, como si todo hubiera sido hecho linealmente, sin uso de ramas.
+
+*USAR SOLO EN LOCAL*
+
+https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Reorganizando-el-trabajo-realizado
+
+** 17. git stash (Guardando cambios temporalmente)
+
+Guarda los tracked (not untracked) files del working area y permite que podamos cambiar de rama sin hacer git commit
+
+$ git stash
+
+$ git stash list
+
+$ git stash drop
+
+Aplica los cambios del tash 0 = CTRL + Save, sin hacer git commit
+
+$ git stash apply
+
+Aplica los cambios de un tash específico = CTRL + SAVE, sin hacer git commit
+
+$ git stash apply <codigo>
+
+** 18. Cherry pick eligiendo commits selectivamente
+
+git cherry-pick [SHA1] nos permite cambiar un commit a otra rama para salvarnos la vida.
+
+** 21. Añadiendo una llave ssh a GitHub
+
+$ git ssh-keygen -t rsa -b 4096 -C "irvin.jair.pg@gmail.com"
+
+$ pbcopy < ~/.ssh/id_rsa.pub
+
+Y agregar la llave ssh a github
+
+** 22. git remote (Añadiendo un repositorio remoto a uno local)
+
+$ git remote add origin <link-of-github>
+
+$ git remote -v
+
+$ git remove remote origin
+
+** 23. git pull/fetch (Trayendo cambios desde el repositorio remoto)
+

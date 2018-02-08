@@ -17,7 +17,7 @@ The following table lists all the CSS transition properties:
 | *transition* 	               | A shorthand property for setting the four transition properties into a single property |
 | *transition-delay*           | Specifies a delay (in seconds) for the transition effect                               |
 | *transition-duration*        | Specifies how many seconds or milliseconds a transition effect takes to complete       |
-| *transition-property*        | Specifies the name of the CSS property the transition effect is for                    |
+| *transition-property*        | Specifies the name of the CSS property the transition effec ¿Cuál de las siguientes propiedades nos ayuda a percibir las transformaciones en tres dimensiones? t is for                    |
 | *transition-timing-function* | Specifies the speed curve of the transition effect                                     |
 
 The *will-change* CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required.
@@ -630,7 +630,7 @@ Propiedades destacadas:
     }
     .btn:active {
       transform: scale(.9);
-    }
+/    }
   </style>
 </head>
 <body>
@@ -657,4 +657,190 @@ Propiedades destacadas:
 </html>
 #+end_src 
 
-* 21. 
+* 21. Cursillo fast de REACT
+
+- Si bien en HTML puro da igual si cerramos una etiqueta, por ejemplo, como /input/. En React *debemos* cerrar siempre los elementos que usemos.
+
+- Se usa /key={this.someDinamic.property}/ en las animaciones cuando usemos /import { CSSTransitionGroup } from 'react-transition-group'/
+
+- Se usa /className/ en lugar de /class/ para el HTML dentro de React porque como todo se usa dentro de un objeto javascript, la palabra /class/ está reservada para la creación de objetos en React
+
+- Es usual usar el /index/ del método *.map()* de los arrays como valor del /key={index}/ en react
+
+- Usefull CSS properties: list-style-position, counter-reset, counter-increment
+
+
+
+
+
+
+
+
+
+
+
+
+transiciones CSS
+transition-delay transition-duration transition-property transition-timing-function
+
+
+
+¿Cuáles son los valores mínimos que necesita una animación?
+tiempos y keyframes
+
+
+animaciones CSS
+ /* The animation code */
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+} 
+
+
+
+
+ ¿Cuál de las siguientes propiedades nos ayuda a percibir las transformaciones en tres dimensiones? 
+perspective
+
+
+
+Cual es la curva de bezier más aproximada para lograr el siguiente resultado de rebote
+
+5 -1 5 -1
+
+
+
+
+transition de entrada
+enter enter-active
+
+
+
+animation fill mode
+
+
+
+
+¿Cuál es la pseudoclase css que se activa al pulsar un elemento <button>?
+hover NOOOOOOOOOOOOOOOOOOOOOOO
+ACTIVE SIIIIIIIIIIIIIIII
+
+
+
+¿Gracias a qué propiedad de animaciones CSS podemos dar la impresión de usar un sprite como si fuera un gif?
+animation-steps NOOOOOOOOOOOOOOOOO
+animation fill mode
+
+
+¿Cuál es el valor por defecto de animation-direction?
+normal
+
+
+¿Cuáles son los valores mínimos que necesita una transición?
+duracion y propiedades ESTA BIEN PERO REVISAR OTRA OPCIONNNNN
+
+
+
+
+animation-timing-function
+FOrwards
+
+
+
+
+¿Con qué propiedad podemos hacer que una animación se quede en su estado final al momento de terminarse?
+animation play state
+
+
+
+
+¿Con qué propiedad podemos hacer que una animación se quede en su estado final al momento de terminarse?
+con coma: ,
+
+
+
+Qué keyframes corresponden a mover la caja roja de izquierda a derecha si tenemos en cuenta que la caja tiene posición absoluta y un ancho de 50px 
+la de 10%% - 50px NOOOOOOOOOOOOOO
+
+
+
+
+
+
+
+¿Cuál es el conjunto de clases que se necesitan para manejar una transición de salida en React?
+leave y leave-active
+
+
+
+
+will change
+
+
+¿Cuáles son los valores permitidos como keyframes?
+ % from to
+
+
+
+
+
+¿Cuál es el valor por defecto de animation-iteration-count?
+1
+
+
+Teniendo una instancia de element.animate llamada “animation” con qué metodo puedo pausar la animación
+pause()
+
+
+
+transition-property
+
+
+
+
+element.animate(keyframes, options); 
+
+
+easing: aceleracion
+
+
+
+100% 100%
+
+
+
+
+¿Cual es el valor por defecto de animation-timing-function?
+ease
+
+
+
+
+timing foucntion
+aceleracion
+
+
+
+
+
+no aceleracion
+linear
+
+
+
+
+
+
+
+
+    animationstart - occurs when the CSS animation has started
+    animationiteration - occurs when the CSS animation is repeated
+    animationend - occurs when the CSS animation has completed
