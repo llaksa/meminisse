@@ -736,8 +736,7 @@ ACTIVE SIIIIIIIIIIIIIIII
 
 
 ¿Gracias a qué propiedad de animaciones CSS podemos dar la impresión de usar un sprite como si fuera un gif?
-animation-steps NOOOOOOOOOOOOOOOOO
-animation fill mode
+animation-timing-position
 
 
 ¿Cuál es el valor por defecto de animation-direction?
@@ -757,7 +756,10 @@ FOrwards
 
 
 ¿Con qué propiedad podemos hacer que una animación se quede en su estado final al momento de terminarse?
-animation play state
+animation fill mode
+
+
+
 
 
 
@@ -844,3 +846,20 @@ linear
     animationstart - occurs when the CSS animation has started
     animationiteration - occurs when the CSS animation is repeated
     animationend - occurs when the CSS animation has completed
+    animationcancel
+
+
+
+
+¿Cuál de estas no es una propiedad de transición CSS?
+transition-title
+
+¿Cuál de estas no es una propiedad de animation CSS?
+animation-title
+
+
+
+
+
+Qué keyframes corresponden a mover la caja roja de izquierda a derecha si tenemos en cuenta que la caja tiene posición absoluta y un ancho de 50px 
+el que dice right: calc(100%-50px); y right: 0;

@@ -322,7 +322,65 @@ $ git remote add origin <link-of-github>
 
 $ git remote -v
 
-$ git remove remote origin
+$ git remote remove origin
 
 ** 23. git pull/fetch (Trayendo cambios desde el repositorio remoto)
 
+Traer los archivos del repo remoto
+
+$ git fetch origin master
+
+Unir repo local master con repo origin/master remoto
+
+$ git merge origin/master --allow-unrelated-histories
+
+Traer los archivos del repo remoto y hacer un merge en un solo comando
+
+$ git pull origin master
+
+** 24. git push (Enviando cambios al repositorio remoto)
+
+Send just the master branch with the current tag
+
+$ git push origin master
+
+Send the master with all tags
+
+$ git push origin master --tag
+
+Send a especific branch
+
+$ git push origin <name-of-branch>
+
+** 25. GitHub Projects, el SCRUM de GitHub
+
+GitHub tiene unas herramientas increíbles para nuestros proyectos. Una de estas herramientas es el projects de GitHub, la cual nos da la posibilidad de tener un mayor control del desarrollo de nuestro proyecto.
+Aquí como en la metodología de SCRUM tenemos la posibilidad de saber qué tenemos pendiente por hacer, cuáles son las features que se encuentran en desarrollo, identificar los bugs que emergen de nuestro proyecto, y los features que debemos revisar.
+
+** 26. Creando un template para issues
+
+Lo ideal es que siempre que creemos un proyecto tengamos un template para enviar pull requests o cuando tengamos issues.
+
+** 27. Creando un template para Pull Request
+
+GitHub permite usar templates a la hora de generar Pull Request
+
+    Crear archivo llamado pull_request_template.md
+    Definir los lineamientos usando sintaxis markdown
+    Hacer commit
+
+Ahora todo será mas ordenado cuando generen contribuciones a tu proyecto.
+
+** 28. .gitignore (Ignorando archivos no deseados)
+
+https://www.gitignore.io/
+
+dentro de .gitignore agregar por ejempplo node_modules
+
+** 29. Pull Request (Colabora a proyectos externos)
+
+Un Pull Request es una solicitud para que el dueño del repositorio realice los cambios que estas proponiendo. Estos nunca se hacen a la rama master, para evitar inconvenientes.
+
+Es la base de la colaboración Open Source en github
+
+** 30. 

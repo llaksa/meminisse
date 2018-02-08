@@ -1,0 +1,4 @@
+* Tips and Tricks of jQuery
+
+*USEFULL WEB:* https://www.w3schools.com/jquery/default.asp
+
