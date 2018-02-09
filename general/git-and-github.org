@@ -280,7 +280,7 @@ $ git merge <name-of-branch>
 |----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------|
 | Fast-forward                     | Automatic merge                                                                                                                                    |
 | Recursive/auto-merging           | Ambas ramas salieron al mismo tiempo y hay algo nuevo en la rama que la otra no recuerda.                                                          |
-| Manual merge                     | Debemos editar y decidir manualmente con qué cambios nos quedamos. Luego /$ git add -A/, después /$ git commit -m "algo"/ y el merge estará listo. |
+| Manual merge                     | Debemos editar y decidir manualmente con qué cambios nos quedamos. Luego /$ git add .../, después /$ git commit .../ y el merge estará listo. |
 
 ** 16. git rebase (Reescribe la historia de tu proyecto)
 
