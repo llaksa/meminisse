@@ -8,7 +8,7 @@ The CSS property you want to add an effect to.
 
 The duration of the effect.
 
-- *CSS Transition Properties*
+ *CSS Transition Properties*
 
 The following table lists all the CSS transition properties:
 
