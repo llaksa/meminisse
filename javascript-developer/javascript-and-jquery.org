@@ -2,3 +2,14 @@
 
 *USEFULL WEB:* https://www.w3schools.com/jquery/default.asp
 
+- To know if A is equivalent to B
+
+A == B
+
+- To know if A and B are the same
+
+A === B
+ 
+- Uso de selectores en jQuery are like CSS selectors
+
+
