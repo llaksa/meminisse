@@ -26,7 +26,7 @@ $ git init
 
 ** 3. git add | rm | status (Agregando, quitando y viendo el estatus de archivos)
 
-+ Check our *repository status*:
+Check our *repository status*:
 
 - Working directory
 - Staging area
@@ -36,19 +36,19 @@ $ git init
 $ git status
 #+end_src
 
-+ Adding a file to our staging area
+Adding a file to our staging area
 
 #+begin_src sh
 $ git add <name-of-file.algo>
 #+end_src
 
-+ Adding all to our staging area
+Adding all to our staging area
 
 #+begin_src sh
 $ git add -A
 #+end_src
 
-+ Come back a file from stage area to working area (unstage)
+Come back a file from stage area to working area (unstage)
 
 #+begin_src sh
 $ git rm --cached <some-file.algo>
@@ -62,19 +62,19 @@ $ git rm --cached <some-file.algo>
 $ git rm -f <some-file.algo>
 #+end_src
 
-I prefer the:
+/I prefer the:/
 
 #+begin_src sh
 $ rm -rf <some-file.algo>
 #+end_src
 
-+ Check if a file exists in our directory
+Check if a file exists in our directory
 
 #+begin_src sh
 $ git dd -n <some-file.algo>
 #+end_src
 
-I prefer the:
+/I prefer the:/
 
 #+begin_src sh
 $ ls -a
@@ -136,8 +136,8 @@ $ git log
 
 To personalize logs
 
-*<options>:*
-
+| *Option*  | *Description*                    |
+|-----------+----------------------------------|
 | --oneline | Show just small SHAs and commits |
 | --graph   | Show a graphic like a time line  |
 
@@ -272,17 +272,21 @@ Untracked files (files in our working area) are not in any branch, indeed, does 
 
 Merge <name-of-branch> with the current branch
 
+#+begin_src sh
 $ git merge <name-of-branch>
+#+end_src
 
-fast-forward: Automatic merge
-recursive/auto-merging: ambas ramas salieron al mismo tiempo y hay algo nuevo en la rama que la otra no recuerda, por eso hace la mezcla recursiva.
-manual merge: muestra los conflictos en los archivos y debemos editar manualmente. Lueg agregar los cmabios con git add -A y hacer git commit -m "algo" para implementar el merge manual.
+| *Git methods to resolve a merge* | *Description*                                                                                                                                                                              |
+|----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Fast-forward                     | Automatic merge                                                                                                                                                                            |
+| Recursive/auto-merging           | Ambas ramas salieron al mismo tiempo y hay algo nuevo en la rama que la otra no recuerda.                                                                                                  |
+| Manual merge                     | Muestra los conflictos en los archivos por lo que debemos editar y decidir manualmente con qué cambios nos quedamos. Luego /git add -A/ -> /git commit -m "algo"/ y el merge estará listo. |
 
 ** 16. git rebase (Reescribe la historia de tu proyecto)
 
 Reorganiza los archivos de manera que a los commits de nuestra current branch se agreguen los commits de una rama específica, como si todo hubiera sido hecho linealmente, sin uso de ramas.
 
-*USAR SOLO EN LOCAL*
+*DE PREFERENCIA USAR SOLO EN LOCAL*
 
 https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Reorganizando-el-trabajo-realizado
 
@@ -290,19 +294,29 @@ https://git-scm.com/book/es/v1/Ramificaciones-en-Git-Reorganizando-el-trabajo-re
 
 Guarda los tracked (not untracked) files del working area y permite que podamos cambiar de rama sin hacer git commit
 
+#+begin_src sh
 $ git stash
+#+end_src
 
+#+begin_src sh
 $ git stash list
+#+end_src
 
+#+begin_src sh
 $ git stash drop
+#+end_src
 
-Aplica los cambios del tash 0 = CTRL + Save, sin hacer git commit
+Aplica los cambios del tash /like a CTRL + Save/, sin necesidad de hacer un commit
 
+#+begin_src sh
 $ git stash apply
+#+end_src
 
-Aplica los cambios de un tash específico = CTRL + SAVE, sin hacer git commit
+Aplica los cambios de un tash específico /like a CTRL + SAVE/, sin necesidad de hacer un commit
 
+#+begin_src sh
 $ git stash apply <codigo>
+#+end_src
 
 ** 18. Cherry pick eligiendo commits selectivamente
 
@@ -310,47 +324,73 @@ git cherry-pick [SHA1] nos permite cambiar un commit a otra rama para salvarnos 
 
 ** 21. Añadiendo una llave ssh a GitHub
 
+#+begin_src sh
 $ git ssh-keygen -t rsa -b 4096 -C "irvin.jair.pg@gmail.com"
 
 $ pbcopy < ~/.ssh/id_rsa.pub
+#+end_src
 
 Y agregar la llave ssh a github
 
 ** 22. git remote (Añadiendo un repositorio remoto a uno local)
 
+Add a remote repo to a local repo
+
+#+begin_src sh
 $ git remote add origin <link-of-github>
+#+end_src
 
+Show the added remote repo
+
+#+begin_src sh
 $ git remote -v
+#+end_src
 
+Remove a remote repo from the local repo
+
+#+begin_src sh
 $ git remote remove origin
+#+end_src
 
 ** 23. git pull/fetch (Trayendo cambios desde el repositorio remoto)
 
 Traer los archivos del repo remoto
 
+#+begin_src sh
 $ git fetch origin master
+#+end_src
 
 Unir repo local master con repo origin/master remoto
 
+#+begin_src sh
 $ git merge origin/master --allow-unrelated-histories
+#+end_src
 
 Traer los archivos del repo remoto y hacer un merge en un solo comando
 
+#+begin_src sh
 $ git pull origin master
+#+end_src
 
 ** 24. git push (Enviando cambios al repositorio remoto)
 
 Send just the master branch with the current tag
 
+#+begin_src sh
 $ git push origin master
+#+end_src
 
 Send the master with all tags
 
+#+begin_src sh
 $ git push origin master --tag
+#+end_src
 
 Send a especific branch
 
+#+begin_src sh
 $ git push origin <name-of-branch>
+#+end_src
 
 ** 25. GitHub Projects, el SCRUM de GitHub
 
@@ -365,9 +405,9 @@ Lo ideal es que siempre que creemos un proyecto tengamos un template para enviar
 
 GitHub permite usar templates a la hora de generar Pull Request
 
-    Crear archivo llamado pull_request_template.md
-    Definir los lineamientos usando sintaxis markdown
-    Hacer commit
+1) Crear archivo llamado pull_request_template.md
+2) Definir los lineamientos usando sintaxis markdown
+3) Hacer commit
 
 Ahora todo será mas ordenado cuando generen contribuciones a tu proyecto.
 
@@ -375,7 +415,11 @@ Ahora todo será mas ordenado cuando generen contribuciones a tu proyecto.
 
 https://www.gitignore.io/
 
-dentro de .gitignore agregar por ejempplo node_modules
+(I. E.) To ignore the /node_modules/ files of a nodeJS project
+
+#+begin_src
+$ echo "node_modules" > .gitignore
+#+end_src
 
 ** 29. Pull Request (Colabora a proyectos externos)
 
@@ -383,4 +427,10 @@ Un Pull Request es una solicitud para que el dueño del repositorio realice los 
 
 Es la base de la colaboración Open Source en github
 
-** 30. 
+** 30 A tener en cuenta
+
+- Pull Request
+
+- Issues y Milestones
+
+- Github Pages y el dominio personalizado
