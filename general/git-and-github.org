@@ -276,11 +276,11 @@ Merge <name-of-branch> with the current branch
 $ git merge <name-of-branch>
 #+end_src
 
-| *Git methods to resolve a merge* | *Description*                                                                                                                                                                              |
-|----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Fast-forward                     | Automatic merge                                                                                                                                                                            |
-| Recursive/auto-merging           | Ambas ramas salieron al mismo tiempo y hay algo nuevo en la rama que la otra no recuerda.                                                                                                  |
-| Manual merge                     | Muestra los conflictos en los archivos por lo que debemos editar y decidir manualmente con qué cambios nos quedamos. Luego /git add -A/ -> /git commit -m "algo"/ y el merge estará listo. |
+| *Git methods to resolve a merge* | *Description*                                                                                                                                      |
+|----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Fast-forward                     | Automatic merge                                                                                                                                    |
+| Recursive/auto-merging           | Ambas ramas salieron al mismo tiempo y hay algo nuevo en la rama que la otra no recuerda.                                                          |
+| Manual merge                     | Debemos editar y decidir manualmente con qué cambios nos quedamos. Luego /$ git add -A/, después /$ git commit -m "algo"/ y el merge estará listo. |
 
 ** 16. git rebase (Reescribe la historia de tu proyecto)
 
@@ -395,6 +395,7 @@ $ git push origin <name-of-branch>
 ** 25. GitHub Projects, el SCRUM de GitHub
 
 GitHub tiene unas herramientas increíbles para nuestros proyectos. Una de estas herramientas es el projects de GitHub, la cual nos da la posibilidad de tener un mayor control del desarrollo de nuestro proyecto.
+
 Aquí como en la metodología de SCRUM tenemos la posibilidad de saber qué tenemos pendiente por hacer, cuáles son las features que se encuentran en desarrollo, identificar los bugs que emergen de nuestro proyecto, y los features que debemos revisar.
 
 ** 26. Creando un template para issues
@@ -415,9 +416,9 @@ Ahora todo será mas ordenado cuando generen contribuciones a tu proyecto.
 
 https://www.gitignore.io/
 
-(I. E.) To ignore the /node_modules/ files of a nodeJS project
+(i. e.) To ignore the /node_modules/ files of a nodeJS project
 
-#+begin_src
+#+begin_src sh
 $ echo "node_modules" > .gitignore
 #+end_src
 
