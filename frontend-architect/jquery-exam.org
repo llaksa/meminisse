@@ -1,0 +1,124 @@
+
+for each : 
+
+
+Si agregamos un event handler a ciertos elementos en el DOM sin la técnica de burbujeo de eventos:
+
+
+attr
+sobre todos los elemntos
+
+
+
+ Cuando hacemos una selección con jQuery, por más que se encuentren elementos en el DOM o no:
+obtenemos un array NOOOOOOOOOOOO
+
+
+
+ Para agregar un efecto para que un elemento aparezca en pantalla lentamente podemos hacer: 
+articlefadein 1000
+
+
+
+Con jQuery para iniciar a ejecutar una función llamada fn luego de que termine de cargar el DOM, podemos utilizar:
+document.ready(fn)
+
+
+
+
+Toda las funcionalidades de jQuery:
+la mas larga
+
+
+
+
+jQuery es un/a ___________
+libreria
+
+
+
+
+manifiesto NPM
+package.json
+
+
+
+
+
+
+Para agregar un event handler anónimo al evento click de un botón con ID "myButton", podemos hacer:
+click(function() {})
+
+
+
+
+
+
+
+Para insertar un objeto de jQuery que tenemos en una variable llamada $p dentro de un elemento con ID "productos", hacemos:
+appendTo(products)
+
+
+
+
+
+
+ La funcionalidad de jQuery es: 
+manipular dom, interaccion sencilla con servidor web
+
+
+
+
+
+
+Para escribir código en ES2015 (el nuevo stándard de ECMAScript) podemos utilizar:
+babelify
+
+
+
+
+Para saber si una selección obtuvo algún elemento, podemos hacer:
+if ($miseleccion) NOOOOO
+
+
+
+
+El intercambio de datos entre el frontend y el backend se suele hacer  mediante...
+API REST y requests HTTP
+
+
+
+
+
+
+Para obtener el texto ingresado por el usuario en un input con ID 'nombre' podemos escribir el siguiente código: 
+.val()
+
+
+
+
+
+Los métodos getter, como: $('img').attr('src')
+primer elemento
+
+
+
+
+
+Si agregamos un event handler a ciertos elementos en el DOM sin la técnica de burbujeo de eventos:
+selecciones no están vivas
+
+
+
+
+Modificar el DOM:
+
+
+
+
+
+
+Para crear nuevos elementos del DOM, como por ejemplo un  <a href="https://platzi.com" target="_blank"> con jQuery podemos hacer:
+'a' href https="" NOOOOOOOOOOOO
+
+
