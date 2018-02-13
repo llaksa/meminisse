@@ -71,21 +71,25 @@ M - M
 
 - 3) Gráfica de entidades y relaciones: un diagrama conceptual inicial
 
-PD: Hasta aquí se debe realizar una revisión de las relaciones y entidades para depurar y aplicar los cambios respectivos (metodologíad el diseño)
+PD: Hasta aquí se debe realizar una revisión de las relaciones y entidades para depurar y aplicar los cambios respectivoshttps://www.youtube.com/ (metodologíad el diseño)
 
 - 4) Atributo - Tipo - Obligatorio - Llave Primaria
 
-(I. E.) Para la entidad: *Cliente*
+(I. E.)
 
-| Atributo        | Tipo         | Obligaatorio | Llave Primaria |
-|-----------------+--------------+--------------+----------------|
-| ID              | Serial       | X            | X              |
-| cuentaPlatzi    | varchar(60)  | X            | X              |
-| nombre          | varchar(80   | X            |                |
-| fechaInicio     | timestamp    | X            |                |
-| correo          | varchar(60)  |              |                |
-| fechaNacimiento | timestamp    |              |                |
-| preferencias    | varchar(300) |              |                |
+Para la entidad: *Cliente*
+
+|                                  *CLIENTE*                             |
+|-------------------------+--------------+--------------+----------------|
+| Atributo                | Tipo         | Obligaatorio | Llave Primaria |
+|-------------------------+--------------+--------------+----------------|
+| cliente_ID              | Serial       | X            | X              |
+| cliente_cuentaPlatzi    | varchar(60)  | X            | X              |
+| cliente_nombre          | varchar(80   | X            |                |
+| cliente_fechaInicio     | timestamp    | X            |                |
+| cliente_correo          | varchar(60)  |              |                |
+| cliente_fechaNacimiento | timestamp    |              |                |
+| cliente_preferencias    | varchar(300) |              |                |
 
 - 5) diagrama conceptual final
 - 6) diagrama del modelo lógico
