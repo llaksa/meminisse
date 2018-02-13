@@ -25,12 +25,12 @@ Datos importantes:
 El símbolo con el que representamos la característica “de uno a muchos” es con la llamada pata de gallo, que gráficamente es una línea continua con dos líneas en 45 grados en cada lado.
 John
 
-0 - 1
-1 - 0
-1 - 1
-0 - M
-1 - M
-M - M 
+- 0 - 1
+- 1 - 0
+- 1 - 1
+- 0 - M
+- 1 - M
+- M - M 
 
 
 * 9. Modelamiento según metofología Barker
@@ -39,6 +39,8 @@ M - M
 
 (I. E.) :
 
+| ENTIDADES    |
+|--------------|
 | Carrito      |
 |--------------|
 | Item         |
@@ -55,25 +57,25 @@ M - M
 
 (I. E.) :
 
-|              | CLiente | Item  | métodoCompra | métodoPago | Proveedor | Carrito |
-|--------------+---------+-------+--------------+------------+-----------+---------|
-| Cliente      | X       | x     | x            | x          | x         | 0 - M   |
-|--------------+---------+-------+--------------+------------+-----------+---------|
-| Item         | X       | X     | X            | X          | 1 - M     | 0 - M   |
-|--------------+---------+-------+--------------+------------+-----------+---------|
-| métodoCompra | X       | X     | X            | X          | X         | 0 - M   |
-|--------------+---------+-------+--------------+------------+-----------+---------|
-| métodoPago   | X       | X     | X            | X          | X         | 0 - M   |
-|--------------+---------+-------+--------------+------------+-----------+---------|
-| Proveedor    | X       | 0 - M | X            | X          | X         | X       |
-|--------------+---------+-------+--------------+------------+-----------+---------|
-| Carrito      | 1 - 1   | 1 - M | 1 - 1        | 1 - 1      | X         | X       |
+|                | CLiente | Item  | métodoCompra | métodoPago | Proveedor | Carrito |
+|----------------+---------+-------+--------------+------------+-----------+---------|
+| *Cliente*      | X       | x     | x            | x          | x         | 0 - M   |
+|----------------+---------+-------+--------------+------------+-----------+---------|
+| *Item*         | X       | X     | X            | X          | 1 - M     | 0 - M   |
+|----------------+---------+-------+--------------+------------+-----------+---------|
+| *métodoCompra* | X       | X     | X            | X          | X         | 0 - M   |
+|----------------+---------+-------+--------------+------------+-----------+---------|
+| *métodoPago*   | X       | X     | X            | X          | X         | 0 - M   |
+|----------------+---------+-------+--------------+------------+-----------+---------|
+| *Proveedor*    | X       | 0 - M | X            | X          | X         | X       |
+|----------------+---------+-------+--------------+------------+-----------+---------|
+| *Carrito*      | 1 - 1   | 1 - M | 1 - 1        | 1 - 1      | X         | X       |
 
 - 3) Gráfica de entidades y relaciones: un diagrama conceptual inicial
 
 PD: Hasta aquí se debe realizar una revisión de las relaciones y entidades para depurar y aplicar los cambios respectivoshttps://www.youtube.com/ (metodologíad el diseño)
 
-- 4) Atributo - Tipo - Obligatorio - Llave Primaria
+- 4) Atributo - Tipo - Obligatorio - Llave Primaria de cada Entidad
 
 (I. E.)
 
