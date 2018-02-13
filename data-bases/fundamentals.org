@@ -17,13 +17,13 @@ Ubicación     => texto
 
 Para definir una Relación tenemos que tener en cuenta los siguientes puntos:
 
-    La obligatoriedad. Ésta se denota con una línea continua.
-    Opcional. Se representa con una línea punteada.
+*/La obligatoriedad:/* Ésta se denota con una línea continua.
+
+*/Opcional:/* Se representa con una línea punteada.
 
 Datos importantes:
 
-El símbolo con el que representamos la característica “de uno a muchos” es con la llamada pata de gallo, que gráficamente es una línea continua con dos líneas en 45 grados en cada lado.
-John
+El símbolo con el que representamos la característica “de uno a muchos” es con la llamada pata de gallo, que gráficamente es una línea continua con dos líneas en 45 grados en cada lado. Las relaciones son.
 
 - 0 - 1
 - 1 - 0
@@ -32,12 +32,11 @@ John
 - 1 - M
 - M - M 
 
-
 * 9. Modelamiento según metofología Barker
 
-- 1) Identificar las entidades
-
 (I. E.) :
+
+*1) Identificar las entidades*
 
 | ENTIDADES    |
 |--------------|
@@ -53,9 +52,7 @@ John
 |--------------|
 | Proveedor    |
 
-- 2) Cardinalidad de las relaciones (0-1, 1-0, 1-1, 0-M, 1-M, M-M)
-
-(I. E.) :
+*2) Cardinalidad de las relaciones (0-1, 1-0, 1-1, 0-M, 1-M, M-M)*
 
 |                | CLiente | Item  | métodoCompra | métodoPago | Proveedor | Carrito |
 |----------------+---------+-------+--------------+------------+-----------+---------|
@@ -63,41 +60,57 @@ John
 |----------------+---------+-------+--------------+------------+-----------+---------|
 | *Item*         | X       | X     | X            | X          | 1 - M     | 0 - M   |
 |----------------+---------+-------+--------------+------------+-----------+---------|
-| *métodoCompra* | X       | X     | X            | X          | X         | 0 - M   |
+| *mCompra* | X       | X     | X            | X          | X         | 0 - M   |
 |----------------+---------+-------+--------------+------------+-----------+---------|
-| *métodoPago*   | X       | X     | X            | X          | X         | 0 - M   |
+| *mPago*   | X       | X     | X            | X          | X         | 0 - M   |
 |----------------+---------+-------+--------------+------------+-----------+---------|
 | *Proveedor*    | X       | 0 - M | X            | X          | X         | X       |
 |----------------+---------+-------+--------------+------------+-----------+---------|
 | *Carrito*      | 1 - 1   | 1 - M | 1 - 1        | 1 - 1      | X         | X       |
 
-- 3) Gráfica de entidades y relaciones: un diagrama conceptual inicial
+*3) Gráfica de entidades y relaciones: un diagrama conceptual inicial*
 
-PD: Hasta aquí se debe realizar una revisión de las relaciones y entidades para depurar y aplicar los cambios respectivoshttps://www.youtube.com/ (metodologíad el diseño)
+*PD:* Hasta aquí se debe realizar una revisión de las relaciones y entidades para depurar y aplicar los cambios respectivos(metodologíad el diseño)
 
-- 4) Atributo - Tipo - Obligatorio - Llave Primaria de cada Entidad
+*4) Atributo - Tipo - Obligatorio - Llave Primaria de cada Entidad*
 
 (I. E.)
 
-Para la entidad: *Cliente*
+- Entidad *Cliente:*
 
-|                                  *CLIENTE*                             |
-|-------------------------+--------------+--------------+----------------|
-| Atributo                | Tipo         | Obligaatorio | Llave Primaria |
-|-------------------------+--------------+--------------+----------------|
-| cliente_ID              | Serial       | X            | X              |
-| cliente_cuentaPlatzi    | varchar(60)  | X            | X              |
-| cliente_nombre          | varchar(80   | X            |                |
-| cliente_fechaInicio     | timestamp    | X            |                |
-| cliente_correo          | varchar(60)  |              |                |
-| cliente_fechaNacimiento | timestamp    |              |                |
-| cliente_preferencias    | varchar(300) |              |                |
+| Atributo                | Tipo         | Obligatorio | Llave Primaria |
+|-------------------------+--------------+-------------+----------------|
+| cliente_ID              | Serial       | X           | X              |
+| cliente_cuentaPlatzi    | varchar(60)  | X           | X              |
+| cliente_nombre          | varchar(80   | X           |                |
+| cliente_fechaInicio     | timestamp    | X           |                |
+| cliente_correo          | varchar(60)  |             |                |
+| cliente_fechaNacimiento | timestamp    |             |                |
+| cliente_preferencias    | varchar(300) |             |                |
 
-- 5) diagrama conceptual final
-- 6) diagrama del modelo lógico
-- 7) Identificar nuevos atributos para las entidades débiles
-- 8) diagrama del modelo físico
-- 9) Pasar al estándar de la base de datos
+- Entidad *Item:*
+- Entidad *mCompra:*
+- Entidad *mPago:*
+- Entidad *Proveedor:*
+- Entidad *Carrito:*
+
+*5) diagrama conceptual final*
+
+
+
+*6) diagrama del modelo lógico*
+
+
+
+*7) Identificar nuevos atributos para las entidades débiles*
+
+
+
+*8) diagrama del modelo físico*
+
+
+
+*9) Pasar al estándar de la base de datos*
 
 | *Princípios*            | *Descripción*                                                                                                                                                                                                                                                                                                                      |
 |-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -119,10 +132,10 @@ Para la entidad: *Cliente*
 | 24 | ghi     |             110 |
 | 53 | jkl     |             111 |
 
-- 10) Recorrido *ARBOL*: Sigue la estructura de árbol B+. En este caso el recorrido sería 10 - abc - 100 - 18 - def - 101 - 24 - ghi - 110 - 53 - jkl - 111
-- 11) Recorrido *Columnar*: El recorrido empieza por una columna, en este caso sería 10 - 18 - 24 - 53 - abc - def - ghi - jkl - 100 - 101 - 110 - 111
+- Recorrido *ARBOL*: Sigue la estructura de árbol B+. En este caso el recorrido sería 10 - abc - 100 - 18 - def - 101 - 24 - ghi - 110 - 53 - jkl - 111
+- Recorrido *Columnar*: El recorrido empieza por una columna, en este caso sería 10 - 18 - 24 - 53 - abc - def - ghi - jkl - 100 - 101 - 110 - 111
 
 * 12. Otros tipos de Bases de Datos en la industria
 
-- 12) Grafos
-- 13) Distribuidas
+- Grafos
+- Distribuidas
