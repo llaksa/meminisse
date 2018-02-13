@@ -4,22 +4,25 @@ Es una abstracción del mundo real.
 
 Con notación Barker, una entidad se representa como una caja; la cual tiene atributos obligatorios o no obligatorios.
 
-(i. e.) Una casa:
+*(i. e.) Una casa:*
 
-*Casa*
-Num. ventanas => number
-Num. Puertas  => numer
-Color         => char(30)
-ID            => numer
-Ubicación     => texto
+Num. ventanas *=>* number
+
+Num. Puertas  *=>* numer
+
+Color         *=>* char(30)
+
+ID            *=>* numer
+
+Ubicación     *=>* texto
 
 * 8. ¿Qué es una Relación?
 
 Para definir una Relación tenemos que tener en cuenta los siguientes puntos:
 
-*/La obligatoriedad:/* Ésta se denota con una línea continua.
+*La obligatoriedad:* Ésta se denota con una línea continua.
 
-*/Opcional:/* Se representa con una línea punteada.
+*Opcional:* Se representa con una línea punteada.
 
 Datos importantes:
 
