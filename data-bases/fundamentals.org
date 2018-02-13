@@ -13,4 +13,110 @@ Color         => char(30)
 ID            => numer
 Ubicación     => texto
 
-* 8. 
+* 8. ¿Qué es una Relación?
+
+Para definir una Relación tenemos que tener en cuenta los siguientes puntos:
+
+    La obligatoriedad. Ésta se denota con una línea continua.
+    Opcional. Se representa con una línea punteada.
+
+Datos importantes:
+
+El símbolo con el que representamos la característica “de uno a muchos” es con la llamada pata de gallo, que gráficamente es una línea continua con dos líneas en 45 grados en cada lado.
+John
+
+0 - 1
+1 - 0
+1 - 1
+0 - M
+1 - M
+M - M 
+
+
+* 9. Modelamiento según metofología Barker
+
+- 1) Identificar las entidades
+
+(I. E.) :
+
+| Carrito      |
+|--------------|
+| Item         |
+|--------------|
+| Cliente      |
+|--------------|
+| métodoPago   |
+|--------------|
+| métodoCompra |
+|--------------|
+| Proveedor    |
+
+- 2) Cardinalidad de las relaciones (0-1, 1-0, 1-1, 0-M, 1-M, M-M)
+
+(I. E.) :
+
+|              | CLiente | Item  | métodoCompra | métodoPago | Proveedor | Carrito |
+|--------------+---------+-------+--------------+------------+-----------+---------|
+| Cliente      | X       | x     | x            | x          | x         | 0 - M   |
+|--------------+---------+-------+--------------+------------+-----------+---------|
+| Item         | X       | X     | X            | X          | 1 - M     | 0 - M   |
+|--------------+---------+-------+--------------+------------+-----------+---------|
+| métodoCompra | X       | X     | X            | X          | X         | 0 - M   |
+|--------------+---------+-------+--------------+------------+-----------+---------|
+| métodoPago   | X       | X     | X            | X          | X         | 0 - M   |
+|--------------+---------+-------+--------------+------------+-----------+---------|
+| Proveedor    | X       | 0 - M | X            | X          | X         | X       |
+|--------------+---------+-------+--------------+------------+-----------+---------|
+| Carrito      | 1 - 1   | 1 - M | 1 - 1        | 1 - 1      | X         | X       |
+
+- 3) Gráfica de entidades y relaciones: un diagrama conceptual inicial
+
+PD: Hasta aquí se debe realizar una revisión de las relaciones y entidades para depurar y aplicar los cambios respectivos (metodologíad el diseño)
+
+- 4) Atributo - Tipo - Obligatorio - Llave Primaria
+
+(I. E.) Para la entidad: *Cliente*
+
+| Atributo        | Tipo         | Obligaatorio | Llave Primaria |
+|-----------------+--------------+--------------+----------------|
+| ID              | Serial       | X            | X              |
+| cuentaPlatzi    | varchar(60)  | X            | X              |
+| nombre          | varchar(80   | X            |                |
+| fechaInicio     | timestamp    | X            |                |
+| correo          | varchar(60)  |              |                |
+| fechaNacimiento | timestamp    |              |                |
+| preferencias    | varchar(300) |              |                |
+
+- 5) diagrama conceptual final
+- 6) diagrama del modelo lógico
+- 7) Identificar nuevos atributos para las entidades débiles
+- 8) diagrama del modelo físico
+- 9) Pasar al estándar de la base de datos
+
+| *Princípios*            | *Descripción*                                                                                                                                                                                                                                                                                                                      |
+|-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Atomicidad              | Una transacción no se va a poder dividir en más subtransacciones, que son su unidad atómica. Se dan los pasos(subtransacciones) y luego se realiza un commit, el cual finaliza y confirma una transacción exitosa. Si hay algún fallo en la transacción, ocurre un rollback, todo lo que se hizo antes regresa a su estado inicial |
+| Consistencia            | Aseguro que una transacción pasa de un estado válido a otro estado válido                                                                                                                                                                                                                                                          |
+| Isolación / Aislamiento | Bloqueo de las transacciones para asegurar su veracidad de información y consistencia. Por ejemplo nunca se podra sacar ni por accidente, más del dinero que figura en el saldo, o no sucederá que se compre un mismo boleto o asiento "al mismo tiempo". Por este principio, se evitan estas situaciones.                         |
+| Durbilidad              | Se asegura que a través de un commit (para registrar en los discos duros), Los datos (por ejemplo, en la memoria volátil) van a perdurar en el tiempo hasta que yo lo decida                                                                                                                                             |
+
+* 11. Bases de Datos In-Memory (Cambio de árboles a columnar)
+
+(I. E.) Teniendo la tabla *Personas*:
+
+|           *PERSONAS*           |
+|--------------------------------|
+| ID | Nombres | Número-Segundos |
+|----+---------+-----------------|
+| 10 | abc     |             100 |
+| 18 | def     |             101 |
+| 24 | ghi     |             110 |
+| 53 | jkl     |             111 |
+
+- 10) Recorrido *ARBOL*: Sigue la estructura de árbol B+. En este caso el recorrido sería 10 - abc - 100 - 18 - def - 101 - 24 - ghi - 110 - 53 - jkl - 111
+- 11) Recorrido *Columnar*: El recorrido empieza por una columna, en este caso sería 10 - 18 - 24 - 53 - abc - def - ghi - jkl - 100 - 101 - 110 - 111
+
+* 12. Otros tipos de Bases de Datos en la industria
+
+- 12) Grafos
+- 13) Distribuidas
