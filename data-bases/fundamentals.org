@@ -22,7 +22,7 @@ Para definir una Relación tenemos que tener en cuenta los siguientes puntos:
 
 *La obligatoriedad:* Ésta se denota con una línea continua.
 
-*Opcional:* Se representa con una línea punteada.
+*La opcionalidad:* Se representa con una línea punteada.
 
 Datos importantes:
 
@@ -35,9 +35,18 @@ El símbolo con el que representamos la característica “de uno a muchos” es
 - 1 - M
 - M - M 
 
-* 9. Modelamiento según metofología Barker
+* 9. Constrains o estricciones
 
-(I. E.) :
+- Restricción de *edad*
+- Restricción de *fecha*
+- Restricción *not null*
+- Restricción *unique*
+
+Por ejemplo:
+
+* 10. Modelamiento según metofología Barker
+
+*(I. E.) :*
 
 *1) Identificar las entidades*
 
@@ -57,27 +66,26 @@ El símbolo con el que representamos la característica “de uno a muchos” es
 
 *2) Cardinalidad de las relaciones (0-1, 1-0, 1-1, 0-M, 1-M, M-M)*
 
-|                | CLiente | Item  | métodoCompra | métodoPago | Proveedor | Carrito |
-|----------------+---------+-------+--------------+------------+-----------+---------|
-| *Cliente*      | X       | x     | x            | x          | x         | 0 - M   |
-|----------------+---------+-------+--------------+------------+-----------+---------|
-| *Item*         | X       | X     | X            | X          | 1 - M     | 0 - M   |
-|----------------+---------+-------+--------------+------------+-----------+---------|
-| *mCompra* | X       | X     | X            | X          | X         | 0 - M   |
-|----------------+---------+-------+--------------+------------+-----------+---------|
-| *mPago*   | X       | X     | X            | X          | X         | 0 - M   |
-|----------------+---------+-------+--------------+------------+-----------+---------|
-| *Proveedor*    | X       | 0 - M | X            | X          | X         | X       |
-|----------------+---------+-------+--------------+------------+-----------+---------|
-| *Carrito*      | 1 - 1   | 1 - M | 1 - 1        | 1 - 1      | X         | X       |
+|             | CLiente | Item  | mCompra | mPago | Proveedor | Carrito |
+|             |         |       |         |       |           |         |
+|-------------+---------+-------+---------+-------+-----------+---------|
+| *Cliente*   | X       | x     | x       | x     | x         | 0 - M   |
+|-------------+---------+-------+---------+-------+-----------+---------|
+| *Item*      | X       | X     | X       | X     | 1 - M     | 0 - M   |
+|-------------+---------+-------+---------+-------+-----------+---------|
+| *mCompra*   | X       | X     | X       | X     | X         | 0 - M   |
+|-------------+---------+-------+---------+-------+-----------+---------|
+| *mPago*     | X       | X     | X       | X     | X         | 0 - M   |
+|-------------+---------+-------+---------+-------+-----------+---------|
+| *Proveedor* | X       | 0 - M | X       | X     | X         | X       |
+|-------------+---------+-------+---------+-------+-----------+---------|
+| *Carrito*   | 1 - 1   | 1 - M | 1 - 1   | 1 - 1 | X         | X       |
 
 *3) Gráfica de entidades y relaciones: un diagrama conceptual inicial*
 
-*PD:* Hasta aquí se debe realizar una revisión de las relaciones y entidades para depurar y aplicar los cambios respectivos(metodologíad el diseño)
+*PD:* Hasta aquí se debe realizar una revisión de las relaciones y entidades para depurar y aplicar los cambios respectivos(metodologías el diseño)
 
 *4) Atributo - Tipo - Obligatorio - Llave Primaria de cada Entidad*
-
-(I. E.)
 
 - Entidad *Cliente:*
 
@@ -92,10 +100,47 @@ El símbolo con el que representamos la característica “de uno a muchos” es
 | cliente_preferencias    | varchar(300) |             |                |
 
 - Entidad *Item:*
+
+| Atributo                | Tipo         | Obligatorio | Llave Primaria |
+|-------------------------+--------------+-------------+----------------|
+
 - Entidad *mCompra:*
+
+| Atributo            | Tipo         | Obligatorio | Llave Primaria |
+|---------------------+--------------+-------------+----------------|
+| mCompra_ID          | Serial       | X           | X              |
+| mCompra_código      | number(15)   | X           | X              |
+| mCompra_método      | varchar(250) | X           |                |
+| mCompra_fechaInicio | timestamp    | X           |                |
+| mCompra_dirección   | varchar(120) |             |                |
+
 - Entidad *mPago:*
+
+| Atributo | Tipo | Obligatorio | Llave Primaria |
+|----------+------+-------------+----------------|
+| mPago_ID |      |             |                |
+| mPago_   |      |             |                |
+| mPago_   |      |             |                |
+| mPago_   |      |             |                |
+| mPago_   |      |             |                |
+| mPago_   |      |             |                |
+
 - Entidad *Proveedor:*
+
+| Atributo   | Tipo | Obligatorio | Llave Primaria |
+|------------+------+-------------+----------------|
+| proveedor_ID |      |             |                |
+| proveedor_ |      |             |                |
+| proveedor_ |      |             |                |
+| proveedor_ |      |             |                |
+| proveedor_ |      |             |                |
+| proveedor_ |      |             |                |
+| proveedor_ |      |             |                |
+
 - Entidad *Carrito:*
+
+| Atributo                | Tipo         | Obligatorio | Llave Primaria |
+|-------------------------+--------------+-------------+----------------|
 
 *5) diagrama conceptual final*
 
@@ -111,6 +156,13 @@ El símbolo con el que representamos la característica “de uno a muchos” es
 
 *8) diagrama del modelo físico*
 
+En este paso:
+
+- Entidades pasan a llamarse Tablas.
+- Dejamos de usar *#, ** y *º* para referinos a *llaves primarias*, *campos obligatorios* y *campos opcionales*, respectivamente.
+- Las relaciones ahora son representadas por flechas.
+- La dirección de las flechas apuntan hacía la tabla que origina una llave foránea o sea la tabla que tiene la llave primaria.
+- Se definen los tipos de datos, dependiendo del motor SQL (MySQL, SQLServer, MariaDB, PostgreSQL).
 
 
 *9) Pasar al estándar de la base de datos*
@@ -142,3 +194,38 @@ El símbolo con el que representamos la característica “de uno a muchos” es
 
 - Grafos
 - Distribuidas
+
+* 13. Llevando nuestro proyecto a SQL (Paso 9)
+
+Apuntes de la Clase
+
+Vamos a tomar lo que hicimos en el diagrama lógico y físico:
+
+    El modelo físico nos va a permitir hacer la implementación de código SQL.
+    El modelo lógico nos va a recordar cuales son las restricciones que teníamos (constraints).
+
+En un ambiente de desarrollo al momento de comenzar a trabajar con nuestro modelo de datos para nuestra aplicación, se recomienda al momento crear tablas borrarlas en el caso de que existan con DROP TABLE.
+
+A la hora de estar haciendo pruebas, cuando generamos código SQL, vamos a generar tablas nuevas en nuestra base de datos, si por error creamos una tabla o ya existe una tabla al momento de aplicar nuestros cambios se pueden generar inconsistencias.
+
+Dependiendo del motor de bases de datos, podemos sobre-escribir la estructura o no en el momento de que ya exista una tabla con ciertos atributos.
+
+Estas tablas se van a borrar en el orden de la tabla que tenga menos relaciones con otras tablas (estas relaciones se van a romper o borrar).
+
+Quitar tablas al comienzo no se debe utilizar en ambientes de producción al momento de crear tablas nuevas, si se hace se pueden dañar las dependencias de las tablas.
+
+Un poco de Sintaxis:
+
+    Las lineas de código terminan en punto y coma ;.
+
+Comentarios de una linea: Se coloca – (2 guiones) al inicio del comentario. Todo lo que este despues de ellos en esa linea, quedara comentado
+Comentarios de multiples Lineas: Se coloca /* para Iniciar el comentario y */ para cerrarlo
+
+* 14. Dependencias funcionales
+
+Dependencias Funcionales
+
+- Reflexiva => Si tengo un dato A de mi tabla (i. e. mi I.D) puedo llegar a un dato B de mi tabla (i. e. Nombre).
+- Aumentativa => Si tengo un dato A,C de mi table entonces puedo obtener un dato B,C de mi tabla; con esto comunmente se generan tuplas.
+- Transitiva => Si tengo una tabla A que esta relacionada con una tabla B y tengo un tabla C relacionada con B no tengo que tener relación entre A y C para poder traer los datos de C cuando hago una consulta de A
+
