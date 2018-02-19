@@ -164,7 +164,6 @@ En este paso:
 - La dirección de las flechas apuntan hacía la tabla que origina una llave foránea o sea la tabla que tiene la llave primaria.
 - Se definen los tipos de datos, dependiendo del motor SQL (MySQL, SQLServer, MariaDB, PostgreSQL).
 
-
 *9) Pasar al estándar de la base de datos*
 
 | *Princípios*            | *Descripción*                                                                                                                                                                                                                                                                                                                      |
@@ -197,12 +196,10 @@ En este paso:
 
 * 13. Llevando nuestro proyecto a SQL (Paso 9)
 
-Apuntes de la Clase
-
 Vamos a tomar lo que hicimos en el diagrama lógico y físico:
 
-    El modelo físico nos va a permitir hacer la implementación de código SQL.
-    El modelo lógico nos va a recordar cuales son las restricciones que teníamos (constraints).
+- El modelo físico nos va a permitir hacer la implementación de código SQL.
+- El modelo lógico nos va a recordar cuales son las restricciones que teníamos (constraints).
 
 En un ambiente de desarrollo al momento de comenzar a trabajar con nuestro modelo de datos para nuestra aplicación, se recomienda al momento crear tablas borrarlas en el caso de que existan con DROP TABLE.
 
@@ -216,16 +213,61 @@ Quitar tablas al comienzo no se debe utilizar en ambientes de producción al mom
 
 Un poco de Sintaxis:
 
-    Las lineas de código terminan en punto y coma ;.
+Las lineas de código terminan en punto y coma ;.
 
-Comentarios de una linea: Se coloca – (2 guiones) al inicio del comentario. Todo lo que este despues de ellos en esa linea, quedara comentado
-Comentarios de multiples Lineas: Se coloca /* para Iniciar el comentario y */ para cerrarlo
+- Comentarios de una linea: Se coloca – (2 guiones) al inicio del comentario. Todo lo que este despues de ellos en esa linea, quedara comentado.
+- Comentarios de multiples Lineas: Se coloca /* para Iniciar el comentario y */ para cerrarlo.
 
 * 14. Dependencias funcionales
-
-Dependencias Funcionales
 
 - Reflexiva => Si tengo un dato A de mi tabla (i. e. mi I.D) puedo llegar a un dato B de mi tabla (i. e. Nombre).
 - Aumentativa => Si tengo un dato A,C de mi table entonces puedo obtener un dato B,C de mi tabla; con esto comunmente se generan tuplas.
 - Transitiva => Si tengo una tabla A que esta relacionada con una tabla B y tengo un tabla C relacionada con B no tengo que tener relación entre A y C para poder traer los datos de C cuando hago una consulta de A
 
+* 15. Normalización
+
+* 16. DDL & DML
+
+* 17. ACID
+
+* 18. CAP
+
+- *Consistency:* Debe retornar un dato válido, me debe permitir a cualquier estructura de su base de datos.
+- *Availability:* Cuando haga una solicitud no me va a importar que nodo del sistema esta up time o down time o sin funcionamiento. Un dato debe estar replicado en al menos tres nodos.
+- *Partition Tolerance:* Es como yo parto esa información por lo menos en tres nodos para evitar que se pierdan mensajes.
+
+Las bases de datos NoSQL están pensadas para ser escalables y distribuidas. Por ser distribuidas tendremos que tener en cuenta el teorema CAP.
+
+El teorema CAP, dice que en sistemas distribuidos es imposible garantizar a la vez: Consistencia, Disponibilidad y Particionamiento.
+
+Para ser escalables y distribuidas, las bases de datos NoSQL, siguen distintos métodos, por lo que no todas cumplen los mismos puntos del teorema CAP.
+
+Según las condiciones que cumplan se pueden tener:
+
+- *AP:* garantizan Disponibilidad y Particionamiento, pero no la consistencia, al menos de forma total. Algunas de ellas consiguen una consistencia parcial a través de la replicación y la verificación.
+- *CP:* garantizan Consistencia y Particionamiento. Para lograr la consistencia y replicar los datos a través de los nodos, sacrifican la disponibilidad.
+- *CA:* garantizan Consistencia y Disponibilidad, pero tienen problemas con la tolerancia a particiones. Este problema lo suelen gestionar replicando los datos.
+
+* 19. Scale Out y Scale Up
+
+- *SQL* cuando tienes data bien indexada.
+- *NoSQL* cuando tienes data no necesariamente indexada pero sí organizada, distribuida.
+
+* 20. ¿Scale out o Scale up?
+
+- *Scale Up* => Crecer con el mismo hardware, (memoria, procesador, etc)
+- *Scale Out* => Escalamiento horizontal, dando balanceo de carga a más canales de comunicación, más maquinas con menores especificaciones, sincronizadas entre ellas.
+
+* 21. DBMS en nube para poder iniciar una aplicación propia
+
+Investigar plataformas en nube para:
+
+- Software como servicio.
+- Plataforma como servicio.
+- Infraestructura como servicio.
+
+* 22. NoSQL
+
+- Colecciones y Shards
+- Comunicaciones y Hardware en base de datos Scale Out
+- Integración con JSON
