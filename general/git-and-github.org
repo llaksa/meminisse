@@ -325,9 +325,9 @@ git cherry-pick [SHA1] nos permite cambiar un commit a otra rama para salvarnos 
 ** 21. Añadiendo una llave ssh a GitHub
 
 #+begin_src sh
-$ git ssh-keygen -t rsa -b 4096 -C "irvin.jair.pg@gmail.com"
+$ ssh-keygen -t rsa -b 4096 -C "irvin.jair.pg@gmail.com"
 
-$ pbcopy < ~/.ssh/id_rsa.pub
+$ cat < ~/.ssh/id_rsa.pub
 #+end_src
 
 Y agregar la llave ssh a github
