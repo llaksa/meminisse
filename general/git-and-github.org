@@ -3,9 +3,9 @@
 ** 1. Configuration
 
 #+begin_src sh
-$ git config --global user.email "your@email.com"
+$ git config --global user.email "irvin.jair.pg@gmail.com"
 
-$ git config --global user.name "your-name"
+$ git config --global user.name "llaksa"
 
 $ git config --global color.ui true
 #+end_src
