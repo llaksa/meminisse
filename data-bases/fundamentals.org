@@ -35,6 +35,16 @@ El símbolo con el que representamos la característica “de uno a muchos” es
 - 1 - M
 - M - M 
 
+Para dos entidades A y B, podría darse el siguiente caso:
+
+- La relación desde A hacia B es de 0 a muchos.
+- la relación desde B hacia A es de uno a uno.
+
+la gráfica conceptual quedaría así:
+
+- Desde A, la primera mitad de la línea es discontínua *(cero: 0)*, y al final de la segunda mitad hay una pata de gallo *(muchos: M)*.
+- Desde B, la segunda mitad de la línea es contínua *(uno: 1)*, y al comienzo de la primera mitad no hay nada *(uno: 1)*.   
+
 * 9. Constrains o estricciones
 
 - Restricción de *edad*
