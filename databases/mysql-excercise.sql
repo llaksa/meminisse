@@ -4,8 +4,10 @@ mysql -u <user> -h <localhost> -p <password>
 */
 
 SHOW DATABASES;
+SHOW TABLES;
 USE <database>
 SELECT DATABASE(); -- muestra la base de datos actual
+SHOW WARNINGS; -- mysql da a conocer aspectos a tener en cuenta
 
 -- si se borra un elemento de la tabla "books", sql ignorará esta acción para asignar un id a un futuro elemento.
 
@@ -27,3 +29,12 @@ CREATE TABLE IF NOT EXISTS authors (
        name VARCHAR(100) NOT NULL,
        natinality VARCHAR(3)
 );
+
+DESCRIBE authors;
+DESC authors;
+
+DESCRIBE books;
+
+SHOW FULL COLUMNS FROM books:
+
+DROP authors; -- borra la tabla "authors" definitivamente, no hay vuelta atrás
