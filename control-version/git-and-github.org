@@ -1,7 +1,7 @@
 * USEFULL GIT AND GITHUB COMANDS
 
 ** 1. Configuration
-
+   
 #+begin_src sh
 $ git config --global user.email "irvin.jair.pg@gmail.com"
 
