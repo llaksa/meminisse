@@ -1,0 +1,27 @@
+* Errores comunes
+- En realidad no hay problemas qué resolver
+- Existían soluciones más simples
+- No puedes medir el impacto de tu modelo
+- No sabes si el problema ya ha sido resuelto
+- El problema era imposible de resolver
+* Preguntas clave
+** ¿Qué beneficio piensas generar y para quién?
+** ¿Qué funcionalidad te sería más útil para lograr ese objetivo?:
+*** Aprendizaje supervisado
+- Predecir una métrica
+- Predecir una etiqueta
+*** Aprendizaje no supervisado
+- Agrupar elementos similares
+- Optimizar un proceso con prueba y error
+* Aterriza tu problema de aprendizaje supervisado
+** ¿De qué tipo es el valor que quieres predecir?
+- Variables contínuas (cualquier float, número real)
+- Variables discretas (valores finitos)
+** ¿Cuál es tu definición de éxito de una predicción?
+- Puede ser precisión, el ricon
+** ¿Con qué datos vas a hacer esta predicción?
+** ¿La pregunta que estás tratando de resolver pertenece a alguna disciplina en particular?
+** ¿Considerando tu intuición en la disciplina, crees que los datos te permitan predecir tu objetivo?
+
+
+

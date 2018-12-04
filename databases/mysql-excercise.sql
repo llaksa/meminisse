@@ -66,3 +66,12 @@ CREATE TABLE clients (
        updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS operations (
+       operation_id
+       book_id
+       client_id
+       type prestado, devuelto, vendido
+       created_at
+       updated_at
+       finished TINYINT(1) NOT NULL
+);
