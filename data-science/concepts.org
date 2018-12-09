@@ -22,6 +22,46 @@
 ** ¿Con qué datos vas a hacer esta predicción?
 ** ¿La pregunta que estás tratando de resolver pertenece a alguna disciplina en particular?
 ** ¿Considerando tu intuición en la disciplina, crees que los datos te permitan predecir tu objetivo?
+* Métodos destacados
+#+begin_src python
+ data = pandas.read_csv(’path/to/data’) # data will be a pandas.DataFrame
+ data.head # show 
+ data.index # “primary key” of data
+ data.columns # columns of data
+ data.loc[idx, col] # idx [escalar or vector]: some index(es), col [escalar or vector]: some column(s)
+ data[’someColumnName’]
+ data.info # show the name and elements type of each data’s column
+ data.dtype # show all the types, is a pandas.DataFrame.Series
+ 
+ # Columnas de TEXTO: 
+ # returning true only for the data’s columns with string elements:
+ obj = (data.dtype == object)
+ # columns name of data’s column with string elements
+ obj_stringColumns = [c for c in obj.index if obj[c]]
+ # Result
+ data_obj = data[obj_stringColumns] # pandas.DataFrame
 
+ # Columnas NUMÉRICAS
+ # returning true only for the data’s columns with string elements:
+ num = (data.dtype == float) | (data.dtype == int)
+ # columns name of data’s column with string elements
+ num_numericColumns = [c for c in num.index if num[c]]
+ # Result
+ data_num = data[num_numericColumns] # pandas.DataFrame
 
+ # ESTADÍSTICAS de las columnas numéricas (Numeric columns ONLY)
+ data_num.describe() # returns the count, mean, std, percentiles at 25% 50% 75% and max
+
+ data_num[’someColumnName’].hist()
+
+ # ESTADÍSTICAS de las columnas de texto
+
+ # CREANDO MÁSCARAS
+ mask = (data[’someColumnName’] > someValue) # example: mask = (movies[’budget’] > 1e9)
+ 
+ data[mask] # extraer los elementos donde someValue es más pequeño
+
+ 
+
+#+end_src
 
