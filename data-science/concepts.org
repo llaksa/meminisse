@@ -30,6 +30,9 @@
  # MOSTRAR GRÁFICA EN LA MISMA LÍNEA
  %matplotlib inline
 
+ # Help of a function
+ help(aquí-va-el-nombre-de-la-función)
+
  data = pandas.read_csv(’path/to/data’) # data will be a pandas.DataFrame
  data.head # show 
  data.index # “primary key” of data
@@ -64,10 +67,52 @@
 
  # CREANDO MÁSCARAS
  mask = (data[’someColumnName’] > someValue) # example: mask = (movies[’budget’] > 1e9)
+ # se genera un dataframe con las mismas columnas e index pero los elementos son solo valores true cuando se cumple la condición or false en el caso contrario
  
- data[mask] # extraer los elementos donde someValue es más pequeño
+ data[mask] # extrae los elementos donde mask tiene el valor de true
 
- 
+ # Cargando otro CSV in data2
+ data2 = pd.read_csv(’path/to/data2’) # pandas.DataFrame
 
+ # Concatenando dataframes (EJEMPLO)
+  # Concatenando una columna de strings (Object type) al dataframe de valores numéricos
+ movies_num = pd.concat([movies_num, movies[’movie_title’]], axis=1)
+
+ # Merge de dataframes
+  # a 3° pandas.Dataframe = pd.merge(a 1° DataFrame, a 2° Dataframe, on='A 2° Dataframe’s column name’, how=’the left (a 1°) or the right (a 2°) Dataframe’)
+  movies_v2 = pd.merge(data2, movies_num, on=’movie_title’, how=’left’)
+  # con how='left’, movies_v2 queda definido con el pandas.DataFrame.index de data2
+  # con how=right’, movies_v2 queda definido con el pandas.DataFrame.index de movies_num
+  # por lo tanto se alterará el pandas.DataFrame.shape
+
+  # Generar un dataframe con iguales nombres de columnas e index pero con elementos true para elementos no NaN y false para el caso contrario
+  pandas.DataFrame.notnull()
+  
+  pandas.DataFrame.notnull().apply(some-function) # Apply ejecutará ’some-function’ sobre los elementos del DataFrame
+  # EJEMPLO: si ’some-function’ = pd.Series.value_conts, en el caso anterior se contará cuántos true or false hay
+
+  available = pandas.DataFrame.notnull().all(axis=1).value_counts()
+  mask2 = available[’someColumnName’]
+  movies_v2 = movies_v2[mask2]
+
+  ( (movies_v2 != 0) & (movies_v2.notnull()) ).worldwide_gross.value_counts()
+
+  from sklearn.preprocessing import Imputer
+  imputer = Imputer(missing_values=np.nan, strategy=’mean’, axis=1)
+
+  movies_v2.drop(’title’) # pandas.DataFrame.drop()
+
+  values = imputer.fit_transform(movies_v2) 
+
+  X = pd.DataFrame(values)
+  X.columns = movies_v2.columns
+  X.index = movies_v2.index
+  X.head()
+  X.to_csv(’some/path/to/save/X.csv’, index=False)
+
+
+
+  
+
+  
 #+end_src
-
