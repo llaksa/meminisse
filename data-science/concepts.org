@@ -110,9 +110,21 @@
   X.head()
   X.to_csv(’some/path/to/save/X.csv’, index=False)
 
+  # Scikit-learn es la librería más usada de Machine Learning tradicional Ver ranking de Github. La librería incluye funcionalidades de:
+
+  #  Preprocesamiento de datos en  sklearn.preprocessing 
+  #  Algoritmos de Machine Learning en sklearn.linear_model, sklearn.svm, sklearn.ensemble, y muchos más.
+  #  Evaluación de modelos en sklearn.model_selection y sklearn.metrics
+
+  X = pd.read(’path/to/X.csv’)
+  Y = X[’worldwide_gross’]
+  X = X.drop('worldwide_gross’)
+
+  X_test, Y_test, X_train, Y_train = train_test_split(X, Y)
+  estimador (entrenado) = fit(Hiperparámetros, estimador (instanciado), X_train, Y_train)
+  Y_predicted = estimador(entrenado).predict (X_test)
+  theScore = score(Y_predicted, Y_test)
 
 
-  
 
-  
 #+end_src
