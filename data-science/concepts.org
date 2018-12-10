@@ -24,6 +24,12 @@
 ** ¿Considerando tu intuición en la disciplina, crees que los datos te permitan predecir tu objetivo?
 * Métodos destacados
 #+begin_src python
+ # MOSTRAR TIEMPO PARA UN COMANDO
+ %timeit
+
+ # MOSTRAR GRÁFICA EN LA MISMA LÍNEA
+ %matplotlib inline
+
  data = pandas.read_csv(’path/to/data’) # data will be a pandas.DataFrame
  data.head # show 
  data.index # “primary key” of data
