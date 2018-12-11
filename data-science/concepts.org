@@ -118,13 +118,41 @@
 
   X = pd.read(’path/to/X.csv’)
   Y = X[’worldwide_gross’]
-  X = X.drop('worldwide_gross’)
+  X = X.drop('worldwide_gross')
 
   X_test, Y_test, X_train, Y_train = train_test_split(X, Y)
   estimador (entrenado) = fit(Hiperparámetros, estimador (instanciado), X_train, Y_train)
   Y_predicted = estimador(entrenado).predict (X_test)
   theScore = score(Y_predicted, Y_test)
 
+  # Comparar Y_test vs Y_predicted
+  plt.hist(Y_test, Y_predicted)
 
+  # Evaluando de forma más fina el error (residuals)
+  residuals = Y_test - y_predicted
+  plt.catter(Y_test, residuals) # [Error en absoluto - dólares?] mientras esta gráfica muestre puntos dispersos sin patrones, está bien
+  
+  ap_residuals = np.abs(residuale) / Y_test
+  plt.scatter(Y_test, ap_residuals)  # [Error en porcentaje]
+
+  lap_residuals = np.log(ap_residuals) # [Error en algoritmo] escala en magnitud, más que en porcentaje
+  plt.scatter(Y_test, lap_residuals)
+
+  plt.hist(lap_residuals, bins=100, normed=1, histtype=’step’, cumulative=True); # [Evolucion del error del error de las medias] => col. horizontal de valores menores a 0: % del error, col. vertical: % de datos
+
+  # DISEÑO DE FEATURES
+  # Métodos heurísticos:
+  # - Features informativas
+  # - Features independientes
+  # - Cantidad de features controladas
+
+  X = pd.read_csv(’some/path/to/file’)
+  
+  import seaborn as sns
+
+  # Visualizar correlación features
+  sns.heatmap(X.corr()) # La diagonal está abstante roja porque es es la misma en horiz. y vert. por las demás partes deberían estar en tonos claros mostrando así que las features están sanas (poca correlación)
+
+  # Se necesita aumentar el número de dimensiones en forma exponensial para tener solo un poco de información de un hiercubo, por lo que es mejor mantener la menor cantidad de dimensiones posibles
 
 #+end_src
